@@ -6,8 +6,11 @@ module.exports = (express, app, mongo, nodemailer) => {
 	app.use('/api', apiRouter);
 
 	apiRouter
-		.get('/hi', controllers.userCtrl.hi);
+		.get('/users', controllers.userCtrl.users)
+		.get('/users/:id', controllers.userCtrl.userById)
+		.get('/users/:username', controllers.userCtrl.userByUsername)
 		//.post('/users/sendemail', controllers.mainCtrl.sendEmail(nodemailer))
+		.get('/blogs', controllers.blogCtrl.blogs)
 
 	app.get('*', function (req, res) {
 		res.send('ERROR: No such a route!');
