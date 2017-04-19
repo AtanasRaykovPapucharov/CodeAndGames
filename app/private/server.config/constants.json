@@ -1,0 +1,4 @@
+{
+	"mongodbConnection": "mongodb://admin:1qazxsw2@ds163060.mlab.com:63060/webdjsdatabase",
+	"transporterConnection": "smtps://webdjsandpy@gmail.com:webdjs2017andPy@smtp.gmail.com"
+}
