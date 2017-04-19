@@ -1,20 +1,18 @@
 'use strict';
 
+
+import { userData as userDataObj } from './data/user.data.js';
+import { blogData as blogDataObj } from './data/blog.data.js';
+
 const data = (() => {
 	return (requester) => {
-		class Data {
-			constructor(requester) {
-				this.requester = requester;
-			}
-
-			getBlogs() {
-				return this.requester.get('/api/blogs');
-			}
+		return {
+			userData: userDataObj(requester),
+			blogData: userDataObj(requester)
 		}
-
-		let newData = new Data(requester);
-		return newData
 	}
 })()
 
-export { data }
+export {
+	data
+};
