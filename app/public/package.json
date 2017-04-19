@@ -1,0 +1,19 @@
+{
+  "name": "game-space",
+  "version": "0.0.1",
+  "description": "",
+  "main": "main.js",
+  "directories": {
+    "test": "tests"
+  },
+  "scripts": {},
+  "author": "team",
+  "license": "ISC",
+  "dependencies": {
+    "systemjs": "^0.19.43",
+    "systemjs-plugin-babel": "0.0.21"
+  },
+  "devDependencies": {
+    "sinon": "^2.1.0"
+  }
+}

@@ -1,0 +1,59 @@
+{
+  "name": "template",
+  "version": "1.0.0",
+  "description": "js spa",
+  "main": "index.js",
+  "engines": {
+    "node": "6.10.x",
+    "npm": "3.10.x"
+  },
+  "scripts": {
+    "c": "npm run css-compress",
+    "css-compress": "gulp css:compress",
+    "sass": "gulp sass:watch",
+    "npm-client": "cd app/public && npm install",
+    "postinstall": "bower install && npm run npm-client",
+    "start": "node index.js",
+    "test": "cd app/public/tests && tests.html"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Sattanaso/MyTemplate.git"
+  },
+  "keywords": [
+    "spa",
+    "javascript",
+    "jquery",
+    "bootstrap",
+    "navigo",
+    "handlebars",
+    "express"
+  ],
+  "author": "team",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/Sattanaso/MyTemplate/issues"
+  },
+  "homepage": "https://github.com/Sattanaso/MyTemplate#readme",
+  "dependencies": {
+    "body-parser": "^1.17.1",
+    "bower": "^1.8.0",
+    "cookie-parser": "^1.4.3",
+    "cors": "^2.8.3",
+    "crypto": "0.0.3",
+    "express": "^4.15.2",
+    "express-session": "^1.15.2",
+    "mongojs": "^2.4.0",
+    "mongojs-models": "^0.1.4",
+    "nodemailer": "^4.0.1",
+    "passport": "^0.3.2",
+    "passport-local": "^1.0.0"
+  },
+  "devDependencies": {
+    "gulp": "^3.9.1",
+    "gulp-concat-css": "^2.3.0",
+    "gulp-sass": "^3.1.0",
+    "gulp-uglifycss": "^1.0.8",
+    "openurl": "^1.1.1"
+  }
+}
