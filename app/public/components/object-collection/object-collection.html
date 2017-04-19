@@ -1,0 +1,12 @@
+<div class="collection">
+	{{#each data}}
+		<h2>{{this.title}}</h2>
+		<p>{{this.description}}</p>
+		<a href="#/blog/{{this._id}}">
+			<img src={{this.image}} alt="img" width="200px">
+		</a>
+		{{#each this.tags}}
+		<button type="" class="btn btn-success">{{this}}</button>
+		{{/each}}
+	{{/each}}
+</div>

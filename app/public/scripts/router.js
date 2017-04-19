@@ -10,6 +10,11 @@ const router = (() => {
 				'/about': () => {
 				},
 				'/blog': () => {
+					controller.blogCtrl.blogs;
+				},
+				'/blog/:id': (params) => {
+					let blogId = params.id;
+					controller.blogCtrl.blogById(blogId);
 				},
 				'/': () => {
 					appRouter.navigate('/home');

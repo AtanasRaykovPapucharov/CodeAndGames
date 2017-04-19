@@ -13,6 +13,19 @@ module.exports = (mongo) => {
 						resolve(blogs);
 					})
 			});
-		}
+		},
+		getBlogById: (id) => {
+			return new Promise((resolve, reject) => {
+				db['blogs']
+					.findOne({
+						_id: mongojsObj.ObjectId(id)
+					}, (err, blog) => {
+						if (err) {
+							reject(err);
+						}
+						resolve(blog);
+					})
+			});
+		},
 	}
 }

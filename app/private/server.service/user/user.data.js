@@ -35,6 +35,17 @@ module.exports = (mongo) => {
 						resolve(users);
 					})
 			});
+		},
+		getUserByEmail: (email) => {
+			return new Promise((resolve, reject) => {
+				db['users']
+					.find({ "email": email }, (err, users) => {
+						if (err) {
+							reject(err);
+						}
+						resolve(users);
+					})
+			});
 		}
 	}
 }

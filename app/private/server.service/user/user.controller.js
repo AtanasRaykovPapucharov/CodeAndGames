@@ -22,6 +22,13 @@ module.exports = (mongo, nodemailer) => {
 					res.send(user);
 					console.log('user by username sent!');
 				});
+		},
+		userByEmail: (req, res, next) => {
+			userData.getUserByUsername(req.params.email)
+				.then((user) => {
+					res.send(user);
+					console.log('user by username sent!');
+				});
 		}
 	}
 }

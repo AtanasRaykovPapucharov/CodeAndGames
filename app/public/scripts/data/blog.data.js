@@ -7,8 +7,12 @@ const blogData = (() => {
 				this.requester = requester;
 			}
 
-			getblog() {
+			getBlogs() {
 				return this.requester.get('/api/blog');
+			}
+
+			getBlogById(id) {
+				return this.requester.get(`/api/blog/${id}`);
 			}
 		}
 

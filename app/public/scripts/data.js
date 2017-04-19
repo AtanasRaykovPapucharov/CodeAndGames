@@ -8,7 +8,7 @@ const data = (() => {
 	return (requester) => {
 		return {
 			userData: userDataObj(requester),
-			blogData: userDataObj(requester)
+			blogData: blogDataObj(requester)
 		}
 	}
 })()
