@@ -1,3 +1,5 @@
+'use strict';
+
 const blogCtrl = (() => {
 	return (data, view, utils) => {
 		class BlogCtrl {

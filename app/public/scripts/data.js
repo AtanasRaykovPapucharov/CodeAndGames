@@ -1,6 +1,5 @@
 'use strict';
 
-
 import { userData as userDataObj } from './data/user.data.js';
 import { blogData as blogDataObj } from './data/blog.data.js';
 

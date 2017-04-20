@@ -1,8 +1,10 @@
+'use strict';
+
 mocha.setup('bdd');
 
 const {
-	expect,
-	assert
+	assert,
+	expect 
 } = chai;
 
 const AUTH_KEY = "SOME_AUTH_KEY";

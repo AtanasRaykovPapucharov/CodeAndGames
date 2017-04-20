@@ -1,2 +1,21 @@
-header div {
-  color: yellow; }
+@font-face {
+  font-family: 'Zhafira';
+  src: url("../assets/fonts/MJF Zhafira Demo.ttf"); }
+
+@font-face {
+  font-family: 'Sunny';
+  src: url("../assets/fonts/Sunny Spring Day - TTF.ttf"); }
+
+* > hr {
+  border: 1px solid #96cc96; }
+
+a:hover {
+  text-decoration: none; }
+
+* > input {
+  border: 1px solid darkorange !important;
+  border-radius: 3px !important;
+  background-color: #96cc96 !important; }
+
+ul {
+  list-style-type: none; }

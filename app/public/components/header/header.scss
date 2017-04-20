@@ -1,0 +1,116 @@
+@import '../global.scss';
+
+.wrapper #header {
+	nav.navbar.nav-header {
+		height: 50px;
+		background-color: #001020;
+		background-image: url('../../assets/images/space-bg.jpg');
+		border: 0;
+		border-radius: 0;
+
+		.nav-colapse-btn {
+			background-color: darkolivegreen;
+			.icon-bar {
+				background-color: darkorange;
+			}
+		}
+
+		.main-link {
+			max-height: 40px;
+			margin-top: 5px;
+			margin-left: 20px;
+			font-family: 'Sunny', serif;
+			font-weight: bold;
+			font-size: 28px;
+			color: darkorange;
+			background-color: black;
+
+			&:hover {
+				color: silver;
+			}
+ 
+			&:focus {
+				color: silver;
+			}
+		}
+
+		#brand {
+			margin-left: 5px;
+			font-family: 'Zhafira', serif;
+			color: darkolivegreen;
+			text-shadow: -1px 1px darkorange;
+			font-size: 38px;
+
+			&:hover {
+				color: silver;
+				text-shadow: -1px 1px whitesmoke
+			}
+		}
+
+		.nav-right {
+			float: right;
+			margin-right: 0.5em;
+
+			li.dropdown>ul>li>a {
+				color: silver;
+				text-shadow: -1px 1px black;
+				&:hover{
+					background-color: silver;
+				}
+			}
+		}
+
+		.menu-dropdown {
+			background-color: #000000;
+			border: 2px solid darkorange;
+			border-radius: 5px;
+			margin-left: -3em;
+			max-width: 22%;
+			font-family: Verdana, Geneva, Tahoma, sans-serif
+		}
+	}
+}
+
+/*==========  Mobile First Method  ==========*/
+
+@media only screen and (min-width : 320px) {
+		
+}
+
+@media only screen and (min-width : 480px) {
+}
+
+@media only screen and (min-width : 768px) {
+	.wrapper .header {
+		nav.navbar.nav-header {
+			.main-link {
+				background-color: transparent;
+			}
+			
+			.nav-right {
+
+				li.dropdown>ul>li>a {
+					color: darkolivegreen;
+					text-shadow: -1px 1px black;
+					&:hover{
+						background-color: silver;
+					}
+				}
+		}
+			
+			.menu-dropdown {
+				max-width: 100%;
+				margin-left: -3.2em;
+				background-color: #96cc96;
+			}
+		}
+	}
+}
+
+@media only screen and (min-width : 992px) {
+
+}
+
+@media only screen and (min-width : 1200px) {
+
+}

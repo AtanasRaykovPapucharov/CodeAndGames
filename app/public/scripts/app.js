@@ -18,21 +18,16 @@ import { router as router } from './router.js';
 
 const app = {
 	init: $(() => {
-		let data = dataObj(requester);
-		let view = viewObj(templateLoader);
-		let utils = {
+		const data = dataObj(requester);
+		const view = viewObj(templateLoader);
+		const utils = {
 			notifier: notifier,
 			validator: validator,
 			hash: hash,
 			storage: storage,
 			cloudinary: cloudinary
 		}
-		let ctrl = controller(data, view, utils);
-
-		// console.log(data);
-		// console.log(view);
-		// console.log(utils);
-		// console.log(ctrl);
+		const ctrl = controller(data, view, utils);
 
 		view.header('#header', {});
 		view.footer('#footer', {});

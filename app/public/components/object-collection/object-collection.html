@@ -1,12 +1,22 @@
-<div class="collection">
+<div class="object-collection">
 	{{#each data}}
-		<h2>{{this.title}}</h2>
-		<p>{{this.description}}</p>
+	<article class="obj-col-article">
 		<a href="#/blog/{{this._id}}">
-			<img src={{this.image}} alt="img" width="200px">
+			<h4 class="obj-col-article-title">{{this.title}}</h4>
 		</a>
-		{{#each this.tags}}
-		<button type="" class="btn btn-success">{{this}}</button>
-		{{/each}}
+		<p class="obj-col-article-text">
+			<a href="#/blog/{{this._id}}">
+				<img class="obj-col-article-img" src={{this.image}} alt="image" width="20%" height="200px">
+			</a>
+		</p>
+
+		<div class="obj-col-article-tags">
+			{{#each this.tags}}
+			<a href="/" class="btn btn-primary">
+				<h6>{{this}}</h6>
+			</a>
+			{{/each}}
+		</div>
+	</article>
 	{{/each}}
 </div>
