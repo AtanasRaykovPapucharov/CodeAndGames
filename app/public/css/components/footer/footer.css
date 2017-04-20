@@ -29,8 +29,7 @@ ul {
   background-color: #001020;
   background-image: url("../../assets/images/space-bg.jpg");
   background-repeat: no-repeat;
-  background-size: 800%;
-  border-top: 2px solid darkorange; }
+  background-size: 800%; }
   .wrapper #footer .footer-contant h5 {
     float: right;
     padding-right: 1.3em; }

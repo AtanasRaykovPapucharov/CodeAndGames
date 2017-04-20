@@ -17,6 +17,7 @@ body {
       padding-left: 15px; }
   body .wrapper #footer {
     background-color: transparent;
+    border-top: 15px solid #ff8c00;
     color: #ff8c00;
     margin-left: -1px;
     min-height: 150px;

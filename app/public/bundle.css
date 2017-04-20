@@ -27,6 +27,7 @@ body .wrapper .middle #content {
 
 body .wrapper #footer {
   background-color: transparent;
+  border-top: 15px solid #ff8c00;
   color: #ff8c00;
   margin-left: -1px;
   min-height: 150px;
@@ -126,7 +127,6 @@ ul {
   background-image: url("assets/images/space-bg.jpg");
   background-repeat: no-repeat;
   background-size: 800%;
-  border-top: 2px solid darkorange;
 }
 
 .wrapper #footer .footer-contant h5 {
@@ -177,6 +177,7 @@ ul {
   height: 50px;
   background-color: #001020;
   background-image: url("assets/images/space-bg.jpg");
+  background-repeat: no-repeat;
   border: 0;
   border-radius: 0;
 }
@@ -247,23 +248,13 @@ ul {
 /*==========  Mobile First Method  ==========*/
 
 @media only screen and (min-width: 768px) {
-  .wrapper .header nav.navbar.nav-header .main-link {
+  .wrapper #header nav.navbar.nav-header .main-link {
     background-color: transparent;
   }
 
-  .wrapper .header nav.navbar.nav-header .nav-right li.dropdown > ul > li > a {
-    color: darkolivegreen;
-    text-shadow: -1px 1px black;
-  }
-
-  .wrapper .header nav.navbar.nav-header .nav-right li.dropdown > ul > li > a:hover {
-    background-color: silver;
-  }
-
-  .wrapper .header nav.navbar.nav-header .menu-dropdown {
+  .wrapper #header nav.navbar.nav-header .menu-dropdown {
     max-width: 100%;
     margin-left: -3.2em;
-    background-color: #96cc96;
   }
 }
 

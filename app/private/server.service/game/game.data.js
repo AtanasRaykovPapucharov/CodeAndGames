@@ -3,48 +3,48 @@ module.exports = (mongo) => {
 	const mongojsObj = mongo.api;
 
 	return {
-		getBlogs: () => {
+		getGames: () => {
 			return new Promise((resolve, reject) => {
-				db['blogs']
-					.find({}, (err, blogs) => {
+				db['games']
+					.find({}, (err, games) => {
 						if (err) {
 							reject(err);
 						}
-						resolve(blogs);
+						resolve(games);
 					})
 			});
 		},
-		getBlogById: (id) => {
+		getGameById: (id) => {
 			return new Promise((resolve, reject) => {
-				db['blogs']
+				db['games']
 					.findOne({
 						_id: mongojsObj.ObjectId(id)
-					}, (err, blog) => {
+					}, (err, game) => {
 						if (err) {
 							reject(err);
 						}
-						resolve(blog);
+						resolve(game);
 					})
 			});
 		},
-		postBlog: (blog) => {
+		postGame: (game) => {
 			return new Promise((resolve, reject) => {
-				db['blogs']
-					.save(blog, (err, blog) => {
+				db['games']
+					.save(game, (err, game) => {
 						if (err) {
 							res.send(err);
 							return;
 						}
-						res.json(blog);
+						res.json(game);
 					})
 			});
 		},
-		updateBlog: (id, dataObj) => {
+		updateGame: (id, dataObj) => {
 			let updated = { $push: dataObj }
 			
 			return new Promise((resolve, reject) => {
 
-				db['blogs'].update({ _id: mongojsObj.ObjectId(id) }, updated, {},
+				db['games'].update({ _id: mongojsObj.ObjectId(id) }, updated, {},
 					(err, obj) => {
 						if (err) {
 							reject(err);

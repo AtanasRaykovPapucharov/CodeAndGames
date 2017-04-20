@@ -14,6 +14,32 @@ module.exports = (mongo) => {
 					})
 			});
 		},
+		postUser: (user) => {
+			return new Promise((resolve, reject) => {
+				db['users']
+					.save(user, (err, user) => {
+						if (err) {
+							res.send(err);
+							return;
+						}
+						res.json(user);
+					})
+			});
+		},
+		updateUser: (id, dataObj) => {
+			let updated = { $push: dataObj }
+
+			return new Promise((resolve, reject) => {
+
+				db['users'].update({ _id: mongojsObj.ObjectId(id) }, updated, {},
+					(err, obj) => {
+						if (err) {
+							reject(err);
+						}
+						resolve(obj);
+					})
+			});
+		},
 		getUserById: (id) => {
 			return new Promise((resolve, reject) => {
 				db['users']
