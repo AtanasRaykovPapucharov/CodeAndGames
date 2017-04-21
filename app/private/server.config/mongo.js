@@ -1,6 +1,6 @@
 module.exports = (connectionString) => {
 	const mongojs = require('mongojs');
-	const collections = ['users', 'blogs'];
+	const collections = ['blogs', 'users', 'games', 'tags'];
 
 	const db = mongojs(connectionString, collections);
 	db.on('error', function (err) {

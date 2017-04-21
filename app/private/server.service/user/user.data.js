@@ -51,6 +51,17 @@ module.exports = (mongo) => {
 					})
 			});
 		},
+		getTags: () => {
+			return new Promise((resolve, reject) => {
+				db['tags']
+					.find({}, (err, tags) => {
+						if (err) {
+							reject(err);
+						}
+						resolve(tags);
+					})
+			});
+		},
 		getUserByUsername: (username) => {
 			return new Promise((resolve, reject) => {
 				db['users']

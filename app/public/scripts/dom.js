@@ -9,3 +9,8 @@ $('main').on('click', () => {
 function closeTaggle() {
 	$('.navbar-collapse').collapse('hide');
 };
+
+
+$(function () {
+	$(".draggable").draggable();
+});

@@ -9,6 +9,14 @@ const mainCtrl = (() => {
 				this.utils = utils;
 			}
 
+			get tags() {
+				this.data.userData.getTags()
+					.then((tags) => {
+						let tagsArray = tags.response[0].value;
+						return this.view.aside('#content-aside', { data: tagsArray})
+					})
+			}
+
 			get home() {
 				return this.view.home('#content', {})
 			}

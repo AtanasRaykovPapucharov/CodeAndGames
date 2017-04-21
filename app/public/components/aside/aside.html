@@ -1,9 +1,9 @@
 <div class="aside">
-	aside
-	<ul>
-		<li><a href=""></a></li>
-		<li><a href=""></a></li>
-		<li><a href=""></a></li>
-		<li><a href=""></a></li>
-	</ul>
+	<div class="aside-tags-container">
+		{{#each data}}
+		<a href="/" class="btn btn-primary draggable">
+			<h6>{{this}}</h6>
+		</a>
+		{{/each}}
+	</div>
 </div>

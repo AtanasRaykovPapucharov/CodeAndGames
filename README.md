@@ -151,7 +151,7 @@ Design is supported by [Twitter Bootstrap](http://getbootstrap.com/ "Twitter Boo
   * POST
     * **New blog post** 
 	* User must be **logged-in**
-    * Needs **text**, **category**, **img** to be sent in the body of the request and the current user's **authKey** as a header with name: `x-auth-key`
+    * Needs **text**, **tag**, **img** to be sent in the body of the request and the current user's **authKey** as a header with name: `x-auth-key`
       * `img` is a string to an online image
       * `img` is optional and if not sent, a **default batman** image will be provided
 * `api/blogs/:id`
@@ -176,7 +176,7 @@ Design is supported by [Twitter Bootstrap](http://getbootstrap.com/ "Twitter Boo
   * POST
     * **New game** 
 	* User must be **logged-in**
-    * Needs **text**, **category**, **img** to be sent in the body of the request and the current user's **authKey** as a header with name: `x-auth-key`
+    * Needs **text**, **tag**, **img** to be sent in the body of the request and the current user's **authKey** as a header with name: `x-auth-key`
       * `img` is a string to an online image
       * `img` is optional and if not sent, a **default image** will be provided
 * `api/games/:id`
@@ -192,7 +192,7 @@ Design is supported by [Twitter Bootstrap](http://getbootstrap.com/ "Twitter Boo
   * GET
     * **Returns** user games
     
-###	Categories
-*	`api/categories`
+###	Tags
+*	`api/tags`
 	*	GET
-		*	**Returns** an array with all categories
+		*	**Returns** an array with all tags

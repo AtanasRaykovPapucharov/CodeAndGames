@@ -6,20 +6,40 @@ const router = (() => {
 
 		appRouter
 			.on({
-				'/home': () => { controller.mainCtrl.home; },
-				'/about': () => { controller.mainCtrl.about; },
-				'/blog': () => { controller.blogCtrl.blogs; },
+				'/home': () => {
+					controller.mainCtrl.home;
+					controller.mainCtrl.tags;
+				},
+				'/about': () => {
+					controller.mainCtrl.about;
+					controller.mainCtrl.tags;
+				},
+				'/blog': () => {
+					controller.blogCtrl.blogs;
+					controller.mainCtrl.tags;
+				},
 				'/blog/:id': (params) => {
 					let blogId = params.id;
 					controller.blogCtrl.blogById(blogId);
+					controller.mainCtrl.tags;
 				},
-				'/games': () => { controller.gamesCtrl.games;},
+				'/games': () => {
+					controller.gamesCtrl.games;
+					controller.mainCtrl.tags;
+				},
 				'/game/:id': (params) => {
 					let gameId = params.id;
 					controller.gamesCtrl.gameById(gameId);
+					controller.mainCtrl.tags;
 				},
-				'/tournaments': () => { controller.mainCtrl.tournaments; },
-				'/profile': () => { controller.userCtrl.profile; },
+				'/tournaments': () => {
+					controller.mainCtrl.tournaments;
+					controller.mainCtrl.tags;
+				},
+				'/profile': () => {
+					controller.userCtrl.profile;
+					controller.mainCtrl.tags;
+				},
 				'/change-password': () => { controller.mainCtrl.changepassword; },
 				'/forgot-password': () => { controller.mainCtrl.forgotpassword; },
 				'/signin': () => { controller.mainCtrl.signin; },
