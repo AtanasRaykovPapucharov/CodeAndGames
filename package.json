@@ -1,5 +1,5 @@
 {
-  "name": "template",
+  "name": "codeandgames",
   "version": "1.0.0",
   "description": "js spa",
   "main": "index.js",
@@ -18,7 +18,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/Sattanaso/MyTemplate.git"
+    "url": "git+https://github.com/Sattanaso/CodeAndGames.git"
   },
   "keywords": [
     "spa",
@@ -32,9 +32,9 @@
   "author": "team",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/Sattanaso/MyTemplate/issues"
+    "url": "https://github.com/Sattanaso/CodeAndGames/issues"
   },
-  "homepage": "https://github.com/Sattanaso/MyTemplate#readme",
+  "homepage": "https://github.com/Sattanaso/CodeAndGames#readme",
   "dependencies": {
     "body-parser": "^1.17.1",
     "bower": "^1.8.0",

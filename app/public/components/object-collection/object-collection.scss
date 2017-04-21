@@ -1,0 +1,51 @@
+.object-collection {
+	border: 1px solid black;
+	max-width: 95%;
+
+	.obj-col-article {
+		border: 1px solid darkorange;
+		margin-bottom: 5px;
+	}
+}
+
+@media only screen and (min-width : 200px) {
+		.object-collection {
+		max-width: 96%;
+
+		.obj-col-article {
+		}
+	}
+}
+
+@media only screen and (min-width : 320px) {
+		.object-collection {
+		max-width: 97%;
+
+		.obj-col-article {
+		}
+	}
+}
+@media only screen and (min-width : 480px) {
+		.object-collection {
+		max-width: 98%;
+
+		.obj-col-article {
+		}
+	}
+
+}
+@media only screen and (min-width : 768px) {
+		.object-collection {
+		max-width: 99%;
+
+		.obj-col-article {
+		}
+	}
+
+}
+@media only screen and (min-width : 992px) {
+
+}
+@media only screen and (min-width : 1200px) {
+
+}

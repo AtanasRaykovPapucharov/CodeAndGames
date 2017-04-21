@@ -1,4 +1,4 @@
-# JS RESTful SPA
+# CodeAndGames - JS RESTful SPA
 
 [JavaScript](https://www.javascript.com/ "JavaScript") single-page application with [Navigo](https://github.com/krasimir/navigo "Navigo"), [jQuery](http://jquery.com/"jQuery"), [Handlebars](http://handlebarsjs.com/ "Handlebars") and [SystemJS](https://github.com/systemjs/systemjs "SystemJS").
 
@@ -14,6 +14,3 @@ App is tested with [Mocha](https://mochajs.org/ "Mocha"), [Chai](http://chaijs.c
 Design is supported by [Twitter Bootstrap](http://getbootstrap.com/ "Twitter Bootstrap"), [jQuery-UI](http://jqueryui.com/ "jQuery-UI") and [Sass](http://sass-lang.com/ "Sass").
 
 - to run sass watcher: >>npm run sass
-
-Architecture simple block-scheme: 
-![Block-scheme](./public/img/mvc-full.png "Block-scheme")

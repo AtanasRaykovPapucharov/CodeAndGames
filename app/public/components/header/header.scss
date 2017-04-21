@@ -6,7 +6,9 @@
 		background-color: #001020;
 		background-image: url('../../assets/images/space-bg.jpg');
 		background-repeat: no-repeat;
-		border: 0;
+		background-size: 300%;
+		border-left: 15px solid darkorange;
+		border-right: 15px solid darkorange;
 		border-radius: 0;
 
 		.nav-colapse-btn {

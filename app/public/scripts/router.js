@@ -20,6 +20,7 @@ const router = (() => {
 				'/tournaments': () => { controller.mainCtrl.tournaments; },
 				'/profile': () => { controller.userCtrl.profile; },
 				'/change-password': () => { controller.mainCtrl.changepassword; },
+				'/forgot-password': () => {  },
 				'/signin': () => { controller.mainCtrl.signin; },
 				'/signup': () => { controller.mainCtrl.signup; },
 				'/signout': () => { },

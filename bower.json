@@ -1,5 +1,5 @@
 {
-  "name": "template",
+  "name": "codeandgames",
   "description": "js spa",
   "main": "index.js",
   "authors": [
@@ -15,7 +15,7 @@
     "handlebars",
     "express"
   ],
-  "homepage": "https://github.com/Sattanaso/MyTemplate",
+  "homepage": "https://github.com/Sattanaso/CodeAndGames",
   "ignore": [
     "**/.*",
     "node_modules",
