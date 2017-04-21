@@ -32,6 +32,10 @@ const mainCtrl = (() => {
 			get changepassword() {
 				return this.view.changePass('#content-aside', {})
 			}
+
+			get forgotpassword() {
+				return this.view.forgotPass('#content-aside', {})
+			}
 		}
 
 		let newCtrl = new MainCtrl(data, view, utils);

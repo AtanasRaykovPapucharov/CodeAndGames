@@ -13,14 +13,15 @@ const router = (() => {
 					let blogId = params.id;
 					controller.blogCtrl.blogById(blogId);
 				},
-				'/games': () => { },
-				'/games/:id': (params) => {
+				'/games': () => { controller.gamesCtrl.games;},
+				'/game/:id': (params) => {
 					let gameId = params.id;
+					controller.gamesCtrl.gameById(gameId);
 				},
 				'/tournaments': () => { controller.mainCtrl.tournaments; },
 				'/profile': () => { controller.userCtrl.profile; },
 				'/change-password': () => { controller.mainCtrl.changepassword; },
-				'/forgot-password': () => {  },
+				'/forgot-password': () => { controller.mainCtrl.forgotpassword; },
 				'/signin': () => { controller.mainCtrl.signin; },
 				'/signup': () => { controller.mainCtrl.signup; },
 				'/signout': () => { },

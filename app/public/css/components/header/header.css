@@ -14,24 +14,30 @@ a:hover {
 
 * > input {
   border: 1px solid darkorange !important;
-  border-radius: 3px !important;
+  border-radius: 5px !important;
   background-color: #96cc96 !important; }
 
 ul {
   list-style-type: none; }
 
 .btn {
-  color: darkorange;
-  font-family: 'Sunny', serif;
-  font-weight: bold;
-  font-size: 28px;
   height: 36px;
-  padding-bottom: 8px; }
+  border: 1px solid darkorange; }
+  .btn h5 {
+    color: darkorange;
+    font-family: 'Sunny', serif;
+    font-weight: bold;
+    font-size: 28px;
+    text-shadow: -1px 1px black;
+    margin-top: -5px; }
+
+.full-width {
+  min-width: 100%; }
 
 .wrapper #header nav.navbar.nav-header {
   height: 50px;
   background-color: #001020;
-  background-image: url("../../assets/images/space-bg.jpg");
+  background-image: url("../../assets/images/staff/bg.jpg");
   background-repeat: no-repeat;
   background-size: 300%;
   border-left: 15px solid darkorange;

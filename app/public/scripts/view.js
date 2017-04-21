@@ -74,12 +74,17 @@ const view = (() => {
 				let template = './components/change-password/change-pass.html';
 				this.templateLoader.load(selector, template, data);
 			}
+
+			forgotPass(selector, data) {
+				let template = './components/forgot-password/forgot-pass.html';
+				this.templateLoader.load(selector, template, data);
+			}
 		}
 
 		const newView = new View(templateLoader);
 		return newView;
 	}
-})()
+})();
 
 export {
 	view

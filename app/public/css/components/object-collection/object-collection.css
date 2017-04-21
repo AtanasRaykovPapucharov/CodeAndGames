@@ -1,9 +1,19 @@
 .object-collection {
-  border: 1px solid black;
-  max-width: 95%; }
+  max-width: 95%;
+  padding-left: 15px;
+  padding-top: 10px;
+  border: 2px solid black; }
   .object-collection .obj-col-article {
     border: 1px solid darkorange;
-    margin-bottom: 5px; }
+    background-image: url("../../assets/images/staff/bg.jpg");
+    background-repeat: no-repeat;
+    background-size: 1800%;
+    padding: 5px;
+    margin-bottom: 11px;
+    margin-right: 11px;
+    width: 100%;
+    height: 400px;
+    display: inline-block; }
 
 @media only screen and (min-width: 200px) {
   .object-collection {
@@ -15,8 +25,14 @@
 
 @media only screen and (min-width: 480px) {
   .object-collection {
-    max-width: 98%; } }
+    max-width: 98%; }
+    .object-collection .obj-col-article {
+      width: 50%; } }
 
 @media only screen and (min-width: 768px) {
   .object-collection {
     max-width: 99%; } }
+
+@media only screen and (min-width: 992px) {
+  .object-collection .obj-col-article {
+    width: 32%; } }
