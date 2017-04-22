@@ -1,5 +1,10 @@
 /*==========  Mobile First Method  ==========*/
 
+#loading {
+  margin-left: 45%;
+  margin-top: 280px;
+}
+
 body {
   background-color: darkorange;
   color: silver;
@@ -74,6 +79,11 @@ body .wrapper #footer {
   src: url("assets/fonts/Sunny Spring Day - TTF.ttf");
 }
 
+@font-face {
+  font-family: 'OpenSans';
+  src: url("assets/fonts/OpenSans-Regular.ttf");
+}
+
 * > hr {
   border: 1px solid #96cc96;
 }
@@ -99,16 +109,17 @@ ul {
 
 .btn h5 {
   color: darkorange;
-  font-family: 'Sunny', serif;
+  font-family: 'OpenSans', serif;
   font-weight: bold;
-  font-size: 28px;
+  font-size: 16px;
   text-shadow: -1px 1px black;
-  margin-top: -5px;
+  margin-top: 0;
 }
 
 .full-width {
   min-width: 100%;
 }
+
 
 
 
@@ -122,6 +133,11 @@ ul {
   src: url("components/assets/fonts/Sunny Spring Day - TTF.ttf");
 }
 
+@font-face {
+  font-family: 'OpenSans';
+  src: url("components/assets/fonts/OpenSans-Regular.ttf");
+}
+
 * > hr {
   border: 1px solid #96cc96;
 }
@@ -147,11 +163,11 @@ ul {
 
 .btn h5 {
   color: darkorange;
-  font-family: 'Sunny', serif;
+  font-family: 'OpenSans', serif;
   font-weight: bold;
-  font-size: 28px;
+  font-size: 16px;
   text-shadow: -1px 1px black;
-  margin-top: -5px;
+  margin-top: 0;
 }
 
 .full-width {
@@ -186,7 +202,6 @@ ul {
 /* Medium Devices, Desktops */
 
 /* Large Devices, Wide Screens */
-
 @font-face {
   font-family: 'Zhafira';
   src: url("components/assets/fonts/MJF Zhafira Demo.ttf");
@@ -195,6 +210,11 @@ ul {
 @font-face {
   font-family: 'Sunny';
   src: url("components/assets/fonts/Sunny Spring Day - TTF.ttf");
+}
+
+@font-face {
+  font-family: 'OpenSans';
+  src: url("components/assets/fonts/OpenSans-Regular.ttf");
 }
 
 * > hr {
@@ -222,11 +242,11 @@ ul {
 
 .btn h5 {
   color: darkorange;
-  font-family: 'Sunny', serif;
+  font-family: 'OpenSans', serif;
   font-weight: bold;
-  font-size: 28px;
+  font-size: 16px;
   text-shadow: -1px 1px black;
-  margin-top: -5px;
+  margin-top: 0;
 }
 
 .full-width {

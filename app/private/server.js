@@ -1,24 +1,21 @@
 module.exports = {
     init: (() => {
-        const express = require('express');
-
-        const app = express();
 
         const env = process.env.NODE_ENV || 'development';
 
         const params = require('./server.config/')[env];
 
-        const sessionSecret = params.sessionSecret;
+        const mongo = require('./server.config/mongo')(params.db);
 
-        require('./server.config/express')(express, app, sessionSecret);
+        const express = require('express');
 
-        const dbConnectionString = params.db;
-        const mongo = require('./server.config/mongo')(dbConnectionString);
+        const app = express();
+        
+        const nodemailer = require('./server.config/nodemailer')(params);
 
-        const transporter = params.transporterConnectionString;
-        const nodemailer = require('./server.config/nodemailer')(transporter);
+        require('./server.config/express')(express, app, params);
 
-        require('./router')(express, app, mongo, nodemailer);
+        require('./router')(express, app, mongo, nodemailer, params);
 
         const port = params.port;
 

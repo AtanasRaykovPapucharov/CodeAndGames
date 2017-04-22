@@ -1,9 +1,10 @@
 'use strict';
-module.exports = (transporterConnectionString) => {
-	const nodemailer = require('nodemailer');
 
+const nodemailer = require('nodemailer');
+
+module.exports = (params) => {
 	// create reusable transporter object using the default SMTP transport
-	const transporter = nodemailer.createTransport(transporterConnectionString);
+	const transporter = nodemailer.createTransport(params.transporterConnectionString);
 
 	// verify connection configuration
 	transporter.verify(function (error, success) {

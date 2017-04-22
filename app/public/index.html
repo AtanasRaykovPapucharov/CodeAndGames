@@ -6,7 +6,9 @@
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<link rel="icon" href="./img/logo.ico">
+	<link rel="stylesheet" href="./bower_components/jquery-ui/themes/base/jquery-ui.min.css">
 	<link rel="stylesheet" href="./bower_components/bootstrap/dist/css/bootstrap.min.css">
+	<link rel="stylesheet" href="./bower_components/font-awesome/css/font-awesome.min.css">
 	<link rel="stylesheet" href="./bower_components/toastr/toastr.min.css">
 	<link rel="stylesheet" href="./bundle.css">
 </head>
@@ -14,10 +16,15 @@
 <body>
 	<div class="wrapper container-fluid">
 		<header id="header">
-			<h1>Loading...</h1>
 		</header>
 		<section class="middle row">
 			<main id="content" class="col-sm-7 col-md-8 col-lg-9">
+				<div id="loading-container">
+					<div id="loading">
+						<i class="fa fa-spinner fa-pulse fa-5x fa-fw"></i>
+						<span class="sr-only">Loading...</span>
+					</div>
+				</div>
 			</main>
 			<aside id="content-aside" class="col-sm-5 col-md-4 col-lg-3">
 			</aside>
@@ -35,9 +42,9 @@
 	<script src="./bower_components/cryptojslib/rollups/md5.js"></script>
 	<script src="./bower_components/cryptojslib/components/enc-base64-min.js"></script>
 	<script src="./bower_components/cryptojslib/rollups/sha3.js"></script>
-	<script src="./scripts/dom.js"></script>
 	<script src="./node_modules/systemjs/dist/system.js"></script>
 	<script src="./systemjs.config.js"></script>
+	<script src="./scripts/dom.js"></script>
 </body>
 
 </html>

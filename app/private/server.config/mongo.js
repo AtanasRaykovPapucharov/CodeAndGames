@@ -1,5 +1,8 @@
+'use strict';
+
+const mongojs = require('mongojs');
+
 module.exports = (connectionString) => {
-	const mongojs = require('mongojs');
 	const collections = ['blogs', 'users', 'games', 'tags'];
 
 	const db = mongojs(connectionString, collections);

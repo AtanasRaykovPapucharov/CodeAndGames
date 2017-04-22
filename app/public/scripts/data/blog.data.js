@@ -1,10 +1,11 @@
 'use strict';
 
 const blogData = (() => {
-	return (requester) => {
+	return (requester, validator, blogModel) => {
 		class BlogData {
-			constructor(requester) {
+			constructor(requester, validator, blogModel) {
 				this.requester = requester;
+				this.validator = validator;
 			}
 
 			getBlogs() {
@@ -16,8 +17,8 @@ const blogData = (() => {
 			}
 		}
 
-		let newData = new BlogData(requester);
-		return newData
+		let newData = new BlogData(requester, validator, blogModel);
+		return newData;
 	}
 })()
 

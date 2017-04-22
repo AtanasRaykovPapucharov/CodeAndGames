@@ -7,45 +7,59 @@ const router = (() => {
 		appRouter
 			.on({
 				'/home': () => {
-					controller.mainCtrl.home;
-					controller.mainCtrl.tags;
+					controller.mainCtrl.showHome;
+					controller.mainCtrl.getTags();
 				},
 				'/about': () => {
-					controller.mainCtrl.about;
-					controller.mainCtrl.tags;
+					controller.mainCtrl.showAbout;
+					controller.mainCtrl.getTags();
 				},
 				'/blog': () => {
 					controller.blogCtrl.blogs;
-					controller.mainCtrl.tags;
+					controller.mainCtrl.getTags();
 				},
 				'/blog/:id': (params) => {
+					console.log(params);
 					let blogId = params.id;
 					controller.blogCtrl.blogById(blogId);
-					controller.mainCtrl.tags;
+					controller.mainCtrl.getTags();
 				},
 				'/games': () => {
 					controller.gamesCtrl.games;
-					controller.mainCtrl.tags;
+					controller.mainCtrl.getTags();
 				},
 				'/game/:id': (params) => {
 					let gameId = params.id;
 					controller.gamesCtrl.gameById(gameId);
-					controller.mainCtrl.tags;
+					controller.mainCtrl.getTags();
 				},
 				'/tournaments': () => {
-					controller.mainCtrl.tournaments;
-					controller.mainCtrl.tags;
+					controller.mainCtrl.showTournaments;
+					controller.mainCtrl.getTags();
 				},
 				'/profile': () => {
 					controller.userCtrl.profile;
-					controller.mainCtrl.tags;
+					controller.mainCtrl.getTags();
 				},
-				'/change-password': () => { controller.mainCtrl.changepassword; },
-				'/forgot-password': () => { controller.mainCtrl.forgotpassword; },
-				'/signin': () => { controller.mainCtrl.signin; },
-				'/signup': () => { controller.mainCtrl.signup; },
-				'/signout': () => { },
-				'/login': () => { },
+				'/contact-us': () => {
+				},
+				'/change-password': () => { controller.mainCtrl.showChangePassword; },
+				'/forgot-password': () => { controller.mainCtrl.showForgotPassword; },
+				'/signin': () => {
+					controller.mainCtrl.showSignIn;
+				},
+				'/signup': () => {
+					controller.mainCtrl.showSignUp;
+				},
+				'/signout': () => {
+					controller.userCtrl.signOut();
+				},
+				'/signin-send': () => {
+					controller.userCtrl.signIn();
+				},
+				'/signup-send': () => {
+					controller.userCtrl.signUp();
+				},
 				'/': () => {
 					appRouter.navigate('/home');
 				},

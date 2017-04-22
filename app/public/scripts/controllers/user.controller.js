@@ -12,6 +12,15 @@ const userCtrl = (() => {
 			get profile() {
 				return this.view.profile('#content-aside', {})
 			}
+
+			sigOut() {
+			}
+
+			sigIn() {
+			}
+			
+			sigUp() {
+			}
 		}
 
 		let newCtrl = new UserCtrl(data, view, utils);

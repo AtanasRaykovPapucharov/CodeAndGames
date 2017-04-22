@@ -1,10 +1,11 @@
 'use strict';
 
 const gamesData = (() => {
-	return (requester) => {
+	return (requester, validator, gameModel) => {
 		class GamesData {
-			constructor(requester) {
+			constructor(requester, validator, gameModel) {
 				this.requester = requester;
+				this.validator = validator;
 			}
 
 			getGames() {
@@ -16,8 +17,8 @@ const gamesData = (() => {
 			}
 		}
 
-		let newData = new GamesData(requester);
-		return newData
+		let newData = new GamesData(requester, validator, gameModel);
+		return newData;
 	}
 })()
 

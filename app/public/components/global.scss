@@ -8,6 +8,11 @@
 	src: url('../assets/fonts/Sunny Spring Day - TTF.ttf');
 }
 
+@font-face {
+	font-family: 'OpenSans';
+	src: url('../assets/fonts/OpenSans-Regular.ttf');
+}
+
 // * {
 // 	text-align: justify
 // }
@@ -37,11 +42,11 @@ ul {
 
 	h5 {
 	color: darkorange;
-	font-family: 'Sunny', serif;
+	font-family: 'OpenSans', serif;
 	font-weight: bold;
-	font-size: 28px;
+	font-size: 16px;
 	text-shadow: -1px 1px black;
-	margin-top: -5px;
+	margin-top: 0;
 	}
 }
 

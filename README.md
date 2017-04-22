@@ -17,6 +17,12 @@ Inside the database there are three collections: Users, Blogs and Games.
     "key": "",
     "image": "",
     "age": "",
+    "interests": [
+       "development",
+       "front-end",
+       "ux-design",
+       "gaming"
+    ],
     "blogs": [
         {
             "title": "",
@@ -62,6 +68,8 @@ Inside the database there are three collections: Users, Blogs and Games.
         "javascript",
         "tutoral"
     ],
+    "link": "",
+    "author": "",
     "comments": [
         {
             "author": "JohnDoe",
@@ -74,10 +82,8 @@ Inside the database there are three collections: Users, Blogs and Games.
             "date": ""
         }
     ],
-    "link": "",
-    "author": "",
-    "date": "",
-		"likes": "0"
+    "likes": "0",
+    "date": ""
 }
 ```
 

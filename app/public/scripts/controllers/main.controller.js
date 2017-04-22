@@ -9,40 +9,40 @@ const mainCtrl = (() => {
 				this.utils = utils;
 			}
 
-			get tags() {
-				this.data.userData.getTags()
-					.then((tags) => {
-						let tagsArray = tags.response[0].value;
-						return this.view.aside('#content-aside', { data: tagsArray})
-					})
-			}
-
-			get home() {
-				return this.view.home('#content', {})
-			}
-
-			get about() {
-				return this.view.about('#content', {})
-			}
-
-			get tournaments() {
-				return this.view.tournaments('#content', {})
-			}
-
-			get signin() {
+			get showSignIn() {
 				return this.view.signin('#content-aside', {})
 			}
 
-			get signup() {
+			get showSignUp() {
 				return this.view.signup('#content-aside', {})
 			}
 
-			get changepassword() {
+			get showChangePassword() {
 				return this.view.changePass('#content-aside', {})
 			}
 
-			get forgotpassword() {
+			get showForgotPassword() {
 				return this.view.forgotPass('#content-aside', {})
+			}
+
+			get showHome() {
+				return this.view.home('#content', {})
+			}
+
+			get showAbout() {
+				return this.view.about('#content', {})
+			}
+
+			get showTournaments() {
+				return this.view.tournaments('#content', {})
+			}
+
+			getTags() {
+				this.data.userData.getTags()
+					.then((tags) => {
+						let tagsArray = tags.response[0].value;
+						return this.view.aside('#content-aside', { data: tagsArray.sort() })
+					})
 			}
 		}
 

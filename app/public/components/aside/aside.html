@@ -1,9 +1,11 @@
 <div class="aside">
-	<div class="aside-tags-container">
+	<ul id="columns" class="aside-tags-container">
 		{{#each data}}
-		<a href="/" class="btn btn-primary draggable">
+		<a href="/" class="btn btn-primary column" draggable="true">
 			<h6>{{this}}</h6>
 		</a>
 		{{/each}}
-	</div>
+	</ul>
+
+	<button id="draggable"  class="ui-widget-content column" draggable="true" type="">Btn</button>
 </div>

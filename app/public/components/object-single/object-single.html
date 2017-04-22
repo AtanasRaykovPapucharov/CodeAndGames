@@ -1,6 +1,12 @@
 <div>
+	<script>
+	</script>
 	<h3>{{title}}</h3>
-	<p>{{description}}</p>
+	<p>
+		{{#each this.description}}
+		<a>{{this.tag}}</a>
+		{{/each}}<br>
+	</p>
 	<a href="/">
 		<img src={{image}} alt="img" width="200px">
 	</a>

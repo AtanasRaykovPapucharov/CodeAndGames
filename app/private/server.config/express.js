@@ -1,15 +1,18 @@
 'use strict';
 
-const path = require('path');
-const cors = require('cors');
-const bodyParser = require('body-parser');
-const cookieParser = require('cookie-parser');
-const session = require('express-session');
-const passport = require('passport');
+module.exports = (express, app, params) => {
+	const path = require('path');
+	const cors = require('cors');
+	const bodyParser = require('body-parser');
+	const cookieParser = require('cookie-parser');
+	const session = require('express-session');
+	const passport = require('passport');
 
-module.exports = (express, app, sessionSecret) => {
+	require('./passport-local')(app);
+	require('./passport-jwt')(app, params);
+
 	let sessionObj = {
-		secret: sessionSecret,
+		secret: params.sessionSecret,
 		resave: true,
 		saveUninitialized: true
 	}

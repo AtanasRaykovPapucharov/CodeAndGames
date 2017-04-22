@@ -1,15 +1,17 @@
-module.exports = (express, app, mongo, nodemailer) => {
-	const controllers = require('./server.service/controller')(mongo, nodemailer);
+const passport = require('passport');
+
+module.exports = (express, app, mongo, nodemailer, params) => {
+	const controllers = require('./server.service/controller')(mongo, nodemailer, params);
 
 	const apiRouter = new express.Router();
 
 	app.use('/api', apiRouter);
 
 	apiRouter
-		.get('/users', controllers.userCtrl.users)
-		.get('/users/:id', controllers.userCtrl.userById)
-		.get('/users/:username', controllers.userCtrl.userByUsername)
-		.get('/users/:email', controllers.userCtrl.userByEmail)
+		.get('/users', passport.authenticate('jwt'), controllers.userCtrl.profile)
+		.post('/users', passport.authenticate('local'), controllers.userCtrl.login)
+		.put('/users', controllers.userCtrl.register)
+		.get('/logout', passport.authenticate('jwt'), controllers.userCtrl.logout)
 
 		.get('/blog', controllers.blogCtrl.blogs)
 		.get('/blog/:id', controllers.blogCtrl.blogById)

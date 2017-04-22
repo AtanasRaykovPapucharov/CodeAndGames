@@ -1,32 +1,32 @@
 const blogModel = (() => {
-	return (newBlog) => {
+	return (newBlog, validator) => {
 		class BlogModel {
 			constructor(newBlog) {
+				this.role = 'blog';
 				this.title = newBlog.title || '';
-				this.description = newBlog.description || '';
-				this.img = newBlog.img || '';
-				this.user = newBlog.user || 'Admin';
-				this.comments = [];
+				this.image = newBlog.img || '';
+				this.link = newBlog.link || '';
+				this.description = newBlog.description || [];
+				this.tags = newBlog.tags || [];
+				this.user = newBlog.user || 'admin';
+				this.likes = newBlog.likes || 0;
+				this.comments = newBlog.comments || [];
+				this.date = new Date();
 			}
 
-			get title() {
-				return this.title;
-			}
-
-			get description() {
-				return this.description;
-			}
-
-			get img() {
-				return this.img;
-			}
-
-			get user() {
-				return this.user;
-			}
-
-			get comments() {
-				return this.comments;
+			get blogObject() {
+				return {
+					role: this.role,
+					title: this.title,
+					image: this.title,
+					link: this.link,
+					description: this.description,
+					tags: this.tags || [],
+					author: this.user,
+					comments: this.comments,
+					likes: this.likes,
+					date: this.date
+				}
 			}
 
 			addComment(comment) {

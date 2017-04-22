@@ -3,9 +3,9 @@
 const LocalStrategy = require('passport-local');
 const passport = require('passport');
 
-const userData = require('../controllers/usersController');
+const userData = require('../server.service/user/user.data');
 
-module.exports = function () {
+module.exports = (app) => {
   const localStrategy = new LocalStrategy({
     username: 'username',
     password: 'password'
