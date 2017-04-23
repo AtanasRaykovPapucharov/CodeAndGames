@@ -37,10 +37,18 @@ const mainCtrl = (() => {
 				return this.view.tournaments('#content', {})
 			}
 
+			get showAddFormBlog() {
+				return this.view.addForm('#content', { data: 'blog' })
+			}
+
+			get showAddFormGames() {
+				return this.view.addForm('#content', { data: 'games' })
+			}
+
 			getTags() {
 				this.data.userData.getTags()
 					.then((tags) => {
-						let tagsArray = tags.response[0].value;
+						let tagsArray = tags[0].value;
 						return this.view.aside('#content-aside', { data: tagsArray.sort() })
 					})
 			}

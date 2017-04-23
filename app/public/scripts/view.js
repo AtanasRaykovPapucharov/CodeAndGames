@@ -79,6 +79,11 @@ const view = (() => {
 				let template = './components/forgot-password/forgot-pass.html';
 				this.templateLoader.load(selector, template, data);
 			}
+
+			addForm(selector, data) {
+				let template = './components/add-form/add.html';
+				this.templateLoader.load(selector, template, data);
+			}
 		}
 
 		const newView = new View(templateLoader);

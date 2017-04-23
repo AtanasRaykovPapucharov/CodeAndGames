@@ -4,7 +4,6 @@ const toastrNotifier = (() => {
 	class Notifier {
 
 		success(msg) {
-			$(body).a;
 			toastr.success(msg, 'SUCCESS', { timeOut: 3000 });
 		}
 

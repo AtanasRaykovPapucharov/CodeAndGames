@@ -43,6 +43,12 @@ const router = (() => {
 				},
 				'/contact-us': () => {
 				},
+				'/add/blog': () => {
+					controller.mainCtrl.showAddFormBlog;
+				},
+				'/add/game': () => {
+					controller.mainCtrl.showAddFormGames;
+				},
 				'/change-password': () => { controller.mainCtrl.showChangePassword; },
 				'/forgot-password': () => { controller.mainCtrl.showForgotPassword; },
 				'/signin': () => {

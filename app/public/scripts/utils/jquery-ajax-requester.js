@@ -4,7 +4,7 @@ const ajaxRequester = (() => {
 	class Requester {
 		_sendAjax(method, url, data, options) {
 			options = options || {};
-			data = options.data || {};
+			data = data || {};
 
 			const headers = options.headers || {},
 				contentType = options.contentType || 'application/json',
@@ -17,7 +17,7 @@ const ajaxRequester = (() => {
 					data: JSON.stringify(data),
 					headers,
 					success: (response) => {
-						resolve({ response });
+						resolve(response);
 					},
 					error: (err) => {
 						reject(err);

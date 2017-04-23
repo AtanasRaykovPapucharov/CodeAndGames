@@ -1,23 +1,34 @@
 'use strict';
 
 const userData = (() => {
-	return (requester, validator, userModel) => {
+	return (requester) => {
 		class UserData {
-			constructor(requester, validator, userModel) {
+			constructor(requester) {
 				this.requester = requester;
-				this.validator = validator;
 			}
+
+			//===============================================
 
 			getUsers() {
 				return this.requester.get('/api/users');
 			}
+
+			newUser(user) {
+				return this.requester.put('/api/users', user);
+			}
+
+			loginUser(user) {
+				return this.requester.post('/api/users', user);
+			}
+
+			//===============================================
 
 			getTags() {
 				return this.requester.get('/api/tags');
 			}
 		}
 
-		let newData = new UserData(requester, validator, userModel);
+		let newData = new UserData(requester);
 		return newData;
 	}
 })()

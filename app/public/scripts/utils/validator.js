@@ -13,63 +13,74 @@ const validator = (() => {
 				}
 			}
 
-			validateEmail(email) {
+			isValidEmail(email) {
 				let letters = this.constantz.emailReg;
 
-				if (!email.match(letters)) {
-					this.notifier.warning('E-mail must consist of letters and numbers, dot, symbol @ ');
+				if (!email || !email.match(letters)) {
+					this.notifier.error('E-mail must consist of letters and numbers, dot, symbol @ ');
 					return false;
 				}
-
 				return true;
 			}
 
-			validatePassword(password) {
+			isValidPassword(password) {
 				let letters = this.constantz.passwordReg;
 
-				if (!password.match(letters)) {
-					this.notifier.warning('Password must contain at least 6 characters, including UPPER/lowercase and numbers');
+				if (!password || !password.match(letters)) {
+					this.notifier.error('Password must contain at least 6 characters, including UPPER/lowercase and numbers');
 					return false;
 				}
-
 				return true;
-
 			}
 
-			validateUsername(username) {
+			isValidUsername(username) {
 				let letters = this.constantz.usernameReg;
 
+				if (!username || username.length < 3 || username.length > 20) {
+					this.notifier.error('Username must be consist of min 3 symbols and max of 20 symbols');
+					return false;
+				}
+
 				if (!username.match(letters)) {
-					this.notifier.warning('Username must consist of letters and numbers');
+					this.notifier.error('Username must consist of letters and numbers');
 					return false;
 				}
-
-				if (username.length < 3 || username.length > 20 || !username) {
-					this.notifier.warning('Username must be consist of min 3 symbols and max of 20 symbols');
-					return false;
-				}
-
 				return true;
 			}
 
-			validateAge(age) {
-				if (age < 0 || age > 120 || !age) {
-					this.notifier.warning('Age must be a number between 0 and 120');
+			isValidAge(age) {
+				if (!age || age < 0 || age > 120) {
+					this.notifier.error('Age must be a number between 0 and 120');
 					return false;
 				}
-
 				return true;
 			}
 
-			validateComment(comment) {
+			isValidComment(comment) {
 				let letters = this.constantz.commentReg;
 
-				if (comment.length < 20 || !comment.match(letters)) {
-					this.notifier.warning('Comment must be minimum 20 symbols of letters and numbers');
+				if (!comment || comment.length > 200 || !comment.match(letters)) {
+					this.notifier.error('Comment must be maximum 200 symbols of letters and numbers');
 					return false;
 				}
-
 				return true;
+			}
+
+			validateStatusCode(statusCode) {
+				switch (statusCode) {
+					case 100:
+						this.notifier.success('Please, confirm registration on e-mail');
+						break;
+					case 200:
+						this.notifier.success('Welcome!');
+						break;
+					case 400:
+						this.notifier.error('We sorry, there is a server problem');
+						break;
+					case 409:
+						this.notifier.warning('Email already exists');
+						break;
+				}
 			}
 		}
 

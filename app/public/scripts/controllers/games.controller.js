@@ -5,19 +5,19 @@ const gamesCtrl = (() => {
 		class GamesCtrl {
 			constructor(data, view, utils) {
 				this.view = view;
-				this.data = data;
+				this.data = data.gamesData;
 				this.utils = utils;
 			}
 
 			get games() {
-				this.data.gamesData.getGames()
+				this.data.getGames()
 					.then((games) => {
 						return this.view.objectCollection('#content', { data: games.response })
 					})
 			}
 
 			gameById(id) {
-				this.data.gamesData.getGameById(id)
+				this.data.getGameById(id)
 					.then((game) => {
 						return this.view.objectSingle('#content', game.response)
 					})

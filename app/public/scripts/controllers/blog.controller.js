@@ -5,19 +5,19 @@ const blogCtrl = (() => {
 		class BlogCtrl {
 			constructor(data, view, utils) {
 				this.view = view;
-				this.data = data;
+				this.data = data.blogData;
 				this.utils = utils;
 			}
 
 			get blogs() {
-				this.data.blogData.getBlogs()
+				this.data.getBlogs()
 					.then((blogs) => {
 						return this.view.objectCollection('#content', { data: blogs.response })
 					})
 			}
 
 			blogById(id) {
-				this.data.blogData.getBlogById(id)
+				this.data.getBlogById(id)
 					.then((blog) => {
 						return this.view.objectSingle('#content', blog.response)
 					})

@@ -8,10 +8,10 @@ module.exports = (express, app, mongo, nodemailer, params) => {
 	app.use('/api', apiRouter);
 
 	apiRouter
-		.get('/users', passport.authenticate('jwt'), controllers.userCtrl.profile)
-		.post('/users', passport.authenticate('local'), controllers.userCtrl.login)
-		.put('/users', controllers.userCtrl.register)
-		.get('/logout', passport.authenticate('jwt'), controllers.userCtrl.logout)
+		// .get('/users', passport.authenticate('jwt'), controllers.userCtrl.profile)
+		// .post('/users', passport.authenticate('local'), controllers.userCtrl.login)
+		.put('/users', controllers.userCtrl.newUser)
+		// .get('/logout', passport.authenticate('jwt'), controllers.userCtrl.logout)
 
 		.get('/blog', controllers.blogCtrl.blogs)
 		.get('/blog/:id', controllers.blogCtrl.blogById)

@@ -7,9 +7,12 @@
 		<a>{{this.tag}}</a>
 		{{/each}}<br>
 	</p>
-	<a href="/">
+	<div>
 		<img src={{image}} alt="img" width="200px">
-	</a>
+	</div><br>
 	{{#each tags}}
-	<button type="" class="btn btn-primary">{{this}}</button> {{/each}}
+	<button type="" class="btn btn-primary">{{this}}</button> 
+	{{/each}}
+	<hr>
+	<a href="#/add/{{this.role}}" class="btn btn-info">Add New</a>
 </div>

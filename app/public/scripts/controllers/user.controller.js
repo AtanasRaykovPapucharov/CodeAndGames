@@ -5,7 +5,7 @@ const userCtrl = (() => {
 		class UserCtrl {
 			constructor(data, view, utils) {
 				this.view = view;
-				this.data = data;
+				this.data = data.userData;
 				this.utils = utils;
 			}
 
@@ -13,13 +13,60 @@ const userCtrl = (() => {
 				return this.view.profile('#content-aside', {})
 			}
 
-			sigOut() {
+			signOut() {
 			}
 
-			sigIn() {
+			signIn() {
 			}
-			
-			sigUp() {
+
+			signUp() {
+				let hash = this.utils.hash.hashSha3;
+				let validator = this.utils.validator;
+
+				$('#signup-btn').on('click', () => {
+					let email = $('#signup-email').val();
+					if (!validator.isValidEmail(email)) {
+						$('#signup-email').val('');
+						return;
+					}
+
+					let username = $('#signup-username').val();
+					if (!validator.isValidUsername(username)) {
+						$('#signup-username').val('');
+						return;
+					}
+
+					let password = $('#signup-password').val();
+					if (!validator.isValidPassword(password)) {
+						$('#signup-password').val('');
+						return;
+					}
+
+					let user = {
+						email: email,
+						username: username,
+						password: hash(password),
+						image: '',
+						age: '',
+						interests: [],
+						blogs: [],
+						games: []
+					}
+
+					$('#signup-email').val('');
+					$('#signup-username').val('');
+					$('#signup-password').val('');
+
+					this.data.newUser(user)
+						.then((respUser) => {
+							if (respUser) {
+								validator.validateStatusCode(100)
+							}
+						})
+						.catch((err) => {
+							console.log(err);
+						})
+				})
 			}
 		}
 
