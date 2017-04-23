@@ -5,8 +5,12 @@ const auth = (() => {
 		isLoggedIn() {
 			return new Promise((reject, resolve) => {
 				reject(!!localStorage.getItem('username'));
-			}).then((res) => {
-				return res;
+			});
+		}
+
+		getUsername() {
+			return new Promise((reject, resolve) => {
+				reject(localStorage.getItem('username'));
 			});
 		}
 	}

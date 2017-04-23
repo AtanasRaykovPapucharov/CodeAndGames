@@ -8,11 +8,11 @@ const toastrNotifier = (() => {
 		}
 
 		error(msg) {
-			toastr.error(msg, 'ERROR', { timeOut: 4000 });
+			toastr.error(msg, 'ERROR', { timeOut: 3000 });
 		}
 
 		warning(msg) {
-			toastr.warning(msg, 'WARNING', { timeOut: 4000 });
+			toastr.warning(msg, 'WARNING', { timeOut: 3000 });
 		}
 	}
 

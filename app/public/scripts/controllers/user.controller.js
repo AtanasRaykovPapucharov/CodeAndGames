@@ -17,6 +17,38 @@ const userCtrl = (() => {
 			}
 
 			signIn() {
+				let hash = this.utils.hash.hashSha3;
+				let validator = this.utils.validator;
+
+				$('#signin-btn').on('click', () => {
+					let email = $('#signin-email').val();
+					if (!validator.isValidEmail(email)) {
+						$('#signin-email').val('');
+						return;
+					}
+
+					let password = $('#signin-password').val();
+					if (!validator.isValidPassword(password)) {
+						$('#signin-password').val('');
+						return;
+					}
+
+					$('#signin-email').val('');
+					$('#signin-password').val('');
+
+					let user = {
+						email: email,
+						password: hash(password)
+					}
+
+					this.data.loginUser(user)
+						.then((resp) => {
+							console.log(resp);
+						})
+						.catch((err) => {
+							console.log(err);
+						})
+				})
 			}
 
 			signUp() {
@@ -59,9 +91,7 @@ const userCtrl = (() => {
 
 					this.data.newUser(user)
 						.then((respUser) => {
-							if (respUser) {
-								validator.validateStatusCode(100)
-							}
+							localStorage.setItem('app-user-data', JSON.stringify(respUser));
 						})
 						.catch((err) => {
 							console.log(err);

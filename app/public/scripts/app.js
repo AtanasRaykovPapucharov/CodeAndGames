@@ -31,7 +31,14 @@ const app = {
 		}
 		const ctrl = controller(data, view, utils);
 
-		view.header('#header', {});
+		let username = '';
+		auth.isLoggedIn().then(isLoggedIn => {
+			if (isLoggedIn) {
+				username = auth.getUsername();
+			}
+		});
+		
+		view.header('#header', { username: username });
 		view.footer('#footer', {});
 
 		router(ctrl);

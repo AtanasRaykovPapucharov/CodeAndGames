@@ -6,6 +6,24 @@ const router = (() => {
 
 		appRouter
 			.on({
+				'/change-password': () => { controller.mainCtrl.showChangePassword; },
+				'/forgot-password': () => { controller.mainCtrl.showForgotPassword; },
+				'/signin': () => { controller.mainCtrl.showSignIn; },
+				'/signup': () => { controller.mainCtrl.showSignUp; },
+				'/signout': () => { controller.userCtrl.signOut(); },
+				'/signin-send': () => {
+					controller.userCtrl.signIn();
+					appRouter.navigate('/home');
+				},
+				'/signup-send': () => {
+					controller.userCtrl.signUp();
+					appRouter.navigate('/home');
+				},
+				'/after-signup': () => {
+					let username = JSON.parse(localStorage.getItem('app-user-data')).username;
+					localStorage.setItem('username', username);
+					appRouter.navigate('/profile');
+				},
 				'/home': () => {
 					controller.mainCtrl.showHome;
 					controller.mainCtrl.getTags();
@@ -19,7 +37,6 @@ const router = (() => {
 					controller.mainCtrl.getTags();
 				},
 				'/blog/:id': (params) => {
-					console.log(params);
 					let blogId = params.id;
 					controller.blogCtrl.blogById(blogId);
 					controller.mainCtrl.getTags();
@@ -41,31 +58,9 @@ const router = (() => {
 					controller.userCtrl.profile;
 					controller.mainCtrl.getTags();
 				},
-				'/contact-us': () => {
-				},
-				'/add/blog': () => {
-					controller.mainCtrl.showAddFormBlog;
-				},
-				'/add/game': () => {
-					controller.mainCtrl.showAddFormGames;
-				},
-				'/change-password': () => { controller.mainCtrl.showChangePassword; },
-				'/forgot-password': () => { controller.mainCtrl.showForgotPassword; },
-				'/signin': () => {
-					controller.mainCtrl.showSignIn;
-				},
-				'/signup': () => {
-					controller.mainCtrl.showSignUp;
-				},
-				'/signout': () => {
-					controller.userCtrl.signOut();
-				},
-				'/signin-send': () => {
-					controller.userCtrl.signIn();
-				},
-				'/signup-send': () => {
-					controller.userCtrl.signUp();
-				},
+				'/add/blog': () => { controller.mainCtrl.showAddFormBlog; },
+				'/add/game': () => { controller.mainCtrl.showAddFormGames; },
+				'/contact-us': () => { },
 				'/': () => {
 					appRouter.navigate('/home');
 				},
