@@ -12,14 +12,14 @@ const gamesCtrl = (() => {
 			get games() {
 				this.data.getGames()
 					.then((games) => {
-						return this.view.objectCollection('#content', { data: games.response })
+						return this.view.objectCollection('#content', { data: games })
 					})
 			}
 
 			gameById(id) {
 				this.data.getGameById(id)
 					.then((game) => {
-						return this.view.objectSingle('#content', game.response)
+						return this.view.objectSingle('#content', game)
 					})
 			}
 		}

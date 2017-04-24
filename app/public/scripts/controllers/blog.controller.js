@@ -12,14 +12,14 @@ const blogCtrl = (() => {
 			get blogs() {
 				this.data.getBlogs()
 					.then((blogs) => {
-						return this.view.objectCollection('#content', { data: blogs.response })
+						return this.view.objectCollection('#content', { data: blogs})
 					})
 			}
 
 			blogById(id) {
 				this.data.getBlogById(id)
 					.then((blog) => {
-						return this.view.objectSingle('#content', blog.response)
+						return this.view.objectSingle('#content', blog)
 					})
 			}
 		}

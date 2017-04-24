@@ -8,17 +8,18 @@ module.exports = (mongo, nodemailer, params) => {
 					res.status(200).json(users);
 				});
 		},
-		login: (req, res) => {
-			const webTokenObject = {
-				_id: req.user.id,
-				username: req.user.username
-			};
-
-			res.status(200).json({
-				username: req.user.username,
-				auth_token: jsonWebToken.sign(webTokenObject, params.webTokenSecret),
-				// favorites: req.user.favorites.map(f => f._id)
-			});
+		login: (req, res, next) => {
+			userData.getUserByEmail(req.body.email)
+				.then((user) => {
+					if (user[0].password === req.body.password) {
+						res.status(200).json(user[0]);
+					} else {
+						res.status(400).json({ error: 'No such a user!' });
+					}
+				})
+				.catch((err) => {
+					res.status(409).json({ error: err });
+				});
 		},
 		newUser: (req, res, next) => {
 			const userObject = req.body;
@@ -50,10 +51,9 @@ module.exports = (mongo, nodemailer, params) => {
 
 								return userData.sendEmail(nodemailerTransporter, mailOptions)
 									.then((resp) => {
-										console.log("object");
 										res
 											.status(200)
-											.cookie('email', user.email, {
+											.cookie('current-user-app', user.username, {
 												expires: new Date(Date.now() + 900000),
 												httpOnly: false
 											})
@@ -62,7 +62,6 @@ module.exports = (mongo, nodemailer, params) => {
 									.catch((err) => {
 										res.status(500).json({ error: 'Server cannot send a message' });
 									});
-
 							})
 					}
 				})

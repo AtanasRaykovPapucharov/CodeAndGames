@@ -1,6 +1,6 @@
 'use strict';
 
-const cookieStorage = (() => {
+const cookies = (() => {
 	return {
 		setCookie: (name, value, minutes) => {
 			let date = new Date();
@@ -20,10 +20,10 @@ const cookieStorage = (() => {
 
 				for (let j = 0; j < cookie.length; j += 1) {
 					if (cookie[j] !== " ") {
+						cookie = cookie.substring(j);
 						break;
 					}
 				}
-				cookie = cookie.substring(j);
 
 				if (cookie.startsWith(name + "=")) {
 					return cookie;
@@ -34,5 +34,5 @@ const cookieStorage = (() => {
 })();
 
 export {
-	cookieStorage
+	cookies
 };

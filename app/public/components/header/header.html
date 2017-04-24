@@ -19,12 +19,7 @@
 				<ul class="dropdown-menu menu-dropdown">
 					<li onclick="$('.navbar-collapse').collapse('hide');"><a href="#/profile">Profile</a></li>
 					<li onclick="$('.navbar-collapse').collapse('hide');"><a href="#/change-password">Change password</a></li>
-					{{#if username}}
-					<li onclick="$('.navbar-collapse').collapse('hide');"><a href="#/signout">Sign out</a></li>
-					{{/if}}
-					{{#unless username}}
-					<li onclick="$('.navbar-collapse').collapse('hide');"><a href="#/signin">Sign in / Sign up</a></li>
-					{{/unless}}
+					<li onclick="$('.navbar-collapse').collapse('hide');"><a id="log-forms-link" href="#/signin">Sign in / Sign up</a></li>
 				</ul>
 			</li>
 		</ul>

@@ -4,7 +4,7 @@ import { auth as auth } from './utils/authentication.js';
 import { notifier as notifier } from './utils/toastr-notifier.js';
 import { validator as validator } from './utils/validator.js';
 import { hashGenerator as hash } from './utils/hash-generator.js';
-import { cookieStorage as cookieStorage } from './utils/cookie-storage.js';
+import { cookies as cookies } from './utils/cookies.js';
 import { cloudinaryUploader as cloudinary } from './utils/cloudinary-uploader.js';
 
 import { ajaxRequester as requester } from './utils/jquery-ajax-requester.js';
@@ -26,22 +26,19 @@ const app = {
 			notifier: notifier,
 			validator: validator(notifier),
 			hash: hash,
-			cookieStorage: cookieStorage,
+			cookies: cookies,
 			cloudinary: cloudinary
 		}
 		const ctrl = controller(data, view, utils);
 
-		let username = '';
-		auth.isLoggedIn().then(isLoggedIn => {
-			if (isLoggedIn) {
-				username = auth.getUsername();
-			}
-		});
-		
-		view.header('#header', { username: username });
+		view.header('#header', {});
 		view.footer('#footer', {});
 
-		router(ctrl);
+		if (localStorage.getItem('current-user-app')) {
+			$('#log-forms-link').html('Sign out').attr('href', '#/signout');
+		}
+
+		router(ctrl, utils);
 	})
 }
 
