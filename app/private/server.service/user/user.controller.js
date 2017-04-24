@@ -37,8 +37,9 @@ module.exports = (mongo, nodemailer, params) => {
 				})
 				.then((emailExists) => {
 					if (!emailExists) {
-						userData.createUser(userObject)
+						return userData.createUser(userObject)
 							.then((user) => {
+								const nodemailerTransporter = nodemailer.transporter;
 								const mailOptions = {
 									from: params.nodemailerAppEmail,
 									to: user.email,
@@ -46,18 +47,23 @@ module.exports = (mongo, nodemailer, params) => {
 									text: params.nodemailerText,
 									html: params.nodemailerHtml,
 								};
-								new Promise((resolve, reject) => {
-									nodemailer.transporter.sendMail(mailOptions, (err, info) => {
-										if (err) {
-											reject(err)
-										} else {
-											resolve(info)
-										}
+
+								return userData.sendEmail(nodemailerTransporter, mailOptions)
+									.then((resp) => {
+										console.log("object");
+										res
+											.status(200)
+											.cookie('email', user.email, {
+												expires: new Date(Date.now() + 900000),
+												httpOnly: false
+											})
+											.json(user);
+									})
+									.catch((err) => {
+										res.status(500).json({ error: 'Server cannot send a message' });
 									});
-								})
-								
-								res.status(200).json(user);
-							});
+
+							})
 					}
 				})
 				.catch((err) => {

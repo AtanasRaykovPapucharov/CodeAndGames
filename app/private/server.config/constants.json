@@ -1,4 +1,9 @@
 {
 	"mongodbConnection": "mongodb://admin:1qazxsw2@ds163060.mlab.com:63060/webdjsdatabase",
-	"transporterConnection": "smtps://webdjsandpy@gmail.com:webdjs2017andPy@smtp.gmail.com"
+	"transporterConnection": "smtps://webdjsandpy@gmail.com:webdjs2017andPy@smtp.gmail.com",
+	"htmlPartOne": "<div><h4>Click and confirm that you want to create an account on Games&Code.<br><br> This link will expire in fifteen minutes and can only be used once.</h4><a href=\"",
+	"htmlPartTwo": "/#/signup-after\">Create account on Games&Code</a></div>",
+	"appEmail": "\"Games&Code\" <webdjsandpy@gmail.com>",
+	"appSubject": "Finish creating your account on Games&Code",
+	"appTextEmail": ""
 }

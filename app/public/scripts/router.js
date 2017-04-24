@@ -13,13 +13,13 @@ const router = (() => {
 				'/signout': () => { controller.userCtrl.signOut(); },
 				'/signin-send': () => {
 					controller.userCtrl.signIn();
-					appRouter.navigate('/home');
+					//appRouter.navigate('/home');
 				},
 				'/signup-send': () => {
 					controller.userCtrl.signUp();
-					appRouter.navigate('/home');
+					//appRouter.navigate('/home');
 				},
-				'/after-signup': () => {
+				'/signup-after': () => {
 					let username = JSON.parse(localStorage.getItem('app-user-data')).username;
 					localStorage.setItem('username', username);
 					appRouter.navigate('/profile');

@@ -55,47 +55,60 @@ const userCtrl = (() => {
 				let hash = this.utils.hash.hashSha3;
 				let validator = this.utils.validator;
 
-				$('#signup-btn').on('click', () => {
-					let email = $('#signup-email').val();
-					if (!validator.isValidEmail(email)) {
+				let registrateUser = (() => {
+					return () => {
+						let email = $('#signup-email').val();
+						if (!validator.isValidEmail(email)) {
+							$('#signup-email').val('');
+							return;
+						}
+
+						let username = $('#signup-username').val();
+						if (!validator.isValidUsername(username)) {
+							$('#signup-username').val('');
+							return;
+						}
+
+						let password = $('#signup-password').val();
+						if (!validator.isValidPassword(password)) {
+							$('#signup-password').val('');
+							return;
+						}
+
+						let user = {
+							email: email,
+							username: username,
+							password: hash(password),
+							image: '',
+							age: '',
+							interests: [],
+							blogs: [],
+							games: []
+						}
+
 						$('#signup-email').val('');
-						return;
-					}
-
-					let username = $('#signup-username').val();
-					if (!validator.isValidUsername(username)) {
 						$('#signup-username').val('');
-						return;
-					}
-
-					let password = $('#signup-password').val();
-					if (!validator.isValidPassword(password)) {
 						$('#signup-password').val('');
-						return;
+
+						this.data.newUser(user)
+							.then((respUser) => {
+								respUser.password = '';
+								localStorage.setItem('app-user-data', JSON.stringify(respUser));
+
+								utils.notifier.success('Please, confirm registration on your email first!');
+							})
+							.catch((err) => {
+								console.log('Server error: ' + err);
+							})
 					}
+				}
+				)();
 
-					let user = {
-						email: email,
-						username: username,
-						password: hash(password),
-						image: '',
-						age: '',
-						interests: [],
-						blogs: [],
-						games: []
-					}
+				registrateUser();
 
-					$('#signup-email').val('');
-					$('#signup-username').val('');
-					$('#signup-password').val('');
-
-					this.data.newUser(user)
-						.then((respUser) => {
-							localStorage.setItem('app-user-data', JSON.stringify(respUser));
-						})
-						.catch((err) => {
-							console.log(err);
-						})
+				$('#signup-btn').on('click', (event) => {
+					event.preventDefault();
+					registrateUser();
 				})
 			}
 		}

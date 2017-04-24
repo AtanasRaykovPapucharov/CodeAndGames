@@ -2,10 +2,7 @@
 
 mocha.setup('bdd');
 
-const {
-	assert,
-	expect 
-} = chai;
+const { expect, assert } = chai;
 
 const AUTH_KEY = "SOME_AUTH_KEY";
 const user = {
@@ -13,7 +10,31 @@ const user = {
 	passHash: 'SOME_PASSHASH'
 };
 
-describe('App - Tests', function () {
+describe('Games&Code App - Data Tests', function () {
+	describe('1 is equal 1', function () {
+		it('1 = 1', function () {
+			expect(1).to.equal(1);
+		})
+	});
+});
+
+describe('Games&Code App - Controllers Tests', function () {
+	describe('1 is equal 1', function () {
+		it('1 = 1', function () {
+			expect(1).to.equal(1);
+		})
+	});
+});
+
+describe('Games&Code App - View Tests', function () {
+	describe('1 is equal 1', function () {
+		it('1 = 1', function () {
+			expect(1).to.equal(1);
+		})
+	});
+});
+
+describe('Games&Code App - Utils Tests', function () {
 	describe('1 is equal 1', function () {
 		it('1 = 1', function () {
 			expect(1).to.equal(1);

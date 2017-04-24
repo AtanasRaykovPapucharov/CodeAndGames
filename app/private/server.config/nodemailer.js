@@ -12,7 +12,7 @@ module.exports = (params) => {
 			console.log(error);
 			return;
 		} else {
-			console.log('Server is ready to take our messages');
+			console.log('Server is ready to send e-mail messages!');
 		}
 	});
 
