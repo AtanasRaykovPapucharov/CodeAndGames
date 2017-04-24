@@ -32,14 +32,11 @@ const router = (() => {
 					localStorage.clear();
 					$('#log-forms-link').html('Sign in / Sign up').attr('href', '#/signin');
 					utils.notifier.warning(`Bye, bye!`);
-
-					//controller.userCtrl.signOut();
-
+					
 					appRouter.navigate('/home');
 				},
 				'/signin-send': () => {
 					controller.userCtrl.signIn();
-					//appRouter.navigate('/home');
 				},
 				'/signup-send': () => {
 					appRouter.navigate('/home');
@@ -65,8 +62,6 @@ const router = (() => {
 
 					if (value) {
 						$('#log-forms-link').html('Sign out').attr('href', '#/signout');
-
-						//let userDataObj = JSON.parse(localStorage.getItem('app-user-data'));
 
 						controller.mainCtrl.showHome;
 						controller.userCtrl.profile;
@@ -101,8 +96,22 @@ const router = (() => {
 					controller.mainCtrl.showTournaments;
 					controller.mainCtrl.getTags();
 				},
-				'/add/blog': () => { controller.mainCtrl.showAddFormBlog; },
-				'/add/game': () => { controller.mainCtrl.showAddFormGames; },
+				'/add/blog': () => {
+					if (localStorage.getItem('current-user-app')) {
+						controller.mainCtrl.showAddFormBlog;
+					} else {
+						utils.notifier.warning(`Please, sign in first!`);
+						appRouter.navigate('/signin');
+					}
+				},
+				'/add/game': () => {
+					if (localStorage.getItem('current-user-app')) {
+						controller.mainCtrl.showAddFormGames;
+					} else {
+						utils.notifier.warning(`Please, sign in first!`);
+						appRouter.navigate('/signin');
+					}
+				},
 				'/contact-us': () => { },
 				'/': () => {
 					appRouter.navigate('/home');

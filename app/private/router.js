@@ -19,6 +19,10 @@ module.exports = (express, app, mongo, nodemailer, params) => {
 
 		.get('/tags', controllers.userCtrl.tags)
 
+		.post('/blog/content', (req, res, next) => {
+			console.log(req.body);
+		})
+
 	app.get('*', (req, res) => {
 		res.send('ERROR: No such a route!');
 	});
