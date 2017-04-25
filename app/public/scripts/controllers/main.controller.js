@@ -45,6 +45,14 @@ const mainCtrl = (() => {
 				return this.view.addForm('#content', { data: 'games' })
 			}
 
+			pleaseSignIn() {
+				const user = localStorage.getItem('current-user-app');
+				if (!user) {
+					this.utils.notifier.warning(`Please, sign in first!`);
+				}
+				return !!user;
+			}
+
 			getTags() {
 				this.data.userData.getTags()
 					.then((tags) => {

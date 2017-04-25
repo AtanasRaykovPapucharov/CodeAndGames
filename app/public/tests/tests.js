@@ -58,6 +58,46 @@ describe('Games&Code App - Data Tests', function () {
 			});
 		});
 	});
+	
+	describe('Games data tests', function () {
+		describe('GET games tests', function () {
+			beforeEach(function () {
+				sinon.stub(requester, 'get')
+					.returns(new Promise((resolve, reject) => {
+						resolve(result);
+					}));
+			});
+			afterEach(function () {
+				requester.get.restore();
+			});
+
+			it('expect gamesData(requester).getGames() to make exactly one get call', function (done) {
+				gamesData(requester).getGames()
+					.then(() => {
+						expect(requester.get.calledOnce).to.be.true;
+					})
+					.then(done, done);
+			});
+			it('expect gamesData(requester).getGames() to make correct get call', function (done) {
+				gamesData(requester).getGames()
+					.then(obj => {
+						const actual = requester.get
+							.firstCall
+							.args[0];
+
+						expect(actual).to.equal('/api/games');
+					})
+					.then(done, done);
+			});
+			it('expect gamesData(requester).getGames() to return correct result', function (done) {
+				gamesData(requester).getGames()
+					.then(obj => {
+						expect(obj).to.eql(result)
+					})
+					.then(done, done);
+			});
+		});
+	});
 
 	describe('User data tests', function () {
 		describe('PUT user tests - registering', function () {

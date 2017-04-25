@@ -38,7 +38,7 @@ const app = {
 			$('#log-forms-link').html('Sign out').attr('href', '#/signout');
 		}
 
-		router(ctrl, utils);
+		router(ctrl);
 	})
 }
 

@@ -9,8 +9,31 @@ const userCtrl = (() => {
 				this.utils = utils;
 			}
 
-			get profile() {
-				return this.view.profile('#content-aside', {})
+			profile() {
+				let value = localStorage.getItem('current-user-app');
+
+				if (value) {
+					$('#log-forms-link').html('Sign out').attr('href', '#/signout');
+					this.view.profile('#content', {})
+				} else {
+					this.utils.notifier.warning(`Please, sign in first!`);
+				}
+
+				return !!value;
+			}
+
+			signUpAfter() {
+				let cookie = this.utils.cookies.getCookieByName('current-user-app');
+
+				if (cookie) {
+					let cookieValue = cookie.split('=')[1];
+					localStorage.setItem('current-user-app', cookieValue);
+					utils.notifier.success(`Welcome, ${cookieValue}!`);
+				} else {
+					utils.notifier.warning(`Please, sign up first!`);
+				}
+
+				return !!cookie;
 			}
 
 			signOut() {
