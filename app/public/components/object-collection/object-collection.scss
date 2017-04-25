@@ -15,6 +15,27 @@
 		width: 100%;
 		height: 400px;
 		display: inline-block;
+
+		a h4 {
+			color: silver;
+		}
+
+		.obj-col-article-text {
+			a .obj-col-article-img {
+
+			}
+		}
+	}
+
+
+	div {
+		text-align:center;
+		text-shadow: -1px 1px darkorange;
+		color: whitesmoke;
+
+		.span-val {
+			margin-right: 10px;
+		}
 	}
 }
 
@@ -23,6 +44,11 @@
 		max-width: 96%;
 
 		.obj-col-article {
+		
+			.obj-col-article-text {
+				a .obj-col-article-img {
+				}
+			}
 		}
 	}
 }
@@ -32,15 +58,27 @@
 		max-width: 97%;
 
 		.obj-col-article {
+		
+			.obj-col-article-text {
+				a .obj-col-article-img {
+					height: 280px;
+				}
+			}
 		}
 	}
 }
-@media only screen and (min-width : 480px) {
+@media only screen and (min-width : 580px) {
 		.object-collection {
 		max-width: 98%;
 
 		.obj-col-article {
-		width: 50%;
+		width: 45%;
+		
+			.obj-col-article-text {
+				a .obj-col-article-img {
+
+				}
+			}
 		}
 	}
 
@@ -50,6 +88,12 @@
 		max-width: 99%;
 
 		.obj-col-article {
+		
+			.obj-col-article-text {
+				a .obj-col-article-img {
+
+				}
+			}
 		}
 	}
 }
@@ -57,7 +101,13 @@
 		.object-collection {
 
 		.obj-col-article {
-			width: 32%;
+			width: 31%;
+		
+			.obj-col-article-text {
+				a .obj-col-article-img {
+
+				}
+			}
 		}
 	}
 }

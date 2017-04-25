@@ -119,6 +119,29 @@ ul {
 .full-width {
   min-width: 100%;
 }
+.add-form div form button.btn.btn-success {
+  float: right;
+  border: 2px solid #000000;
+  margin: 5px;
+  width: 33%;
+  height: 30px;
+  color: darkorange;
+  font-weight: bold;
+  font-size: 16px;
+}
+
+.add-form div form button.btn.btn-success h5 {
+  margin-top: -2px;
+}
+
+.add-form div form #myEditor {
+  margin-left: 30%;
+}
+
+.add-form div .add-title {
+  border: 2px solid #000000 !important;
+  width: 62%;
+}
 
 
 
@@ -360,6 +383,20 @@ ul {
   display: inline-block;
 }
 
+.object-collection .obj-col-article a h4 {
+  color: silver;
+}
+
+.object-collection div {
+  text-align: center;
+  text-shadow: -1px 1px darkorange;
+  color: whitesmoke;
+}
+
+.object-collection div .span-val {
+  margin-right: 10px;
+}
+
 @media only screen and (min-width: 200px) {
   .object-collection {
     max-width: 96%;
@@ -370,15 +407,19 @@ ul {
   .object-collection {
     max-width: 97%;
   }
+
+  .object-collection .obj-col-article .obj-col-article-text a .obj-col-article-img {
+    height: 280px;
+  }
 }
 
-@media only screen and (min-width: 480px) {
+@media only screen and (min-width: 580px) {
   .object-collection {
     max-width: 98%;
   }
 
   .object-collection .obj-col-article {
-    width: 50%;
+    width: 45%;
   }
 }
 
@@ -390,7 +431,7 @@ ul {
 
 @media only screen and (min-width: 992px) {
   .object-collection .obj-col-article {
-    width: 32%;
+    width: 31%;
   }
 }
 

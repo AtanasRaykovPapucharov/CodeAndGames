@@ -52,6 +52,15 @@ const mainCtrl = (() => {
 						return this.view.aside('#content-aside', { data: tagsArray.sort() })
 					})
 			}
+
+			checkHome() {
+				let value = localStorage.getItem('current-user-app');
+				if (value) {
+					$('#log-forms-link').html('Sign out').attr('href', '#/signout');
+
+					utils.notifier.success(`Welcome, ${value}!`);
+				}
+			}
 		}
 
 		let newCtrl = new MainCtrl(data, view, utils);

@@ -1,12 +1,25 @@
-.add-form {
-		&>button {
+.add-form div form {
+	button.btn.btn-success {
+			float: right;
+			border: 2px solid #000000;
 			margin: 5px;
+			width: 33%;
 			height: 30px;
-			width: 50%;
-			float: right
+			color: darkorange;
+			font-weight: bold;
+			font-size: 16px;
+
+			h5 {
+				margin-top: -2px;
+			}
 		}
 		
 		#myEditor {
 			margin-left: 30%;
 		}
+}
+
+.add-form div .add-title {
+		border: 2px solid #000000 !important;
+		width: 62%;
 }

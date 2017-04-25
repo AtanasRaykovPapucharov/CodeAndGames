@@ -9,14 +9,7 @@ const router = (() => {
 				'/home': () => {
 					controller.mainCtrl.showHome;
 					controller.mainCtrl.getTags();
-
-					let value = localStorage.getItem('current-user-app');
-
-					if (value) {
-						$('#log-forms-link').html('Sign out').attr('href', '#/signout');
-
-						utils.notifier.success(`Welcome, ${value}!`);
-					}
+					controller.mainCtrl.checkHome();
 				},
 				'/change-password': () => { controller.mainCtrl.showChangePassword; },
 				'/forgot-password': () => { controller.mainCtrl.showForgotPassword; },
@@ -27,10 +20,7 @@ const router = (() => {
 					controller.mainCtrl.showSignUp;
 				},
 				'/signout': () => {
-					localStorage.clear();
-					$('#log-forms-link').html('Sign in / Sign up').attr('href', '#/signin');
-					utils.notifier.warning(`Bye, bye!`);
-
+					controller.userCtrl.signOut();
 					appRouter.navigate('/home');
 				},
 				'/signin-send': () => {
@@ -42,17 +32,14 @@ const router = (() => {
 				},
 				'/signup-after': () => {
 					let cookie = utils.cookies.getCookieByName('current-user-app');
-
+					let cookieValue = cookie.split('=')[1];
 					if (cookie) {
-						let cookieValue = cookie.split('=')[1];
-
 						localStorage.setItem('current-user-app', cookieValue);
-
 						appRouter.navigate('/profile');
 						utils.notifier.success(`Welcome, ${cookieValue}!`);
 					} else {
-						utils.notifier.warning(`Please, sign in first!`);
 						appRouter.navigate('/signin');
+						utils.notifier.warning(`Please, sign in first!`);
 					}
 				},
 				'/profile': () => {
@@ -97,6 +84,7 @@ const router = (() => {
 				'/add/blog': () => {
 					if (localStorage.getItem('current-user-app')) {
 						controller.mainCtrl.showAddFormBlog;
+						controller.mainCtrl.getTags();
 					} else {
 						utils.notifier.warning(`Please, sign in first!`);
 						appRouter.navigate('/signin');
@@ -105,6 +93,7 @@ const router = (() => {
 				'/add/game': () => {
 					if (localStorage.getItem('current-user-app')) {
 						controller.mainCtrl.showAddFormGames;
+						controller.mainCtrl.getTags();
 					} else {
 						utils.notifier.warning(`Please, sign in first!`);
 						appRouter.navigate('/signin');

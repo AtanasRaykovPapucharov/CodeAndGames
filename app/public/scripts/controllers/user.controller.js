@@ -14,6 +14,9 @@ const userCtrl = (() => {
 			}
 
 			signOut() {
+				localStorage.clear();
+				$('#log-forms-link').html('Sign in / Sign up').attr('href', '#/signin');
+				utils.notifier.warning(`Bye, bye!`);
 			}
 
 			signIn() {
@@ -95,7 +98,7 @@ const userCtrl = (() => {
 							email: email,
 							username: username,
 							password: hash(password),
-							image: '',
+							image: './assets/images/staff/empty-avatar.png',
 							age: '',
 							interests: [],
 							blogs: [],
