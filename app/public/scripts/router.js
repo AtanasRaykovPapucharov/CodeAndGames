@@ -21,18 +21,16 @@ const router = (() => {
 				'/change-password': () => { controller.mainCtrl.showChangePassword; },
 				'/forgot-password': () => { controller.mainCtrl.showForgotPassword; },
 				'/signin': () => {
-					controller.mainCtrl.showHome;
 					controller.mainCtrl.showSignIn;
 				},
 				'/signup': () => {
-					controller.mainCtrl.showHome;
 					controller.mainCtrl.showSignUp;
 				},
 				'/signout': () => {
 					localStorage.clear();
 					$('#log-forms-link').html('Sign in / Sign up').attr('href', '#/signin');
 					utils.notifier.warning(`Bye, bye!`);
-					
+
 					appRouter.navigate('/home');
 				},
 				'/signin-send': () => {

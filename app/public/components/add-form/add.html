@@ -1,11 +1,12 @@
-<div>
-	{{data}}Add Form
+<div class="add-form">
+	<br>
+	<h3>Add {{data}}</h3>
 	<hr>
 	<form action="/api/{{data}}/content" method="POST">
 		<textarea name="editor_content" id="myEditor"></textarea>
-		<button class="btn btn-primary">Submit</button>
+		<button class="btn btn-info">Submit</button>
 	</form>
-
+	
 	<script>
 		$(function () {
 			$('#myEditor').froalaEditor({ toolbarInline: false })

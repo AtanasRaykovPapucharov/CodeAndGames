@@ -1,0 +1,12 @@
+.add-form {
+		&>button {
+			margin: 5px;
+			height: 30px;
+			width: 50%;
+			float: right
+		}
+		
+		#myEditor {
+			margin-left: 30%;
+		}
+}
