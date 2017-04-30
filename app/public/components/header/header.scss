@@ -1,8 +1,28 @@
 @import '../global.scss';
+$header-colors: whitesmoke;
+
+#navbar-links {
+	background-color: #001020;
+}
+
+#profile-link {
+	margin-top: -7px;
+	margin-left: 35px;
+	border: 3px solid $header-colors;
+	border-radius: 25%;
+}
+
+#profile-link:hover {
+	border-color: darkorange;
+}
+
+#profile-a:focus {
+	border-color: darkorange;
+}
 
 .wrapper #header {
 	nav.navbar.nav-header {
-		height: 50px;
+		padding-top: 10px;
 		background-color: #001020;
 		background-image: url('../../assets/images/staff/bg.jpg');
 		background-repeat: no-repeat;
@@ -13,6 +33,7 @@
 
 		.nav-colapse-btn {
 			background-color: darkolivegreen;
+			margin-left: -11px;
 			.icon-bar {
 				background-color: darkorange;
 			}
@@ -20,20 +41,20 @@
 
 		.main-link {
 			max-height: 40px;
-			margin-top: 5px;
+			margin-top: 8px;
 			margin-left: 20px;
-			font-family: 'Sunny', serif;
+			font-family: 'OpenSans', serif;
 			font-weight: bold;
-			font-size: 28px;
-			color: darkorange;
+			font-size: 19px;
+			color: $header-colors;
 			background-color: black;
 
 			&:hover {
-				color: silver;
+				color: darkorange;
 			}
  
 			&:focus {
-				color: silver;
+				color: darkorange;
 			}
 		}
 
@@ -42,7 +63,7 @@
 			font-family: 'Zhafira', serif;
 			color: darkolivegreen;
 			text-shadow: -1px 1px darkorange;
-			font-size: 38px;
+			font-size: 42px;
 
 			&:hover {
 				color: silver;
@@ -64,8 +85,8 @@
 		}
 
 		.menu-dropdown {
-			background-color: #000000;
-			border: 2px solid darkorange;
+			background-color: #001020;
+			border: 2px solid $header-colors;
 			border-radius: 5px;
 			margin-left: -3em;
 			max-width: 22%;
@@ -95,7 +116,8 @@
 			
 			.menu-dropdown {
 				max-width: 100%;
-				margin-left: -3.2em;
+				margin-left: -3.7em;
+				margin-top: 1px;
 			}
 		}
 	}

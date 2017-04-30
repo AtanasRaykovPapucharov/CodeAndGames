@@ -12,7 +12,10 @@ const blogCtrl = (() => {
 			get blogs() {
 				this.data.getBlogs()
 					.then((blogs) => {
-						return this.view.objectCollection('#content', { data: blogs})
+						blogs.forEach((blog) => {
+							blog.titleShort = blog.title.substring(0, 19) + ' ...';
+						}, this);
+						return this.view.objectCollection('#content', { data: blogs })
 					})
 			}
 
@@ -21,6 +24,28 @@ const blogCtrl = (() => {
 					.then((blog) => {
 						return this.view.objectSingle('#content', blog)
 					})
+			}
+
+			get showAddFormBlog() {
+				return this.view.addForm('#content', { role: 'blog' })
+			}
+
+			newBlog() {
+				let formObj = {};
+
+				function addNewBlog() {
+					$('#add-form-blog').serializeArray().forEach((el) => {
+						formObj[el.name] = el.value;
+					});
+				}
+				addNewBlog();
+				console.log(formObj);
+
+				$('#add-form-blog').on('submit', (e) => {
+					e.preventDefault();
+					addNewBlog();
+					console.log(formObj);
+				})
 			}
 		}
 

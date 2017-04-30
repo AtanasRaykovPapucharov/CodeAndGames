@@ -60,6 +60,11 @@ const view = (() => {
 				this.templateLoader.load(selector, template, data);
 			}
 
+			contactUs(selector, data) {
+				let template = './components/contact-us/contactus.html';
+				this.templateLoader.load(selector, template, data);
+			}
+
 			signin(selector, data) {
 				let template = './components/signin/signin.html';
 				this.templateLoader.load(selector, template, data);

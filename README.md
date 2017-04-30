@@ -5,6 +5,8 @@
 **Games&Code** is a [JavaScript](https://www.javascript.com/ "JavaScript") single-page application with [Navigo](https://github.com/krasimir/navigo "Navigo"), [jQuery](http://jquery.com/"jQuery"), [Handlebars](http://handlebarsjs.com/ "Handlebars") and [SystemJS](https://github.com/systemjs/systemjs "SystemJS").
 App works with [NodeJS](https://nodejs.org/ "NodeJS") as a server and [MongoDB](https://www.mongodb.com/ "MongoDB") as a database.
 
+This app is a blog for games and programming. A user could see all blog posts and all games, could play some games, could sign up and sign in. A signed in user has a profile. A signed in user could add new blog post, add a new game, likes, comments and bookmarks.
+
 Inside the database there are three collections: Users, Blogs and Games.
 
 **User**s collection contains objects like this:
@@ -37,7 +39,8 @@ Inside the database there are three collections: Users, Blogs and Games.
             "date": "",
             "likes": "0"
         }
-    ]
+    ],
+    "bookmarks": []
 }
 ```
 
@@ -48,20 +51,7 @@ Inside the database there are three collections: Users, Blogs and Games.
     "role": "blog",
     "title": "",
     "image": "",
-    "description": [
-        {
-            "tag": "strong",
-            "content": "."
-        },
-        {
-            "tag": "p",
-            "content": ""
-        },
-        {
-            "tag": "img",
-            "content": ""
-        }
-    ],
+    "content": "",
     "tags": [
         "game-development",
         "canvas",
@@ -75,14 +65,11 @@ Inside the database there are three collections: Users, Blogs and Games.
             "author": "JohnDoe",
             "content": "Once upon a time a veeery interesting comment.",
             "date": ""
-        },
-        {
-            "author": "JohnDoe",
-            "content": "Once upon a time a veeery interesting comment.",
-            "date": ""
         }
     ],
     "likes": "0",
+    "looks": "0",
+    "bookmarks": "0",
     "date": ""
 }
 ```
@@ -93,30 +80,28 @@ Inside the database there are three collections: Users, Blogs and Games.
     "role": "game",
     "title": "Tetris",
     "image": "",
-    "description": [
-        {
-            "tag": "p",
-            "content": ""
-        },
-        {
-            "tag": "img",
-            "content": ""
-        },
-        {
-            "tag": "strong",
-            "content": ""
-        }
-    ],
+    "content": "",
     "tags": [
         "speeding-game",
         "strategic"
     ],
     "link": "",
-    "likes": "0"
+    "author": "",
+    "comments": [
+        {
+            "author": "JohnDoe",
+            "content": "Once upon a time a veeery interesting comment.",
+            "date": ""
+        }
+    ],
+    "likes": "0",
+    "looks": "0",
+    "bookmarks": "0",
+    "date": ""
 }
 ```
 
-## Resources:
+## Start up's:
 
 - to install node modules: >>npm install
 - to run app: >>npm start

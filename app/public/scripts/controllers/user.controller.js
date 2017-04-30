@@ -9,6 +9,10 @@ const userCtrl = (() => {
 				this.utils = utils;
 			}
 
+			contactUs() {
+				this.view.contactUs('#content-aside', {})
+			}
+
 			profile() {
 				let value = localStorage.getItem('current-user-app');
 
@@ -68,7 +72,7 @@ const userCtrl = (() => {
 							password: hash(password)
 						}
 
-						this.data.loginUser(user)
+						return this.data.loginUser(user)
 							.then((resp) => {
 								resp.password = '';
 
@@ -78,9 +82,11 @@ const userCtrl = (() => {
 								$('#log-forms-link').html('Sign out').attr('href', '#/signout');
 
 								utils.notifier.success(`Welcome, ${resp.username}!`);
+								return true;
 							})
 							.catch((err) => {
 								utils.notifier.error(`No such a user!`);
+								return false;
 							})
 					}
 				})()
@@ -121,6 +127,7 @@ const userCtrl = (() => {
 							email: email,
 							username: username,
 							password: hash(password),
+							key: '',
 							image: './assets/images/staff/empty-avatar.png',
 							age: '',
 							interests: [],
@@ -138,10 +145,12 @@ const userCtrl = (() => {
 								localStorage.setItem('app-user-data', JSON.stringify(respUser));
 
 								utils.notifier.success('Please, confirm registration on your e-mail first!');
+								return true;
 							})
 							.catch((err) => {
 								console.log('Server error: ' + err);
 								utils.notifier.error('This e-mail address already exists!');
+								return false;
 							})
 					}
 				}

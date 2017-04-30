@@ -1,0 +1,44 @@
+<section class="contact-us-block">
+	<div class="contact-us-container">
+		<form class="contact-us-form">
+			<fieldset>
+				<div class="input-group">
+					<div class="label-holder">
+						<label for="user-email">Your e-mail:</label>
+					</div>
+					<input id="contact-us-email" class="form-control full-width" type="email" size="60">
+				</div>
+				<div class="input-group">
+					<div class="label-holder">
+						<label for="user-password">Subject:</label>
+					</div>
+					<input id="contact-us-password" class="form-control full-width" type="text" size="60">
+				</div><br>
+				<div class="input-group">
+					<div class="label-holder">
+						<label for="user-password">Message:</label>
+					</div>
+					<div id="contact-us-msg-container">
+						<style>
+							#contact-us-msg-container {
+								border: 1px solid darkorange;
+								border-radius: 5px;
+							}
+						</style>
+						<textarea rows="" cols="" id="contact-us-msg" class="form-control full-width" type="text" size="60"></textarea>
+					</div>
+
+				</div><br>
+				<a id="contact-us-btn" href="#/" class="btn btn-success full-width">
+					<h5>Send</h5>
+				</a>
+			</fieldset>
+		</form>
+	</div>
+</section>
+<script>
+	$(function () {
+		$('#contact-us-msg').froalaEditor({ toolbarInline: false })
+	});
+
+</script>

@@ -7,10 +7,7 @@ module.exports = (express, app, params) => {
 	const cookieParser = require('cookie-parser');
 	const session = require('express-session');
 	const passport = require('passport');
-
-	require('./passport-local')(app);
-	require('./passport-jwt')(app, params);
-
+	
 	let sessionObj = {
 		secret: params.sessionSecret,
 		resave: true,

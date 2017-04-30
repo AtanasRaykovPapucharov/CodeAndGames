@@ -14,6 +14,26 @@ const toastrNotifier = (() => {
 		warning(msg) {
 			toastr.warning(msg, 'WARNING', { timeOut: 3000 });
 		}
+
+		info(msg) {
+			toastr.info(msg, 'INFO', { timeOut: 3000 });
+		}
+
+		successUntitle(msg) {
+			toastr.success(msg, '', { timeOut: 3000 });
+		}
+
+		errorUntitle(msg) {
+			toastr.error(msg, '', { timeOut: 3000 });
+		}
+
+		warningUntitle(msg) {
+			toastr.warning(msg, '', { timeOut: 3000 });
+		}
+
+		infoUntitle(msg) {
+			toastr.info(msg, '', { timeOut: 3000 });
+		}
 	}
 
 	const notifier = new Notifier();

@@ -1,13 +1,16 @@
 /*==========  Mobile First Method  ==========*/
 
+$colors-main: darkorange;
+
 #loading {
 	margin-left: 45%;
 	margin-top: 280px;
 }
 
 body {
-	background-color: darkorange;
-	color: silver;
+	background-color: $colors-main;
+	color: whitesmoke;
+	font-size: 16px;
 	text-align: justify;
 
 	.wrapper {
@@ -15,31 +18,34 @@ body {
 
 		}
 		.middle {
-			padding-top: 50px;
+			padding-top: 80px;
 
 			#content, #content-aside {
-				border-left: 15px solid #ff8c00;
-				border-right: 15px solid #ff8c00;
 				min-height: 600px;
-				background-color: #556b2f;
-				opacity: 0.9;
+				background-color: darkolivegreen;
+				opacity: 0.8;
 				padding: 5px;
+				padding-right: 19px;
+				padding-left: 19px;
 				font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 			}
 
 			#content {
-				padding-left: 15px;
+				border-left: 15px solid $colors-main;
+				border-right: 15px solid $colors-main;
 			}
 			
 			#content-aside {
-				border-top: 5px solid #ff8c00;
+				border-left: 15px solid $colors-main;
+				border-right: 15px solid $colors-main;
+				border-top: 5px solid $colors-main;
 			}
 		}
 
 		#footer {
 			background-color: transparent;
-			border-top: 15px solid #ff8c00;
-			color: #ff8c00;
+			border-top: 15px solid $colors-main;
+			color: $colors-main;
 			margin-left: -1px;
 			min-height: 150px;
 			min-width: 100.3%;
@@ -101,10 +107,11 @@ body {
 				#content, #content-aside {
 				}
 				#content {
+				border-right: 5px solid $colors-main;
 				}
 				#content-aside {
+				border-left: 5px solid $colors-main;
 				border-top: 0;
-				border-left: 0;
 				}
 			}
 			#footer {

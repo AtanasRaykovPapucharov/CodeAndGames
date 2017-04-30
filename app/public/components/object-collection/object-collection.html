@@ -1,12 +1,12 @@
-<div class="object-collection row">
+<div class="object-collection">
 	{{#each data}}
-	<article class="obj-col-article col-md-4">
+	<article class="obj-col-article">
 		<a href="#/{{this.role}}/{{this._id}}">
-			<h4 class="obj-col-article-title">{{this.title}}</h4>
+			<h4 class="obj-col-article-title">{{titleShort}}</h4>
 		</a>
 		<p class="obj-col-article-text">
 			<a href="#/{{this.role}}/{{this._id}}">
-				<img class="obj-col-article-img" src={{this.image}} alt="image" width="100%" height="300px">
+				<img class="obj-col-article-img" src={{this.image}} alt="image" width="100%" height="250px">
 			</a>
 		</p>
 		<div>

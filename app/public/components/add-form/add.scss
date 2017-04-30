@@ -5,7 +5,7 @@
 			margin: 5px;
 			width: 33%;
 			height: 30px;
-			color: darkorange;
+			color: #9AC540;
 			font-weight: bold;
 			font-size: 16px;
 
@@ -17,6 +17,13 @@
 		#myEditor {
 			margin-left: 30%;
 		}
+}
+
+ul.droppable {
+	border: 2px solid black !important;
+	border-radius: 3px; 
+	width: 100%;
+	height: 50px;
 }
 
 .add-form div .add-title {

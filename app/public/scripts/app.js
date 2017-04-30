@@ -34,7 +34,8 @@ const app = {
 		view.header('#header', {});
 		view.footer('#footer', {});
 
-		if (localStorage.getItem('current-user-app')) {
+		let isLoggedNow = !!localStorage.getItem('current-user-app');
+		if (isLoggedNow) {
 			$('#log-forms-link').html('Sign out').attr('href', '#/signout');
 		}
 

@@ -22,6 +22,14 @@ const gamesCtrl = (() => {
 						return this.view.objectSingle('#content', game)
 					})
 			}
+
+			get showAddFormGames() {
+				return this.view.addForm('#content', { role: 'game' })
+			}
+
+			newGame() {
+
+			}
 		}
 
 		let newCtrl = new GamesCtrl(data, view, utils);

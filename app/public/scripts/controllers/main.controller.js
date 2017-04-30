@@ -10,7 +10,13 @@ const mainCtrl = (() => {
 			}
 
 			get showSignIn() {
-				return this.view.signin('#content-aside', {})
+				let currentWidth = window.screen.width;
+				let route = '#content-aside';
+
+				if (currentWidth < 500) {
+					route = '#content';
+				}
+				return this.view.signin(route, {})
 			}
 
 			get showSignUp() {
@@ -25,10 +31,6 @@ const mainCtrl = (() => {
 				return this.view.forgotPass('#content-aside', {})
 			}
 
-			get showHome() {
-				return this.view.home('#content', {})
-			}
-
 			get showAbout() {
 				return this.view.about('#content', {})
 			}
@@ -37,12 +39,17 @@ const mainCtrl = (() => {
 				return this.view.tournaments('#content', {})
 			}
 
-			get showAddFormBlog() {
-				return this.view.addForm('#content', { data: 'blog' })
+			get showHome() {
+				return this.view.home('#content', {})
 			}
 
-			get showAddFormGames() {
-				return this.view.addForm('#content', { data: 'games' })
+			checkHome() {
+				let value = localStorage.getItem('current-user-app');
+				if (value) {
+					$('#log-forms-link').html('Sign out').attr('href', '#/signout');
+
+					utils.notifier.success(`Welcome, ${value}!`);
+				}
 			}
 
 			pleaseSignIn() {
@@ -59,15 +66,6 @@ const mainCtrl = (() => {
 						let tagsArray = tags[0].value;
 						return this.view.aside('#content-aside', { data: tagsArray.sort() })
 					})
-			}
-
-			checkHome() {
-				let value = localStorage.getItem('current-user-app');
-				if (value) {
-					$('#log-forms-link').html('Sign out').attr('href', '#/signout');
-
-					utils.notifier.success(`Welcome, ${value}!`);
-				}
 			}
 		}
 
