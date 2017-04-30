@@ -19,15 +19,16 @@ const blogCtrl = (() => {
 					})
 			}
 
+			get showAddFormBlog() {
+				return this.view.addForm('#content', { role: 'blog' })
+			}
+
 			blogById(id) {
 				this.data.getBlogById(id)
 					.then((blog) => {
-						return this.view.objectSingle('#content', blog)
+						this.view.objectSingle('#content', blog);
+						$('#single-content-container').html(Handlebars.compile(blog.content)());
 					})
-			}
-
-			get showAddFormBlog() {
-				return this.view.addForm('#content', { role: 'blog' })
 			}
 
 			newBlog() {
@@ -40,6 +41,7 @@ const blogCtrl = (() => {
 				this.data.postBlog(formObj)
 					.then((resp) => {
 						console.log(resp);
+						this.utils.notifier.success('Blog post successful!');
 					})
 					.catch((err) => {
 						throw ('Server error: ' + err);

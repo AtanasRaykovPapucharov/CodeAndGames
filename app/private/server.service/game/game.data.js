@@ -32,16 +32,15 @@ module.exports = (mongo) => {
 				db['games']
 					.save(game, (err, game) => {
 						if (err) {
-							res.send(err);
-							return;
+							reject(err);
 						}
-						res.json(game);
+						resolve(game);
 					})
 			});
 		},
 		updateGame: (id, dataObj) => {
 			let updated = { $push: dataObj }
-			
+
 			return new Promise((resolve, reject) => {
 
 				db['games'].update({ _id: mongojsObj.ObjectId(id) }, updated, {},

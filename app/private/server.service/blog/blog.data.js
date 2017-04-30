@@ -32,10 +32,9 @@ module.exports = (mongo) => {
 				db['blogs']
 					.save(blog, (err, blog) => {
 						if (err) {
-							res.send(err);
-							return;
+							reject(err);
 						}
-						res.json(blog);
+						resolve(blog);
 					})
 			});
 		},

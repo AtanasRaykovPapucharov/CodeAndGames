@@ -299,7 +299,7 @@ ul {
 #profile-link {
   margin-top: -7px;
   margin-left: 35px;
-  border: 3px solid whitesmoke;
+  border: 3px solid silver;
   border-radius: 25%;
 }
 
@@ -333,12 +333,12 @@ ul {
 
 .wrapper #header nav.navbar.nav-header .main-link {
   max-height: 40px;
-  margin-top: 8px;
+  margin-top: 7px;
   margin-left: 20px;
   font-family: 'OpenSans', serif;
   font-weight: bold;
   font-size: 19px;
-  color: whitesmoke;
+  color: silver;
   background-color: black;
 }
 
@@ -379,7 +379,7 @@ ul {
 
 .wrapper #header nav.navbar.nav-header .menu-dropdown {
   background-color: #001020;
-  border: 2px solid whitesmoke;
+  border: 2px solid silver;
   border-radius: 5px;
   margin-left: -3em;
   max-width: 22%;

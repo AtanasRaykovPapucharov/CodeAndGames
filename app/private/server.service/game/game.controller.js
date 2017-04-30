@@ -21,7 +21,7 @@ module.exports = (mongo) => {
 				});
 		},
 		newGame: (req, res, next) => {
-			blogData.gameBlog(req.body)
+			gameData.postGame(req.body)
 				.then((game) => {
 					res.status(200).json(game);
 				})
