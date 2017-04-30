@@ -28,7 +28,19 @@ const gamesCtrl = (() => {
 			}
 
 			newGame() {
+				let formObj = {};
 
+				$('#add-form-game').serializeArray().forEach((el) => {
+					formObj[el.name] = el.value;
+				});
+
+				this.data.postGame(formObj)
+					.then((resp) => {
+						console.log(resp);
+					})
+					.catch((err) => {
+						throw ('Server error: ' + err);
+					})
 			}
 		}
 

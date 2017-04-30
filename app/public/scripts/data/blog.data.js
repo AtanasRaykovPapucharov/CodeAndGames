@@ -14,6 +14,10 @@ const blogData = (() => {
 			getBlogById(id) {
 				return this.requester.get(`/api/blog/${id}`);
 			}
+
+			postBlog(blog) {
+				return this.requester.post('/api/blog', blog);
+			}
 		}
 
 		let newData = new BlogData(requester);

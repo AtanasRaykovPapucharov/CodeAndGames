@@ -33,19 +33,17 @@ const blogCtrl = (() => {
 			newBlog() {
 				let formObj = {};
 
-				function addNewBlog() {
-					$('#add-form-blog').serializeArray().forEach((el) => {
-						formObj[el.name] = el.value;
-					});
-				}
-				addNewBlog();
-				console.log(formObj);
+				$('#add-form-blog').serializeArray().forEach((el) => {
+					formObj[el.name] = el.value;
+				});
 
-				$('#add-form-blog').on('submit', (e) => {
-					e.preventDefault();
-					addNewBlog();
-					console.log(formObj);
-				})
+				this.data.postBlog(formObj)
+					.then((resp) => {
+						console.log(resp);
+					})
+					.catch((err) => {
+						throw ('Server error: ' + err);
+					})
 			}
 		}
 

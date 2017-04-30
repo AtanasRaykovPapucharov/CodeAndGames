@@ -14,11 +14,11 @@ const userData = (() => {
 			}
 
 			newUser(user) {
-				return this.requester.put('/api/users', user);
+				return this.requester.post('/api/users', user);
 			}
 
 			loginUser(user) {
-				return this.requester.post('/api/users', user);
+				return this.requester.put('/api/users', user);
 			}
 
 			//===============================================

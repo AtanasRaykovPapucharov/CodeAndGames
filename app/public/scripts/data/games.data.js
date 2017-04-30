@@ -14,6 +14,10 @@ const gamesData = (() => {
 			getGameById(id) {
 				return this.requester.get(`/api/games/${id}`);
 			}
+
+			postGame(game) {
+				return this.requester.post('/api/games', game);
+			}
 		}
 
 		let newData = new GamesData(requester);

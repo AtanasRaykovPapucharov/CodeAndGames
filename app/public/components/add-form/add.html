@@ -23,12 +23,16 @@
 	<hr>
 	<div>
 		<form id="add-form-{{role}}" action="" method="POST">
-			<label for="add-title">Title: </label>
-			<input class="add-title" type="text" name="add-title" value=""><br>
-			<label for="add-content">Content: </label>
-			<textarea name="add-content" id="myEditor"></textarea><br>
-			<label for="add-tags">Tags: </label>
-			<ul name="add-tags" class="droppable"></ul>
+			<input type="hidden" name="role" value="{{role}}">
+			<input type="hidden" name="likes" value="0">
+			<input type="hidden" name="looks" value="0">
+			<input type="hidden" name="bookmarks" value="0">
+			<label for="title">Title: </label>
+			<input class="add-title" type="text" name="title" value=""><br>
+			<label for="content">Content: </label>
+			<textarea name="content" id="myEditor"></textarea><br>
+			<label for="tags">Tags: </label>
+			<div name="tags" class="droppable"></div>
 			<a href="#/post/{{role}}" class="btn btn-success"><h5>Submit</h5></a>
 		</form>
 	</div>

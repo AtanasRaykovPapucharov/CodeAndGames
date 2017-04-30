@@ -9,20 +9,16 @@ module.exports = (express, app, mongo, nodemailer, params) => {
 	app.use('/api', apiRouter);
 
 	apiRouter
-		.put('/users', controllers.userCtrl.newUser)
-		.post('/users', controllers.userCtrl.login)
+		.post('/users', controllers.userCtrl.newUser)
+		.put('/users', controllers.userCtrl.login)
 
 		.get('/blog', controllers.blogCtrl.blogs)
 		.get('/blog/:id', controllers.blogCtrl.blogById)
-		.post('/blog', (req, res, next) => {
-			console.log(req.body);
-		})
+		.post('/blog', controllers.blogCtrl.newBlog)
 
 		.get('/games', controllers.gameCtrl.games)
 		.get('/games/:id', controllers.gameCtrl.gameById)
-		.post('/games', (req, res, next) => {
-			console.log(req.body);
-		})
+		.post('/games', controllers.gameCtrl.newGame)
 
 		.get('/tags', controllers.userCtrl.tags)
 
