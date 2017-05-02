@@ -18,7 +18,7 @@ const userCtrl = (() => {
 
 				if (value) {
 					$('#log-forms-link').html('Sign out').attr('href', '#/signout');
-					this.view.profile('#content', {})
+					this.view.profile('#content', { username: value })
 				} else {
 					this.utils.notifier.warning(`Please, sign in first!`);
 				}
