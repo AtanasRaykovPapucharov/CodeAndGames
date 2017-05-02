@@ -17,30 +17,25 @@ Inside the database there are three collections: Users, Blogs and Games.
     "email": "",
     "hashedPassword": "",
     "key": "",
-    "image": "",
+    "imageAvatar": "",
     "age": "",
-    "interests": [
-       "development",
-       "front-end",
-       "ux-design",
-       "gaming"
-    ],
+    "interests": [string],
     "blogs": [
         {
-            "title": "",
-            "date": "",
-            "commentsNumber": "0",
-            "likes": "0"
+            "title": string,
+            "date": date,
+            "commentsNumber": number,
+            "likes": number
         }
     ],
     "games": [
         {
-            "title": "",
-            "date": "",
-            "likes": "0"
+            "title": string,
+            "date": date,
+            "likes": number
         }
     ],
-    "bookmarks": []
+    "bookmarks": [string]
 }
 ```
 
@@ -49,28 +44,23 @@ Inside the database there are three collections: Users, Blogs and Games.
 ```javascript
 {
     "role": "blog",
-    "title": "",
-    "image": "",
-    "content": "",
-    "tags": [
-        "game-development",
-        "canvas",
-        "javascript",
-        "tutoral"
-    ],
-    "link": "",
-    "author": "",
+    "title": string,
+    "image": string,
+    "content": string",
+    "tags": [string],
+    "link": string,
+    "author": string,
     "comments": [
         {
-            "author": "JohnDoe",
-            "content": "Once upon a time a veeery interesting comment.",
-            "date": ""
+            "author": string,
+            "content": string,
+            "date": string
         }
     ],
-    "likes": "0",
-    "looks": "0",
-    "bookmarks": "0",
-    "date": ""
+    "likes": number,
+    "looks": number,
+    "bookmarks": number,
+    "date": string
 }
 ```
 
@@ -78,26 +68,23 @@ Inside the database there are three collections: Users, Blogs and Games.
 ```javascript
 {
     "role": "game",
-    "title": "Tetris",
-    "image": "",
-    "content": "",
-    "tags": [
-        "speeding-game",
-        "strategic"
-    ],
-    "link": "",
-    "author": "",
+    "title": string,
+    "image": string,
+    "content": string,
+    "tags": [string],
+    "link": string,
+    "author": string,
     "comments": [
         {
-            "author": "JohnDoe",
-            "content": "Once upon a time a veeery interesting comment.",
-            "date": ""
+            "author": string,
+            "content": string,
+            "date": date
         }
     ],
-    "likes": "0",
-    "looks": "0",
-    "bookmarks": "0",
-    "date": ""
+    "likes": number,
+    "looks": number,
+    "bookmarks": number,
+    "date": date
 }
 ```
 
@@ -132,7 +119,7 @@ Design is supported by [Twitter Bootstrap](http://getbootstrap.com/ "Twitter Boo
   * PUT
     * **Logs in** an user
     * Needs **username** and **passHash** to be sent in the body of the request
-	* If the request is valid returns **username** and **authKey**
+	* If the request is valid returns **user** and **authKey**
 
 ### Blog
 
@@ -142,22 +129,14 @@ Design is supported by [Twitter Bootstrap](http://getbootstrap.com/ "Twitter Boo
   * POST
     * **New blog post** 
 	* User must be **logged-in**
-    * Needs **text**, **tag**, **img** to be sent in the body of the request and the current user's **authKey** as a header with name: `x-auth-key`
+    * Needs **authKey** as a header with name: `x-auth-key`
       * `img` is a string to an online image
-      * `img` is optional and if not sent, a **default batman** image will be provided
+      * `img` is optional and if not sent, a **default image** will be provided
 * `api/blogs/:id`
   * PUT
     * **Likes** a blog post
     * Needs `type` to be sent in the body of the request
       * `type` can only have values 'like'
-
-###	My Blog
-
-* `api/my-blog`
-	* User must be **logged-in**
-  * GET
-    * **Returns** user blogs
-    
 
 ###	Games
 
@@ -167,7 +146,7 @@ Design is supported by [Twitter Bootstrap](http://getbootstrap.com/ "Twitter Boo
   * POST
     * **New game** 
 	* User must be **logged-in**
-    * Needs **text**, **tag**, **img** to be sent in the body of the request and the current user's **authKey** as a header with name: `x-auth-key`
+    * Needs **authKey** as a header with name: `x-auth-key`
       * `img` is a string to an online image
       * `img` is optional and if not sent, a **default image** will be provided
 * `api/games/:id`
@@ -176,13 +155,6 @@ Design is supported by [Twitter Bootstrap](http://getbootstrap.com/ "Twitter Boo
     * Needs `type` to be sent in the body of the request
       * `type` can only have values 'like'
 
-###	My Games
-
-* `api/my-games`
-	* User must be **logged-in**
-  * GET
-    * **Returns** user games
-    
 ###	Tags
 *	`api/tags`
 	*	GET
