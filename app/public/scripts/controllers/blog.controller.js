@@ -26,8 +26,13 @@ const blogCtrl = (() => {
 			blogById(id) {
 				this.data.getBlogById(id)
 					.then((blog) => {
-						this.view.objectSingle('#content', blog);
-						$('#single-content-container').html(Handlebars.compile(blog.content)());
+						this.view.objectSingle('#content', blog)
+							.then(() => {
+								$('#single-content-container').html(blog.content);
+							})
+					})
+					.catch((err) => {
+						throw (err);
 					})
 			}
 

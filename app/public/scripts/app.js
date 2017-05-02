@@ -27,7 +27,8 @@ const app = {
 			validator: validator(notifier),
 			hash: hash,
 			cookies: cookies,
-			cloudinary: cloudinary
+			cloudinary: cloudinary,
+			templateLoader: templateLoader
 		}
 		const ctrl = controller(data, view, utils);
 
