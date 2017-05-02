@@ -46,7 +46,7 @@ Inside the database there are three collections: Users, Blogs and Games.
     "role": "blog",
     "title": string,
     "image": string,
-    "content": string",
+    "content": string,
     "tags": [string],
     "link": string,
     "author": string,
