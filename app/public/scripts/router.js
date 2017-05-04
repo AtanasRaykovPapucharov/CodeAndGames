@@ -11,16 +11,16 @@ const router = (() => {
 					controller.mainCtrl.getTags();
 				},
 				'/change-password': () => {
-					controller.mainCtrl.showChangePassword;
+					controller.usertrl.showChangePassword();
 				},
 				'/forgot-password': () => {
-					controller.mainCtrl.showForgotPassword;
+					controller.userCtrl.showForgotPassword();
 				},
 				'/signin': () => {
-					controller.mainCtrl.showSignIn;
+					controller.userCtrl.showSignIn();
 				},
 				'/signup': () => {
-					controller.mainCtrl.showSignUp;
+					controller.userCtrl.showSignUp();
 				},
 				'/signout': () => {
 					controller.userCtrl.signOut();

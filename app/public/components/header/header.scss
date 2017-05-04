@@ -46,15 +46,15 @@ $header-colors: silver;
 			font-family: 'OpenSans', serif;
 			font-weight: bold;
 			font-size: 19px;
-			color: $header-colors;
+			color: darkorange;
 			background-color: black;
 
 			&:hover {
-				color: darkorange;
+				color: silver;
 			}
  
 			&:focus {
-				color: darkorange;
+				color: silver;
 			}
 		}
 
@@ -86,7 +86,7 @@ $header-colors: silver;
 
 		.menu-dropdown {
 			background-color: #001020;
-			border: 2px solid $header-colors;
+			border: 2px solid darkorange;
 			border-radius: 5px;
 			margin-left: -3em;
 			max-width: 22%;

@@ -17,25 +17,13 @@ Inside the database there are three collections: Users, Blogs and Games.
     "email": "",
     "hashedPassword": "",
     "key": "",
-    "imageAvatar": "",
+    "image": "",
     "age": "",
     "interests": [string],
-    "blogs": [
-        {
-            "title": string,
-            "date": date,
-            "commentsNumber": number,
-            "likes": number
-        }
-    ],
-    "games": [
-        {
-            "title": string,
-            "date": date,
-            "likes": number
-        }
-    ],
-    "bookmarks": [string]
+    "blogs": [string],
+    "games": [string],
+    "bookmarks": [string],
+    "date": string
 }
 ```
 
@@ -90,7 +78,7 @@ Inside the database there are three collections: Users, Blogs and Games.
 
 ## Start up's:
 
-- to install node modules: >>npm install
+- to install node and bower modules: >>npm install
 - to run app: >>npm start
 
 App is tested with [Mocha](https://mochajs.org/ "Mocha"), [Chai](http://chaijs.com/ "Chai") and [SinonJS](http://sinonjs.org/ "SinonJS").
@@ -118,7 +106,7 @@ Design is supported by [Twitter Bootstrap](http://getbootstrap.com/ "Twitter Boo
 * `api/auth`
   * PUT
     * **Logs in** an user
-    * Needs **username** and **passHash** to be sent in the body of the request
+    * Needs **email** and **passHash** to be sent in the body of the request
 	* If the request is valid returns **user** and **authKey**
 
 ### Blog

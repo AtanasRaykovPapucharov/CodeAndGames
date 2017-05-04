@@ -127,7 +127,11 @@ ul {
 .full-width {
   min-width: 100%;
 }
-
+#about-container a {
+  color: #FFC44E;
+  font-weight: bold;
+  font-size: 18px;
+}
 form input {
   color: midnightblue;
 }
@@ -343,16 +347,16 @@ ul {
   font-family: 'OpenSans', serif;
   font-weight: bold;
   font-size: 19px;
-  color: silver;
+  color: darkorange;
   background-color: black;
 }
 
 .wrapper #header nav.navbar.nav-header .main-link:hover {
-  color: darkorange;
+  color: silver;
 }
 
 .wrapper #header nav.navbar.nav-header .main-link:focus {
-  color: darkorange;
+  color: silver;
 }
 
 .wrapper #header nav.navbar.nav-header #brand {
@@ -384,7 +388,7 @@ ul {
 
 .wrapper #header nav.navbar.nav-header .menu-dropdown {
   background-color: #001020;
-  border: 2px solid silver;
+  border: 2px solid darkorange;
   border-radius: 5px;
   margin-left: -3em;
   max-width: 22%;
@@ -404,7 +408,13 @@ ul {
     margin-top: 1px;
   }
 }
+#home-container {
+  text-align: center;
+}
 
+#home-container img {
+  width: 100%;
+}
 .object-collection {
   width: 96%;
   padding-top: 25px;
@@ -584,6 +594,7 @@ ul {
   border: 2px solid silver;
   min-height: 300px;
   background-color: #96cc96;
+  color: midnightblue;
 }
 
 

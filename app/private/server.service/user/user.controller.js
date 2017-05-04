@@ -31,7 +31,7 @@ module.exports = (mongo, nodemailer, params) => {
 
 					if (userObj) {
 						emailExists = true;
-						res.status(409).json({ message: 'Email already exists' });
+						res.status(400).json({ message: 'Email already exists' });
 					}
 
 					return emailExists;

@@ -14,7 +14,7 @@
     "npm-client": "cd app/public && npm install",
     "postinstall": "bower install && npm run npm-client",
     "start": "node index.js",
-    "test": "cd app/public/tests && tests.html"
+    "test": "cd app/public/test && tests.html"
   },
   "repository": {
     "type": "git",

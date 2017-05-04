@@ -1,5 +1,4 @@
 const passport = require('passport');
-const fs = require('fs');
 
 module.exports = (express, app, mongo, nodemailer, params) => {
 	const controllers = require('./server.service/controller')(mongo, nodemailer, params);

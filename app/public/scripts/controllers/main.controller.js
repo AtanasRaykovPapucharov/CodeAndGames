@@ -8,29 +8,7 @@ const mainCtrl = (() => {
 				this.view = view;
 				this.utils = utils;
 			}
-
-			get showSignIn() {
-				let currentWidth = window.screen.width;
-				let route = '#content-aside';
-
-				if (currentWidth < 500) {
-					route = '#content';
-				}
-				return this.view.signin(route, {})
-			}
-
-			get showSignUp() {
-				return this.view.signup('#content-aside', {})
-			}
-
-			get showChangePassword() {
-				return this.view.changePass('#content-aside', {})
-			}
-
-			get showForgotPassword() {
-				return this.view.forgotPass('#content-aside', {})
-			}
-
+			
 			get showAbout() {
 				return this.view.about('#content', {})
 			}
