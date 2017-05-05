@@ -1,6 +1,6 @@
 'use strict';
 
-import { auth as auth } from './utils/authentication.js';
+import { localStore as localStore } from './utils/local-storage.js';
 import { notifier as notifier } from './utils/toastr-notifier.js';
 import { validator as validator } from './utils/validator.js';
 import { hashGenerator as hash } from './utils/hash-generator.js';
@@ -22,17 +22,27 @@ const app = {
 		const data = dataObj(requester, validator(notifier));
 		const view = viewObj(templateLoader);
 		const utils = {
-			auth: auth,
 			notifier: notifier,
 			validator: validator(notifier),
 			hash: hash,
+			templateLoader: templateLoader,
 			cookies: cookies,
-			cloudinary: cloudinary,
-			templateLoader: templateLoader
+			localStore: localStore,
+			cloudinaryStore: cloudinary
 		}
 		const ctrl = controller(data, view, utils);
 
-		view.header('#header', {});
+		const currentUser = localStorage.getItem('app-user-data');
+		const user = JSON.parse(currentUser);
+
+		let username, image;
+
+		if (currentUser) {
+			username = user.username;
+			image = user.image;
+		}
+
+		view.header('#header', { image: image });
 		view.footer('#footer', {});
 
 		let isLoggedNow = !!localStorage.getItem('current-user-app');

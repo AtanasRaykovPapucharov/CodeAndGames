@@ -4,6 +4,7 @@ const userCtrl = (() => {
 	return (data, view, utils) => {
 		class UserCtrl {
 			constructor(data, view, utils) {
+				this.emptyAvatar = '../../assets/images/staff/empty-avatar.png';
 				this.view = view;
 				this.data = data.userData;
 				this.utils = utils;
@@ -39,7 +40,7 @@ const userCtrl = (() => {
 								localStorage.setItem('app-user-data', JSON.stringify(resp));
 
 								$('#log-forms-link').html('Sign out').attr('href', '#/signout');
-
+								$('#profile-link').attr('src', resp.image);
 								utils.notifier.success(`Welcome, ${resp.username}!`);
 								return true;
 							})
@@ -129,16 +130,18 @@ const userCtrl = (() => {
 			}
 
 			profile() {
-				let value = localStorage.getItem('current-user-app');
+				const userStr = localStorage.getItem('app-user-data');
+				const user = JSON.parse(userStr);
+				let avatarUser = user.image || this.emptyAvatar;
 
-				if (value) {
+				if (user) {
 					$('#log-forms-link').html('Sign out').attr('href', '#/signout');
-					this.view.profile('#content', { username: value })
+					this.view.profile('#content', { user: user, avatar: avatarUser })
 				} else {
 					this.utils.notifier.warning(`Please, sign in first!`);
 				}
 
-				return !!value;
+				return !!user;
 			}
 
 			signUpAfter() {
@@ -158,6 +161,7 @@ const userCtrl = (() => {
 			signOut() {
 				localStorage.clear();
 				$('#log-forms-link').html('Sign in / Sign up').attr('href', '#/signin');
+				$('#profile-link').attr('src', this.emptyAvatar);
 				utils.notifier.warning(`Bye, bye!`);
 			}
 

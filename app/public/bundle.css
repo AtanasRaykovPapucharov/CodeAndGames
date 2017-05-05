@@ -586,15 +586,20 @@ ul {
 .btn-pref .btn {
   border-radius: 2px;
   height: 50px;
-  color: midnightblue;
+  color: #191970;
   font-size: 18px;
+}
+
+.btn-pref .btn:focus {
+  color: #FFC44E;
+  font-weight: bold;
 }
 
 .well {
   border: 2px solid silver;
   min-height: 300px;
   background-color: #96cc96;
-  color: midnightblue;
+  color: #191970;
 }
 
 
