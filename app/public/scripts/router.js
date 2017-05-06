@@ -11,7 +11,7 @@ const router = (() => {
 					controller.mainCtrl.getTags();
 				},
 				'/change-password': () => {
-					controller.usertrl.showChangePassword();
+					controller.userCtrl.showChangePassword();
 				},
 				'/forgot-password': () => {
 					controller.userCtrl.showForgotPassword();
@@ -49,6 +49,9 @@ const router = (() => {
 						controller.mainCtrl.showHome;
 						appRouter.navigate('/signin');
 					}
+				},
+				'/upload-image': () => {
+					controller.userCtrl.imageUpload();
 				},
 				'/about': () => {
 					controller.mainCtrl.showAbout;

@@ -99,4 +99,19 @@
     min-height: 300px;
     background-color: #96cc96;
     color: #191970;
+
+    label {
+        color : silver;
+        padding: 2px;
+        border: 1px solid transparent;
+        border-radius: 2px;
+    }
+
+    h4 {
+        display: inline-block;
+    }
+}
+
+#file-upload {
+    background-color: transparent;
 }

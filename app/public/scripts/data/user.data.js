@@ -14,11 +14,40 @@ const userData = (() => {
 			}
 
 			newUser(user) {
-				return this.requester.post('/api/users', user);
+				const options = {
+					data: user
+				}
+
+				return this.requester.post('/api/users', options);
 			}
 
 			loginUser(user) {
-				return this.requester.put('/api/users', user);
+				const options = {
+					data: user
+				}
+
+				return this.requester.put('/api/users', options);
+			}
+
+			//===============================================
+
+			getParams() {
+				return new Promise((resolve, reject) => {
+					$.getJSON('./statics/constants.json', (data) => {
+						resolve(data);
+					});
+				});
+			}
+
+			postImage(url, data) {
+				const options = {
+					headers: {
+						'Content-Type': 'application/x-www-form-urlencoded',
+						'X-Requested-With': 'XMLHttpRequest'
+					},
+					data: data
+				}
+				return this.requester.put('/api/users/image', options);
 			}
 
 			//===============================================

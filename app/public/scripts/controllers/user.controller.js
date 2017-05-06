@@ -4,10 +4,11 @@ const userCtrl = (() => {
 	return (data, view, utils) => {
 		class UserCtrl {
 			constructor(data, view, utils) {
-				this.emptyAvatar = '../../assets/images/staff/empty-avatar.png';
+				this.imageFile = '';
 				this.view = view;
 				this.data = data.userData;
 				this.utils = utils;
+				this.cloudinary = this.utils.cloudinaryStore
 				this.hash = this.utils.hash.hashSha3;
 				this.validator = this.utils.validator;
 				this.loginUser = (() => {
@@ -129,14 +130,52 @@ const userCtrl = (() => {
 				this.view.contactUs('#content-aside', {})
 			}
 
+			imageUpload() {
+				console.log('Save pressed!');
+				$('#span-upload .btn').addClass('hidden-obj');
+				this.cloudinary(this.data, this.imageFile)
+					.then((resp) => {
+						console.log(resp);
+					})
+					.catch((err) => {
+						console.log(err);
+					});
+			}
+
 			profile() {
 				const userStr = localStorage.getItem('app-user-data');
 				const user = JSON.parse(userStr);
-				let avatarUser = user.image || this.emptyAvatar;
 
 				if (user) {
 					$('#log-forms-link').html('Sign out').attr('href', '#/signout');
-					this.view.profile('#content', { user: user, avatar: avatarUser })
+
+					let hasAvatar = false;
+					let emptyAvatar = './assets/images/staff/empty-avatar.png';
+
+					if (user.image !== emptyAvatar) {
+						hasAvatar = true;
+					}
+
+					this.view.profile('#content', { user: user, hasAvatar: hasAvatar })
+						.then(() => {
+							$('#file-upload').on('change', (e) => {
+								e.preventDefault();
+								this.imageFile = document.querySelector('input[type=file]').files[0];
+								let preview = $('#user-avatar');
+								let reader = new FileReader();
+
+								if (this.imageFile) {
+									reader.readAsDataURL(this.imageFile);
+								}
+								reader.onloadend = () => {
+									preview.attr('src', reader.result);
+									$('#span-upload .btn').removeClass('hidden-obj');
+								}
+							})
+						})
+						.catch((err) => {
+							console.log(err);
+						})
 				} else {
 					this.utils.notifier.warning(`Please, sign in first!`);
 				}

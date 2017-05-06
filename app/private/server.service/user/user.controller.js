@@ -21,6 +21,19 @@ module.exports = (mongo, nodemailer, params) => {
 					res.status(409).json({ error: err });
 				});
 		},
+		imageUpdate: (req, res, next) => {
+			const imgObject = req.body;
+
+			userData.updateImage(imgObject.image)
+				.then((image) => {
+					if (image){
+						res.status(200).json({ message: 'success' });
+					}
+				})
+				.catch((err) => {
+					res.status(400).json({ error: err.message });
+				});
+		},
 		newUser: (req, res, next) => {
 			const userObject = req.body;
 

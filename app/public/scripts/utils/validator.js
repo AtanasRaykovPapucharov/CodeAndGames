@@ -66,22 +66,22 @@ const validator = (() => {
 				return true;
 			}
 
-			validateStatusCode(statusCode) {
-				switch (statusCode) {
-					case 100:
-						this.notifier.success('Please, confirm registration on e-mail');
-						break;
-					case 200:
-						this.notifier.success('Welcome!');
-						break;
-					case 400:
-						this.notifier.error('We sorry, there is a server problem');
-						break;
-					case 409:
-						this.notifier.warning('Email already exists');
-						break;
-				}
-			}
+			// validateStatusCode(statusCode) {
+			// 	switch (statusCode) {
+			// 		case 100:
+			// 			this.notifier.success('Please, confirm registration on e-mail');
+			// 			break;
+			// 		case 200:
+			// 			this.notifier.success('Welcome!');
+			// 			break;
+			// 		case 400:
+			// 			this.notifier.error('We sorry, there is a server problem');
+			// 			break;
+			// 		case 409:
+			// 			this.notifier.warning('Email already exists');
+			// 			break;
+			// 	}
+			// }
 		}
 
 		const newValid = new Validator(notifier);

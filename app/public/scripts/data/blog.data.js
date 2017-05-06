@@ -16,7 +16,11 @@ const blogData = (() => {
 			}
 
 			postBlog(blog) {
-				return this.requester.post('/api/blog', blog);
+				const options = {
+					data: blog
+				}
+			
+				return this.requester.post('/api/blog', options);
 			}
 		}
 

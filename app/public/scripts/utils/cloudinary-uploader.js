@@ -2,12 +2,11 @@
 
 const cloudinaryUploader = (() => {
 	return (data, file) => {
-		data
-			.getCloudinaryParams()
+		return data.getParams()
 			.then((params) => {
-				let CLOUDINARY_URL = params.CLOUDINARY_URL;
-				let CLOUDINARY_UPLOAD_PRESET = params.CLOUDINARY_UPLOAD_PRESET;
-
+				console.log(params);
+				let CLOUDINARY_URL = params.cloudinary.CLOUDINARY_URL;
+				let CLOUDINARY_UPLOAD_PRESET = params.cloudinary.CLOUDINARY_UPLOAD_PRESET;
 				let formData = new FormData();
 
 				formData.append('file', file);
@@ -18,20 +17,18 @@ const cloudinaryUploader = (() => {
 				}
 				return dataObj;
 			})
-			.then((dataObj) => {
-				let r = data.postImage(dataObj.CLOUDINARY_URL, dataObj.formData)
-					.then((res) => {
-						console.log(res);
-						return res;
-					});
-				console.log(r);
-				return r;
-			})
-			.catch((err) => {
-				console.log(err);
-			})
+			// .then((dataObj) => {
+			// 	let r = data.postImage(dataObj.CLOUDINARY_URL, dataObj.formData)
+			// 		.then((res) => {
+			// 			return res;
+			// 		});
+			// 	return r;
+			// })
+			// .catch((err) => {
+			// 	console.log(err);
+			// })
 	}
-})()
+})();
 
 export {
 	cloudinaryUploader

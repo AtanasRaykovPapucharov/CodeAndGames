@@ -25,6 +25,18 @@ module.exports = (mongo) => {
 					})
 			});
 		},
+		updateImage: (id, imgObj) => {
+			return new Promise((resolve, reject) => {
+				db['users'].update({ _id: mongojsObj.ObjectId(id) },
+					{ $set: { image: imgObj } },
+					(err, obj) => {
+						if (err) {
+							reject(err);
+						}
+						resolve(obj);
+					})
+			});
+		},
 		updateUser: (id, dataObj) => {
 			let updated = { $push: dataObj }
 

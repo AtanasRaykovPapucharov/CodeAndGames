@@ -16,7 +16,11 @@ const gamesData = (() => {
 			}
 
 			postGame(game) {
-				return this.requester.post('/api/games', game);
+				const options = {
+					data: game
+				}
+				
+				return this.requester.post('/api/games', options);
 			}
 		}
 

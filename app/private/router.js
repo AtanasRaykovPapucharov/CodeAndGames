@@ -10,10 +10,12 @@ module.exports = (express, app, mongo, nodemailer, params) => {
 	apiRouter
 		.post('/users', controllers.userCtrl.newUser)
 		.put('/users', controllers.userCtrl.login)
+		.put('/users/image', controllers.userCtrl.imageUpdate)
 
 		.get('/blog', controllers.blogCtrl.blogs)
 		.get('/blog/:id', controllers.blogCtrl.blogById)
 		.post('/blog', controllers.blogCtrl.newBlog)
+		.put('/blog/comment', controllers.userCtrl.imageUpdate)
 
 		.get('/games', controllers.gameCtrl.games)
 		.get('/games/:id', controllers.gameCtrl.gameById)

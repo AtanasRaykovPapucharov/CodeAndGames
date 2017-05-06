@@ -2,13 +2,12 @@
 
 const ajaxRequester = (() => {
 	class Requester {
-		_sendAjax(method, url, data, options) {
+		_sendAjax(method, url, options) {
 			options = options || {};
-			data = data || {};
 
 			const headers = options.headers || {},
-				contentType = options.contentType || 'application/json',
-				callBack = options.callbackfunc;
+				data = options.data || {},
+				contentType = options.contentType || 'application/json';
 
 			const promise = new Promise((resolve, reject) => {
 				$.ajax(url, {
@@ -28,16 +27,16 @@ const ajaxRequester = (() => {
 			return promise;
 		}
 
-		get(url, data, options) {
-			return this._sendAjax('GET', url, data, options);
+		get(url, options) {
+			return this._sendAjax('GET', url, options);
 		}
 
-		post(url, data, options) {
-			return this._sendAjax('POST', url, data, options);
+		post(url, options) {
+			return this._sendAjax('POST', url, options);
 		}
 
-		put(url, data, options) {
-			return this._sendAjax('PUT', url, data, options);
+		put(url, options) {
+			return this._sendAjax('PUT', url, options);
 		}
 	}
 

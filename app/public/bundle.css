@@ -96,6 +96,10 @@ body .wrapper #footer {
   border: 1px solid silver !important;
 }
 
+.hidden-obj {
+  visibility: hidden;
+}
+
 a:hover {
   text-decoration: none;
 }
@@ -189,6 +193,10 @@ ul.droppable {
   border: 1px solid silver !important;
 }
 
+.hidden-obj {
+  visibility: hidden;
+}
+
 a:hover {
   text-decoration: none;
 }
@@ -267,6 +275,10 @@ ul {
 
 * > hr {
   border: 1px solid silver !important;
+}
+
+.hidden-obj {
+  visibility: hidden;
 }
 
 a:hover {
@@ -600,6 +612,21 @@ ul {
   min-height: 300px;
   background-color: #96cc96;
   color: #191970;
+}
+
+.well label {
+  color: silver;
+  padding: 2px;
+  border: 1px solid transparent;
+  border-radius: 2px;
+}
+
+.well h4 {
+  display: inline-block;
+}
+
+#file-upload {
+  background-color: transparent;
 }
 
 
