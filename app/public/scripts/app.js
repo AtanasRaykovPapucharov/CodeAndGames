@@ -5,7 +5,7 @@ import { notifier as notifier } from './utils/toastr-notifier.js';
 import { validator as validator } from './utils/validator.js';
 import { hashGenerator as hash } from './utils/hash-generator.js';
 import { cookies as cookies } from './utils/cookies.js';
-import { cloudinaryUploader as cloudinary } from './utils/cloudinary-uploader.js';
+import {cloudinaryUploader as cloudinaryUploader } from './utils/cloudinary-uploader.js';
 
 import { ajaxRequester as requester } from './utils/jquery-ajax-requester.js';
 import { data as dataObj } from './data.js';
@@ -28,7 +28,7 @@ const app = {
 			templateLoader: templateLoader,
 			cookies: cookies,
 			localStore: localStore,
-			cloudinaryStore: cloudinary
+			cloudinary: cloudinaryUploader(data)
 		}
 		const ctrl = controller(data, view, utils);
 

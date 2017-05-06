@@ -24,10 +24,10 @@ module.exports = (mongo, nodemailer, params) => {
 		imageUpdate: (req, res, next) => {
 			const imgObject = req.body;
 
-			userData.updateImage(imgObject.image)
+			userData.updateImage(imgObject.id, imgObject.image)
 				.then((image) => {
-					if (image){
-						res.status(200).json({ message: 'success' });
+					if (image) {
+						res.status(200).json({ image: image, message: 'success' });
 					}
 				})
 				.catch((err) => {

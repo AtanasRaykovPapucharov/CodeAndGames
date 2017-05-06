@@ -8,9 +8,9 @@
 				<img id="user-avatar" src={{user.image}} alt="image-avatar">
 			</div>
 			<div class="card-info">
+				<input id="file-upload" type="file" name="uploader" value="Upload"><br>
 				{{#unless hasAvatar}}
 				<span id="span-upload">
-					<input id="file-upload" type="file" name="uploader" value="Upload"><br>
 					<a href="#/upload-image" class="btn btn-danger hidden-obj">SAVE</a>
 				</span>
 				{{/unless}}<br>

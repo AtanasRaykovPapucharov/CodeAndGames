@@ -51,7 +51,10 @@ const router = (() => {
 					}
 				},
 				'/upload-image': () => {
-					controller.userCtrl.imageUpload();
+					controller.userCtrl.imageUpload()
+						.then(() => {
+							appRouter.navigate('/profile');
+						})
 				},
 				'/about': () => {
 					controller.mainCtrl.showAbout;

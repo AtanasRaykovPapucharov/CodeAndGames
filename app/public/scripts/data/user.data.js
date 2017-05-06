@@ -1,5 +1,7 @@
 'use strict';
 
+import { ajaxRequesterAxios as axiosRequester } from '../utils/axios-ajax-requester.js';
+
 const userData = (() => {
 	return (requester) => {
 		class UserData {
@@ -31,9 +33,9 @@ const userData = (() => {
 
 			//===============================================
 
-			getParams() {
+			get params() {
 				return new Promise((resolve, reject) => {
-					$.getJSON('./statics/constants.json', (data) => {
+					$.get('./scripts/data/statics/constants.json', (data) => {
 						resolve(data);
 					});
 				});
@@ -46,6 +48,16 @@ const userData = (() => {
 						'X-Requested-With': 'XMLHttpRequest'
 					},
 					data: data
+				}
+				return axiosRequester.post(url, options);
+			}
+
+			putImage(image) {
+				const options = {
+					data: {
+						image: image,
+						id: JSON.parse(localStorage.getItem('app-user-data'))._id
+					}
 				}
 				return this.requester.put('/api/users/image', options);
 			}
