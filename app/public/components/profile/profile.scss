@@ -77,6 +77,10 @@
     line-height: 20px;
     color: #737373;
     text-overflow: ellipsis;
+
+    #file-upload {
+        margin-left: 58%;
+    }
 }
 .card.hovercard .bottom {
     padding: 0 20px;
@@ -110,8 +114,4 @@
     h4 {
         display: inline-block;
     }
-}
-
-#file-upload {
-    background-color: transparent;
 }

@@ -20,19 +20,19 @@ const toastrNotifier = (() => {
 		}
 
 		successUntitle(msg) {
-			toastr.success(msg, '', { timeOut: 3000 });
+			toastr.success(msg, '', { timeOut: 5000 });
 		}
 
 		errorUntitle(msg) {
-			toastr.error(msg, '', { timeOut: 3000 });
+			toastr.error(msg, '', { timeOut: 5000 });
 		}
 
 		warningUntitle(msg) {
-			toastr.warning(msg, '', { timeOut: 3000 });
+			toastr.warning(msg, '', { timeOut: 5000 });
 		}
 
 		infoUntitle(msg) {
-			toastr.info(msg, '', { timeOut: 3000 });
+			toastr.info(msg, '', { timeOut: 5000 });
 		}
 	}
 

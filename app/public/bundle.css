@@ -590,6 +590,10 @@ ul {
   text-overflow: ellipsis;
 }
 
+.card.hovercard .card-info #file-upload {
+  margin-left: 58%;
+}
+
 .card.hovercard .bottom {
   padding: 0 20px;
   margin-bottom: 17px;
@@ -623,10 +627,6 @@ ul {
 
 .well h4 {
   display: inline-block;
-}
-
-#file-upload {
-  background-color: transparent;
 }
 
 

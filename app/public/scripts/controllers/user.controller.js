@@ -144,7 +144,7 @@ const userCtrl = (() => {
 									localStorage.setItem('app-user-data', JSON.stringify(userData));
 									$('#profile-link').attr('src', imageObj);
 									$('#span-upload .btn').addClass('hidden-obj');
-									utils.notifier.success('Avatar image added successfully!');
+									utils.notifier.success('Image avatar saved!');
 								}
 							})
 							.catch((err) => {
@@ -163,18 +163,10 @@ const userCtrl = (() => {
 				if (user) {
 					$('#log-forms-link').html('Sign out').attr('href', '#/signout');
 
-					let hasAvatar = false;
-					let emptyAvatar = './assets/images/staff/empty-avatar.png';
-
-					if (user.image !== emptyAvatar) {
-						hasAvatar = true;
-					}
-
-					this.view.profile('#content', { user: user, hasAvatar: hasAvatar })
+					this.view.profile('#content', { user: user })
 						.then(() => {
 							$('#file-upload').on('change', (e) => {
 								e.preventDefault();
-								hasAvatar = false;
 								this.imageFile = document.querySelector('input[type=file]').files[0];
 								let preview = $('#user-avatar');
 								let reader = new FileReader();
@@ -185,8 +177,6 @@ const userCtrl = (() => {
 								reader.onloadend = () => {
 									preview.attr('src', reader.result);
 									$('#span-upload .btn').removeClass('hidden-obj');
-
-									//TODO: this.imageFile = '';
 								}
 							})
 						})
@@ -218,7 +208,7 @@ const userCtrl = (() => {
 				localStorage.clear();
 				$('#log-forms-link').html('Sign in / Sign up').attr('href', '#/signin');
 				$('#profile-link').attr('src', this.emptyAvatar);
-				utils.notifier.warning(`Bye, bye!`);
+				utils.notifier.infoUntitle(`Bye, bye!`);
 			}
 
 			signIn() {

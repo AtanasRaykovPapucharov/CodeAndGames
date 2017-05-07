@@ -8,7 +8,7 @@ module.exports = {
 		nodemailerText: constantz.appTextEmail,
 		nodemailerHtml:
 		`<div>
-			<h4>Click and confirm that you want to create an account on Games&Code. <br> This link will expire in fifteen minutes and can only be used once.</h4>
+			<h4>Click and confirm that you want to create an account on Games&Code.</h4> <br> <h5>This link will expire in fifteen minutes.</h5>
 			<a href="`+ 'http://localhost:3333/#/signup-after' + `">Create account on Games&Code</a>
 		</div>`,
 		transporterConnectionString: constantz.transporterConnection,
