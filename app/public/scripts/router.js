@@ -10,12 +10,55 @@ const router = (() => {
 					controller.mainCtrl.showHome;
 					controller.mainCtrl.getTags();
 				},
+				'/about': () => {
+					controller.mainCtrl.showAbout;
+					controller.mainCtrl.getTags();
+				},
+
+				//=====================================================//
+
+				'/profile': () => {
+					let isLogged = controller.profileCtrl.profile();
+					if (!isLogged) {
+						controller.mainCtrl.showHome;
+						appRouter.navigate('/signin');
+					}
+				},
+				'/upload-image': () => {
+					controller.profileCtrl.imageUpload()
+						.then(() => {
+							appRouter.navigate('/home');
+							//appRouter.navigate('/profile');
+						})
+				},
+
+				//=====================================================//
+
+				'/contact-us': () => {
+					controller.userCtrl.showContactUs();
+				},
 				'/change-password': () => {
 					controller.userCtrl.showChangePassword();
 				},
 				'/forgot-password': () => {
 					controller.userCtrl.showForgotPassword();
 				},
+
+				'/contact-us-btn': () => {
+					controller.userCtrl.contactUs();
+					appRouter.navigate('/home');
+				},
+				'/change-password-btn': () => {
+					controller.userCtrl.changePassword();
+					appRouter.navigate('/signout');
+				},
+				'/forgot-password-btn': () => {
+					controller.userCtrl.forgotPassword();
+					appRouter.navigate('/signin');
+				},
+
+				//=====================================================//
+
 				'/signin': () => {
 					controller.userCtrl.showSignIn();
 				},
@@ -43,24 +86,9 @@ const router = (() => {
 						appRouter.navigate('/profile');
 					}
 				},
-				'/profile': () => {
-					let isLogged = controller.userCtrl.profile();
-					if (!isLogged) {
-						controller.mainCtrl.showHome;
-						appRouter.navigate('/signin');
-					}
-				},
-				'/upload-image': () => {
-					controller.userCtrl.imageUpload()
-						.then(() => {
-							appRouter.navigate('/home');
-							//appRouter.navigate('/profile');
-						})
-				},
-				'/about': () => {
-					controller.mainCtrl.showAbout;
-					controller.mainCtrl.getTags();
-				},
+
+				//=====================================================//
+
 				'/blog': () => {
 					controller.blogCtrl.blogs;
 					controller.mainCtrl.getTags();
@@ -79,6 +107,9 @@ const router = (() => {
 						appRouter.navigate('/signin');
 					}
 				},
+
+				//============================================//
+
 				'/post/blog': () => {
 					controller.blogCtrl.newBlog();
 					appRouter.navigate('/blog');
@@ -105,13 +136,10 @@ const router = (() => {
 					controller.gamesCtrl.newGame();
 					appRouter.navigate('/games');
 				},
-				'/tournaments': () => {
-					controller.mainCtrl.showTournaments;
-					controller.mainCtrl.getTags();
-				},
-				'/contact-us': () => {
-					controller.userCtrl.contactUs();
-				},
+				// '/tournaments': () => {
+				// 	controller.mainCtrl.showTournaments;
+				// 	controller.mainCtrl.getTags();
+				// },
 				'/': () => {
 					appRouter.navigate('/home');
 				},

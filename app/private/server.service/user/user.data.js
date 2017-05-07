@@ -37,6 +37,18 @@ module.exports = (mongo) => {
 					})
 			});
 		},
+		updatePassword: (id, pass) => {
+			return new Promise((resolve, reject) => {
+				db['users'].update({ _id: mongojsObj.ObjectId(id) },
+					{ $set: { password: pass } },
+					(err, obj) => {
+						if (err) {
+							reject(err);
+						}
+						resolve(obj);
+					})
+			});
+		},
 		updateUser: (id, dataObj) => {
 			let updated = { $push: dataObj }
 

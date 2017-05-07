@@ -1,28 +1,29 @@
 <section class="changepass-block">
 	<div class="changepass-container">
+		<h2>Change password</h2><hr>
 		<form class="changepass-form">
 			<fieldset>
 				<div class="input-group">
 					<div class="label-holder">
 						<label for="user-email">E-mail:</label>
 					</div>
-					<input class="form-control full-width" type="email" size="60">
+					<input id="change-pass-email" class="form-control full-width" type="email" size="60">
 				</div>
 				<div class="input-group">
 					<div class="label-holder">
 						<label for="user-password">Old password:</label>
 					</div>
-					<input class="form-control full-width" type="password" size="60">
+					<input id="change-pass-old" class="form-control full-width" type="password" size="60">
 				</div>
 				<div class="input-group">
 					<div class="label-holder">
 						<label for="user-password">New password:</label>
 					</div>
-					<input class="form-control full-width" type="password" size="60">
+					<input id="change-pass-new" class="form-control full-width" type="password" size="60">
 				</div><br>
-				<a type="submit" class="btn btn-success full-width"><h5>Send</h5></a>
+				<a id="change-password-btn" href="#/change-password-btn" class="btn btn-success full-width"><h5>Send</h5></a>
 			</fieldset>
-		</form>
+		</form><hr>
 
 		<div class="log-bottom"><br>
 			<a href="#/forgot-password" class="btn btn-info full-width"><h5>Forgot your password?</h5></a><br><br>

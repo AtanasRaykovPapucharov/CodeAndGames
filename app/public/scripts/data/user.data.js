@@ -31,6 +31,14 @@ const userData = (() => {
 				return this.requester.put('/api/users', options);
 			}
 
+			changeUserPassword(user) {
+				const options = {
+					data: user
+				}
+
+				return this.requester.put('/api/users/change-password', options);
+			}
+
 			//===============================================
 
 			get params() {
@@ -40,6 +48,11 @@ const userData = (() => {
 					});
 				});
 			}
+			getTags() {
+				return this.requester.get('/api/tags');
+			}
+
+			//===============================================
 
 			postImage(url, data) {
 				const options = {
@@ -60,12 +73,6 @@ const userData = (() => {
 					}
 				}
 				return this.requester.put('/api/users/image', options);
-			}
-
-			//===============================================
-
-			getTags() {
-				return this.requester.get('/api/tags');
 			}
 		}
 

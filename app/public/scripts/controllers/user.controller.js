@@ -12,6 +12,53 @@ const userCtrl = (() => {
 				this.cloudinary = this.utils.cloudinary;
 				this.hash = this.utils.hash.hashSha3;
 				this.validator = this.utils.validator;
+				this.changePass = (() => {
+					return () => {
+						let email = $('#change-pass-email').val();
+						if (!this.validator.isValidEmail(email)) {
+							$('#change-pass-email').val('');
+							return;
+						}
+
+						let passwordOld = $('#change-pass-old').val();
+						if (!this.validator.isValidPassword(passwordOld)) {
+							$('#change-pass-old').val('');
+							return;
+						}
+
+						let passwordNew = $('#change-pass-new').val();
+						if (!this.validator.isValidPassword(passwordNew)) {
+							$('#change-pass-new').val('');
+							return;
+						}
+
+						$('#change-pass-email').val('');
+						$('#change-pass-old').val('');
+						$('#change-pass-new').val('');
+
+						let user = {
+							email: email,
+							passwordOld: this.hash(passwordOld),
+							passwordNew: this.hash(passwordNew)
+						}
+
+						return this.data.changeUserPassword(user)
+							.then((resp) => {
+								if (resp) {
+									// localStorage.clear();
+									// $('#log-forms-link').html('Sign in / Sign up').attr('href', '#/signin');
+									// $('#profile-link').attr('src', this.emptyAvatar);
+									utils.notifier.success(`Password changed successfully!`);
+								}
+
+								return resp;
+							})
+							.catch((err) => {
+								utils.notifier.error(`No such a user!`);
+								return false;
+							})
+					}
+				})();
 				this.loginUser = (() => {
 					return () => {
 						let email = $('#signin-email').val();
@@ -115,79 +162,26 @@ const userCtrl = (() => {
 				return this.view.signin(route, {})
 			}
 
+			signIn() {
+				this.loginUser();
+
+				$('#signin-btn').on('click', (event) => {
+					event.preventDefault();
+					this.loginUser();
+				})
+			}
+
 			showSignUp() {
 				return this.view.signup('#content-aside', {})
 			}
 
-			showChangePassword() {
-				return this.view.changePass('#content-aside', {})
-			}
+			signUp() {
+				this.registrateUser();
 
-			showForgotPassword() {
-				return this.view.forgotPass('#content-aside', {})
-			}
-
-			contactUs() {
-				this.view.contactUs('#content-aside', {})
-			}
-
-			imageUpload() {
-				return this.cloudinary.uploadImage(this.imageFile)
-					.then((resp) => {
-						let imageObj = resp.data.secure_url;
-
-						this.data.putImage(imageObj)
-							.then((resp) => {
-								if (resp) {
-									let userData = JSON.parse(localStorage.getItem('app-user-data'));
-									userData.image = imageObj;
-									localStorage.setItem('app-user-data', JSON.stringify(userData));
-									$('#profile-link').attr('src', imageObj);
-									$('#span-upload .btn').addClass('hidden-obj');
-									utils.notifier.success('Image avatar saved!');
-								}
-							})
-							.catch((err) => {
-								console.log(err);
-							});
-					})
-					.catch((err) => {
-						console.log(err);
-					});
-			}
-
-			profile() {
-				const userStr = localStorage.getItem('app-user-data');
-				const user = JSON.parse(userStr);
-
-				if (user) {
-					$('#log-forms-link').html('Sign out').attr('href', '#/signout');
-
-					this.view.profile('#content', { user: user })
-						.then(() => {
-							$('#file-upload').on('change', (e) => {
-								e.preventDefault();
-								this.imageFile = document.querySelector('input[type=file]').files[0];
-								let preview = $('#user-avatar');
-								let reader = new FileReader();
-
-								if (this.imageFile) {
-									reader.readAsDataURL(this.imageFile);
-								}
-								reader.onloadend = () => {
-									preview.attr('src', reader.result);
-									$('#span-upload .btn').removeClass('hidden-obj');
-								}
-							})
-						})
-						.catch((err) => {
-							console.log(err);
-						})
-				} else {
-					this.utils.notifier.warning(`Please, sign in first!`);
-				}
-
-				return !!user;
+				$('#signup-btn').on('click', (event) => {
+					event.preventDefault();
+					this.registrateUser();
+				})
 			}
 
 			signUpAfter() {
@@ -208,26 +202,38 @@ const userCtrl = (() => {
 				localStorage.clear();
 				$('#log-forms-link').html('Sign in / Sign up').attr('href', '#/signin');
 				$('#profile-link').attr('src', this.emptyAvatar);
-				utils.notifier.infoUntitle(`Bye, bye!`);
+				//utils.notifier.infoUntitle(`Bye, bye!`);
 			}
 
-			signIn() {
-				this.loginUser();
+			showChangePassword() {
+				return this.view.changePass('#content-aside', {})
+			}
 
-				$('#signin-btn').on('click', (event) => {
+			showForgotPassword() {
+				return this.view.forgotPass('#content-aside', {})
+			}
+
+			showContactUs() {
+				return this.view.contactUs('#content-aside', {})
+			}
+
+			changePassword() {
+				this.changePass();
+
+				$('#change-password-btn').on('click', (event) => {
 					event.preventDefault();
-					this.loginUser();
+					this.changePass();
 				})
 			}
 
-			signUp() {
-				this.registrateUser();
+			forgotPassword() {
 
-				$('#signup-btn').on('click', (event) => {
-					event.preventDefault();
-					this.registrateUser();
-				})
 			}
+
+			contactUs() {
+
+			}
+
 		}
 
 		let newCtrl = new UserCtrl(data, view, utils);

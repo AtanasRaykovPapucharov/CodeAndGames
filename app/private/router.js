@@ -11,6 +11,7 @@ module.exports = (express, app, mongo, nodemailer, params) => {
 		.post('/users', controllers.userCtrl.newUser)
 		.put('/users', controllers.userCtrl.login)
 		.put('/users/image', controllers.userCtrl.imageUpdate)
+		.put('/users/change-password', controllers.userCtrl.changePassword)
 
 		.get('/blog', controllers.blogCtrl.blogs)
 		.get('/blog/:id', controllers.blogCtrl.blogById)

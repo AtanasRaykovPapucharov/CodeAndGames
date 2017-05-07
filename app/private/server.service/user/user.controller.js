@@ -2,10 +2,30 @@ module.exports = (mongo, nodemailer, params) => {
 	const userData = require('./user.data')(mongo);
 
 	return {
+		changePassword: (req, res, next) => {
+			userData.getUserByEmail(req.body.email)
+				.then((user) => {
+					if (user[0].password === req.body.passwordOld) {
+						return userData.updatePassword(user[0]._id, req.body.passwordNew)
+							.then((user) => {
+								res.status(200).json(user);
+							})
+							.catch((err) => {
+								res.status(400).json({ error: err });
+							})
+					}
+				})
+				.catch((err) => {
+					res.status(409).json({ error: err });
+				});
+		},
 		users: (req, res, next) => {
 			userData.getUsers()
 				.then((users) => {
 					res.status(200).json(users);
+				})
+				.catch((err) => {
+					res.status(409).json({ error: err });
 				});
 		},
 		login: (req, res, next) => {
