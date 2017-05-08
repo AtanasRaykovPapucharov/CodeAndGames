@@ -9,6 +9,14 @@ const userData = (() => {
 				this.requester = requester;
 			}
 
+			get params() {
+				return new Promise((resolve, reject) => {
+					$.get('./scripts/data/statics/constants.json', (data) => {
+						resolve(data);
+					});
+				});
+			}
+
 			//===============================================
 
 			getUsers() {
@@ -39,15 +47,24 @@ const userData = (() => {
 				return this.requester.put('/api/users/change-password', options);
 			}
 
+			forgotPassword(user) {
+				const options = {
+					data: user
+				}
+
+				return this.requester.put('/api/users/forgot-password', options);
+			}
+
+			contactUs(msg) {
+				const options = {
+					data: msg
+				}
+
+				return this.requester.post('/api/users/contact-us', options);
+			}
+
 			//===============================================
 
-			get params() {
-				return new Promise((resolve, reject) => {
-					$.get('./scripts/data/statics/constants.json', (data) => {
-						resolve(data);
-					});
-				});
-			}
 			getTags() {
 				return this.requester.get('/api/tags');
 			}

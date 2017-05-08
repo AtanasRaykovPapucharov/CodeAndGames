@@ -12,6 +12,71 @@ const userCtrl = (() => {
 				this.cloudinary = this.utils.cloudinary;
 				this.hash = this.utils.hash.hashSha3;
 				this.validator = this.utils.validator;
+				this.contactUsLog = (() => {
+					return () => {
+						let email = $('#contact-us-email').val();
+						if (!this.validator.isValidEmail(email)) {
+							$('#contact-us-email').val('');
+							return;
+						}
+
+						let subject = $('#contact-us-subject').val();
+						let content = $('#contact-us-msg').val();
+
+						if (!subject || !content) {
+							return;
+						}
+
+						let msg = {
+							email: email,
+							subject: subject,
+							content: content
+						}
+
+						$('#contact-us-email').val('');
+						$('#contact-us-subject').val('');
+						$('#contact-us-msg').val('');
+
+						this.data.contactUs(msg)
+							.then((resp) => {
+								utils.notifier.success('Message sent!');
+								return true;
+							})
+							.catch((err) => {
+								console.log('Server error: ' + err);
+							})
+					}
+				})();
+				this.forgotPass = (() => {
+					return () => {
+						let email = $('#forgot-pass-email').val();
+						if (!this.validator.isValidEmail(email)) {
+							$('#forgot-pass-email').val('');
+							return;
+						}
+
+						$('#forgot-pass-email').val('');
+
+						let user = {
+							email: email
+						}
+
+						return this.data.forgotPassword(user)
+							.then((resp) => {
+								if (resp) {
+									utils.notifier.success('New password sent to your e-mail address!');
+								}
+
+								return resp;
+							})
+							.catch((err) => {
+								utils.notifier.error('No such a user!');
+								return false;
+							})
+
+
+					}
+				})();
 				this.changePass = (() => {
 					return () => {
 						let email = $('#change-pass-email').val();
@@ -201,8 +266,11 @@ const userCtrl = (() => {
 			signOut() {
 				localStorage.clear();
 				$('#log-forms-link').html('Sign in / Sign up').attr('href', '#/signin');
-				$('#profile-link').attr('src', this.emptyAvatar);
-				//utils.notifier.infoUntitle(`Bye, bye!`);
+				if ($('#profile-link').attr('src') !== this.emptyAvatar) {
+					$('#profile-link').attr('src', this.emptyAvatar);
+				} else {
+					utils.notifier.infoUntitle('Bye, bye!');
+				}
 			}
 
 			showChangePassword() {
@@ -227,11 +295,21 @@ const userCtrl = (() => {
 			}
 
 			forgotPassword() {
+				this.forgotPass();
 
+				$('#forgot-password-btn').on('click', (event) => {
+					event.preventDefault();
+					this.forgotPass();
+				})
 			}
 
 			contactUs() {
+				this.contactUsLog();
 
+				$('#contact-us-btn').on('click', (event) => {
+					event.preventDefault();
+					this.contactUsLog();
+				})
 			}
 
 		}

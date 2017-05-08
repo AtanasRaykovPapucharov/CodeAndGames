@@ -54,7 +54,7 @@ const router = (() => {
 				},
 				'/forgot-password-btn': () => {
 					controller.userCtrl.forgotPassword();
-					appRouter.navigate('/signin');
+					appRouter.navigate('/signout');
 				},
 
 				//=====================================================//
@@ -136,10 +136,6 @@ const router = (() => {
 					controller.gamesCtrl.newGame();
 					appRouter.navigate('/games');
 				},
-				// '/tournaments': () => {
-				// 	controller.mainCtrl.showTournaments;
-				// 	controller.mainCtrl.getTags();
-				// },
 				'/': () => {
 					appRouter.navigate('/home');
 				},

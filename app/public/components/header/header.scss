@@ -2,7 +2,7 @@
 $header-colors: silver;
 
 #navbar-links {
-	background-color: #001020;
+	background-color: #00102C;
 }
 
 #profile-link {
@@ -13,29 +13,29 @@ $header-colors: silver;
 }
 
 #profile-link:hover {
-	border-color: darkorange;
+	border-color: #FFFBD0;
 }
 
 #profile-a:focus {
-	border-color: darkorange;
+	border-color: #FFFBD0;
 }
 
 .wrapper #header {
 	nav.navbar.nav-header {
 		padding-top: 10px;
-		background-color: #001020;
+		background-color: #00102C;
 		background-image: url('../../assets/images/staff/bg.jpg');
 		background-repeat: no-repeat;
 		background-size: 300%;
-		border-left: 15px solid darkorange;
-		border-right: 15px solid darkorange;
+		border-left: 15px solid $header-colors;
+		border-right: 15px solid $header-colors;
 		border-radius: 0;
 
 		.nav-colapse-btn {
-			background-color: darkolivegreen;
+			background-color: #00102C;
 			margin-left: -11px;
 			.icon-bar {
-				background-color: darkorange;
+				background-color: $header-colors;
 			}
 		}
 
@@ -46,7 +46,7 @@ $header-colors: silver;
 			font-family: 'OpenSans', serif;
 			font-weight: bold;
 			font-size: 19px;
-			color: darkorange;
+			color: $header-colors;
 			background-color: black;
 
 			&:hover {
@@ -61,8 +61,8 @@ $header-colors: silver;
 		#brand {
 			margin-left: 5px;
 			font-family: 'Zhafira', serif;
-			color: darkolivegreen;
-			text-shadow: -1px 1px darkorange;
+			color: #085691;
+			text-shadow: -1px 1px $header-colors;
 			font-size: 42px;
 
 			&:hover {
@@ -86,7 +86,7 @@ $header-colors: silver;
 
 		.menu-dropdown {
 			background-color: #001020;
-			border: 2px solid darkorange;
+			border: 2px solid $header-colors;
 			border-radius: 5px;
 			margin-left: -3em;
 			max-width: 22%;

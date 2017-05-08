@@ -1,6 +1,6 @@
 /*==========  Mobile First Method  ==========*/
 
-$colors-main: darkorange;
+$colors-main: silver;
 
 #loading {
 	margin-left: 45%;
@@ -9,7 +9,7 @@ $colors-main: darkorange;
 
 body {
 	background-color: $colors-main;
-	color: silver;
+	color: #FFFBD0;
 	font-size: 16px;
 	text-align: justify;
 
@@ -22,8 +22,7 @@ body {
 
 			#content, #content-aside {
 				min-height: 600px;
-				background-color: #4F6228;
-				opacity: 0.8;
+				background-color: #00102C;
 				padding: 5px;
 				padding-right: 19px;
 				padding-left: 19px;

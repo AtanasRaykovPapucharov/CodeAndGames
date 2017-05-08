@@ -6,8 +6,8 @@
 }
 
 body {
-  background-color: darkorange;
-  color: silver;
+  background-color: silver;
+  color: #FFFBD0;
   font-size: 16px;
   text-align: justify;
 }
@@ -19,8 +19,7 @@ body .wrapper .middle {
 body .wrapper .middle #content,
 body .wrapper .middle #content-aside {
   min-height: 600px;
-  background-color: #4F6228;
-  opacity: 0.8;
+  background-color: #00102C;
   padding: 5px;
   padding-right: 19px;
   padding-left: 19px;
@@ -28,20 +27,20 @@ body .wrapper .middle #content-aside {
 }
 
 body .wrapper .middle #content {
-  border-left: 15px solid darkorange;
-  border-right: 15px solid darkorange;
+  border-left: 15px solid silver;
+  border-right: 15px solid silver;
 }
 
 body .wrapper .middle #content-aside {
-  border-left: 15px solid darkorange;
-  border-right: 15px solid darkorange;
-  border-top: 5px solid darkorange;
+  border-left: 15px solid silver;
+  border-right: 15px solid silver;
+  border-top: 5px solid silver;
 }
 
 body .wrapper #footer {
   background-color: transparent;
-  border-top: 15px solid darkorange;
-  color: darkorange;
+  border-top: 15px solid silver;
+  color: silver;
   margin-left: -1px;
   min-height: 150px;
   min-width: 100.3%;
@@ -61,11 +60,11 @@ body .wrapper #footer {
 
 @media only screen and (min-width: 768px) {
   body .wrapper .middle #content {
-    border-right: 5px solid darkorange;
+    border-right: 5px solid silver;
   }
 
   body .wrapper .middle #content-aside {
-    border-left: 5px solid darkorange;
+    border-left: 5px solid silver;
     border-top: 0;
   }
 
@@ -93,7 +92,7 @@ body .wrapper #footer {
 }
 
 * > hr {
-  border: 1px solid silver !important;
+  border: 1px solid #FFFBD0 !important;
 }
 
 .hidden-obj {
@@ -105,7 +104,7 @@ a:hover {
 }
 
 * > input {
-  border: 1px 2px solid silver !important;
+  border: 2px solid darkorange !important;
   border-radius: 5px !important;
   background-color: #96cc96 !important;
 }
@@ -116,11 +115,11 @@ ul {
 
 .btn {
   height: 36px;
-  border: 2px solid silver;
+  border: 2px solid darkorange;
 }
 
 .btn h5 {
-  color: darkorange;
+  color: #FFFBD0;
   font-family: 'OpenSans', serif;
   font-weight: bold;
   font-size: 16px;
@@ -167,13 +166,16 @@ ul.droppable {
   width: 62%;
 }
 .aside a h6 {
-  color: darkorange;
+  color: #FFFBD0;
   text-shadow: -1px 1px #000;
   font-size: 16px;
   margin-top: 0;
 }
 
-
+#contact-us-msg-container {
+  border: 1px solid darkorange;
+  border-radius: 5px;
+}
 @font-face {
   font-family: 'Zhafira';
   src: url("components/assets/fonts/MJF Zhafira Demo.ttf");
@@ -190,7 +192,7 @@ ul.droppable {
 }
 
 * > hr {
-  border: 1px solid silver !important;
+  border: 1px solid #FFFBD0 !important;
 }
 
 .hidden-obj {
@@ -202,7 +204,7 @@ a:hover {
 }
 
 * > input {
-  border: 1px 2px solid silver !important;
+  border: 2px solid darkorange !important;
   border-radius: 5px !important;
   background-color: #96cc96 !important;
 }
@@ -213,11 +215,11 @@ ul {
 
 .btn {
   height: 36px;
-  border: 2px solid silver;
+  border: 2px solid darkorange;
 }
 
 .btn h5 {
-  color: darkorange;
+  color: #FFFBD0;
   font-family: 'OpenSans', serif;
   font-weight: bold;
   font-size: 16px;
@@ -274,7 +276,7 @@ ul {
 }
 
 * > hr {
-  border: 1px solid silver !important;
+  border: 1px solid #FFFBD0 !important;
 }
 
 .hidden-obj {
@@ -286,7 +288,7 @@ a:hover {
 }
 
 * > input {
-  border: 1px 2px solid silver !important;
+  border: 2px solid darkorange !important;
   border-radius: 5px !important;
   background-color: #96cc96 !important;
 }
@@ -297,11 +299,11 @@ ul {
 
 .btn {
   height: 36px;
-  border: 2px solid silver;
+  border: 2px solid darkorange;
 }
 
 .btn h5 {
-  color: darkorange;
+  color: #FFFBD0;
   font-family: 'OpenSans', serif;
   font-weight: bold;
   font-size: 16px;
@@ -314,7 +316,7 @@ ul {
 }
 
 #navbar-links {
-  background-color: #001020;
+  background-color: #00102C;
 }
 
 #profile-link {
@@ -325,31 +327,31 @@ ul {
 }
 
 #profile-link:hover {
-  border-color: darkorange;
+  border-color: #FFFBD0;
 }
 
 #profile-a:focus {
-  border-color: darkorange;
+  border-color: #FFFBD0;
 }
 
 .wrapper #header nav.navbar.nav-header {
   padding-top: 10px;
-  background-color: #001020;
+  background-color: #00102C;
   background-image: url("assets/images/staff/bg.jpg");
   background-repeat: no-repeat;
   background-size: 300%;
-  border-left: 15px solid darkorange;
-  border-right: 15px solid darkorange;
+  border-left: 15px solid silver;
+  border-right: 15px solid silver;
   border-radius: 0;
 }
 
 .wrapper #header nav.navbar.nav-header .nav-colapse-btn {
-  background-color: darkolivegreen;
+  background-color: #00102C;
   margin-left: -11px;
 }
 
 .wrapper #header nav.navbar.nav-header .nav-colapse-btn .icon-bar {
-  background-color: darkorange;
+  background-color: silver;
 }
 
 .wrapper #header nav.navbar.nav-header .main-link {
@@ -359,7 +361,7 @@ ul {
   font-family: 'OpenSans', serif;
   font-weight: bold;
   font-size: 19px;
-  color: darkorange;
+  color: silver;
   background-color: black;
 }
 
@@ -374,8 +376,8 @@ ul {
 .wrapper #header nav.navbar.nav-header #brand {
   margin-left: 5px;
   font-family: 'Zhafira', serif;
-  color: darkolivegreen;
-  text-shadow: -1px 1px darkorange;
+  color: #085691;
+  text-shadow: -1px 1px silver;
   font-size: 42px;
 }
 
@@ -400,7 +402,7 @@ ul {
 
 .wrapper #header nav.navbar.nav-header .menu-dropdown {
   background-color: #001020;
-  border: 2px solid darkorange;
+  border: 2px solid silver;
   border-radius: 5px;
   margin-left: -3em;
   max-width: 22%;
@@ -592,6 +594,7 @@ ul {
 
 .card.hovercard .card-info #file-upload {
   margin-left: 58%;
+  margin-top: 15px;
 }
 
 .card.hovercard .bottom {
