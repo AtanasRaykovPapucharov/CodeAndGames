@@ -6,7 +6,7 @@
 }
 
 body {
-  background-color: silver;
+  background-color: #FFFBD0;
   color: #FFFBD0;
   font-size: 16px;
   text-align: justify;
@@ -27,20 +27,20 @@ body .wrapper .middle #content-aside {
 }
 
 body .wrapper .middle #content {
-  border-left: 15px solid silver;
-  border-right: 15px solid silver;
+  border-left: 15px solid #FFFBD0;
+  border-right: 15px solid #FFFBD0;
 }
 
 body .wrapper .middle #content-aside {
-  border-left: 15px solid silver;
-  border-right: 15px solid silver;
-  border-top: 5px solid silver;
+  border-left: 15px solid #FFFBD0;
+  border-right: 15px solid #FFFBD0;
+  border-top: 5px solid #FFFBD0;
 }
 
 body .wrapper #footer {
   background-color: transparent;
-  border-top: 15px solid silver;
-  color: silver;
+  border-top: 15px solid #FFFBD0;
+  color: #FFFBD0;
   margin-left: -1px;
   min-height: 150px;
   min-width: 100.3%;
@@ -60,11 +60,11 @@ body .wrapper #footer {
 
 @media only screen and (min-width: 768px) {
   body .wrapper .middle #content {
-    border-right: 5px solid silver;
+    border-right: 5px solid #FFFBD0;
   }
 
   body .wrapper .middle #content-aside {
-    border-left: 5px solid silver;
+    border-left: 5px solid #FFFBD0;
     border-top: 0;
   }
 
@@ -134,6 +134,10 @@ ul {
   color: #FFC44E;
   font-weight: bold;
   font-size: 18px;
+}
+
+#about-container p p ul li.team-members {
+  margin: 3px;
 }
 form input {
   color: midnightblue;
@@ -322,16 +326,16 @@ ul {
 #profile-link {
   margin-top: -2px;
   margin-left: 35px;
-  border: 3px solid silver;
+  border: 3px solid #FFFBD0;
   border-radius: 25%;
 }
 
 #profile-link:hover {
-  border-color: #FFFBD0;
+  border-color: silver;
 }
 
 #profile-a:focus {
-  border-color: #FFFBD0;
+  border-color: silver;
 }
 
 .wrapper #header nav.navbar.nav-header {
@@ -340,8 +344,8 @@ ul {
   background-image: url("assets/images/staff/bg.jpg");
   background-repeat: no-repeat;
   background-size: 300%;
-  border-left: 15px solid silver;
-  border-right: 15px solid silver;
+  border-left: 15px solid #FFFBD0;
+  border-right: 15px solid #FFFBD0;
   border-radius: 0;
 }
 
@@ -351,7 +355,7 @@ ul {
 }
 
 .wrapper #header nav.navbar.nav-header .nav-colapse-btn .icon-bar {
-  background-color: silver;
+  background-color: #FFFBD0;
 }
 
 .wrapper #header nav.navbar.nav-header .main-link {
@@ -361,7 +365,7 @@ ul {
   font-family: 'OpenSans', serif;
   font-weight: bold;
   font-size: 19px;
-  color: silver;
+  color: #FFFBD0;
   background-color: black;
 }
 
@@ -377,7 +381,7 @@ ul {
   margin-left: 5px;
   font-family: 'Zhafira', serif;
   color: #085691;
-  text-shadow: -1px 1px silver;
+  text-shadow: -1px 1px #FFFBD0;
   font-size: 42px;
 }
 
@@ -402,7 +406,7 @@ ul {
 
 .wrapper #header nav.navbar.nav-header .menu-dropdown {
   background-color: #001020;
-  border: 2px solid silver;
+  border: 2px solid #FFFBD0;
   border-radius: 5px;
   margin-left: -3em;
   max-width: 22%;

@@ -1,5 +1,5 @@
 @import '../global.scss';
-$header-colors: silver;
+$header-colors: #FFFBD0;
 
 #navbar-links {
 	background-color: #00102C;
@@ -13,11 +13,11 @@ $header-colors: silver;
 }
 
 #profile-link:hover {
-	border-color: #FFFBD0;
+	border-color: silver;
 }
 
 #profile-a:focus {
-	border-color: #FFFBD0;
+	border-color: silver;
 }
 
 .wrapper #header {

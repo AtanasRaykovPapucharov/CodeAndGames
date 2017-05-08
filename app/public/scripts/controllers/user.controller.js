@@ -58,7 +58,8 @@ const userCtrl = (() => {
 						$('#forgot-pass-email').val('');
 
 						let user = {
-							email: email
+							email: email,
+							pass: this.hash(email)
 						}
 
 						return this.data.forgotPassword(user)
@@ -91,6 +92,11 @@ const userCtrl = (() => {
 							return;
 						}
 
+						let passOld = (this.hash(email) + 'WA');
+						if (passOld !== passwordOld) {
+							passOld = this.hash(passwordOld);
+						}
+
 						let passwordNew = $('#change-pass-new').val();
 						if (!this.validator.isValidPassword(passwordNew)) {
 							$('#change-pass-new').val('');
@@ -101,18 +107,16 @@ const userCtrl = (() => {
 						$('#change-pass-old').val('');
 						$('#change-pass-new').val('');
 
+
 						let user = {
 							email: email,
-							passwordOld: this.hash(passwordOld),
+							passwordOld: passOld,
 							passwordNew: this.hash(passwordNew)
 						}
 
 						return this.data.changeUserPassword(user)
 							.then((resp) => {
 								if (resp) {
-									// localStorage.clear();
-									// $('#log-forms-link').html('Sign in / Sign up').attr('href', '#/signin');
-									// $('#profile-link').attr('src', this.emptyAvatar);
 									utils.notifier.success(`Password changed successfully!`);
 								}
 
@@ -141,9 +145,14 @@ const userCtrl = (() => {
 						$('#signin-email').val('');
 						$('#signin-password').val('');
 
+						let passwordNew = (this.hash(email) + 'WA');
+						if (password !== passwordNew) {
+							passwordNew = this.hash(password);
+						}
+
 						let user = {
 							email: email,
-							password: this.hash(password)
+							password: passwordNew
 						}
 
 						return this.data.loginUser(user)

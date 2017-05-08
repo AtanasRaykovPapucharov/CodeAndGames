@@ -24,10 +24,30 @@ module.exports = (mongo, nodemailer, params) => {
 		forgotPassword: (req, res, next) => {
 			userData.getUserByEmail(req.body.email)
 				.then((user) => {
-					if (user[0].password === req.body.passwordOld) {
-						return userData.updatePassword(user[0]._id, req.body.passwordNew)
+					if (user) {
+						return userData.updatePassword(user[0]._id, req.body.pass + 'WA')
 							.then((user) => {
-								res.status(200).json(user);
+								if (user) {
+									const nodemailerTransporter = nodemailer.transporter;
+									const mailOptions = {
+										from: params.nodemailerAppEmail,
+										to: req.body.email,
+										subject: 'New password',
+										text: '',
+										html: 'Your new password is: <h5>' + req.body.pass + 'WA</h5><br>It could be changed anytime.'
+									};
+
+									return userData.sendEmail(nodemailerTransporter, mailOptions)
+										.then((resp) => {
+											return resp;
+										})
+										.catch((err) => {
+											res.status(400).json({ error: err });
+										});
+								}
+							})
+							.then(() => {
+								res.status(200).json({ success: 'success' });
 							})
 							.catch((err) => {
 								res.status(400).json({ error: err });
@@ -47,12 +67,12 @@ module.exports = (mongo, nodemailer, params) => {
 								res.status(200).json(user);
 							})
 							.catch((err) => {
-								res.status(400).json({ error: err });
+								res.status(409).json({ error: err });
 							})
 					}
 				})
 				.catch((err) => {
-					res.status(409).json({ error: err });
+					res.status(400).json({ error: err });
 				});
 		},
 		users: (req, res, next) => {

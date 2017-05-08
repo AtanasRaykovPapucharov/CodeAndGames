@@ -13,7 +13,8 @@ const blogCtrl = (() => {
 				this.data.getBlogs()
 					.then((blogs) => {
 						blogs.forEach((blog) => {
-							blog.titleShort = blog.title.substring(0, 19) + ' ...';
+							let titleShort = blog.title.substring(0, 19) + ' ...';
+							blog.title = titleShort;
 						}, this);
 						return this.view.objectCollection('#content', { data: blogs })
 					})

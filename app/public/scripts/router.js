@@ -54,7 +54,7 @@ const router = (() => {
 				},
 				'/forgot-password-btn': () => {
 					controller.userCtrl.forgotPassword();
-					appRouter.navigate('/signout');
+					appRouter.navigate('/signin');
 				},
 
 				//=====================================================//
