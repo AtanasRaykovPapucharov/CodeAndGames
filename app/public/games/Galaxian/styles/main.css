@@ -1,0 +1,87 @@
+body, div, ul, ol, li, h1, h2, h3, img, span, a {
+    padding: 0;
+    margin: 0;
+}
+
+ul {
+    list-style: none;
+    margin-left: 5px;
+}
+
+ol ,ul {
+    display: inline-block;
+    text-align: left;
+    color:white;
+}
+
+li{
+    font-size: 1.3em;
+}
+
+body {
+    background: black;
+}
+
+h1 {
+    color: white;
+    font-size: 48px;
+    font-family: Consolas, monaco, monospace;
+    text-align: center;
+    margin: 30px;
+}
+
+#game {
+    position: relative;
+    display: none;
+}
+
+    #game #canvas-game {
+        border: 1px solid white;
+        position: absolute;
+        top: 0;
+        left: 0;
+        z-index: 9000;
+    }
+
+img {
+    display: none;
+}
+
+#frontpage {
+    width: 100%;
+    height: 100%;
+    text-align: center;
+}
+
+    #frontpage #playbutton {
+        width: 150px;
+        height: 50px;
+        font-size: 1.5em;
+        cursor: pointer;
+        margin: 50px;
+        clear: both;
+    }
+
+#audio button {
+    color: white;
+    display: none;
+    width: 38px;
+    height: 38px;
+    background: url(../images/speaker-icon.png);
+    margin-top: 10px;
+    border-color: black;
+    outline: none;
+}
+
+#svg {
+    display: block;
+    width: 500px;
+    height: 100px;
+    margin-left: 750px;
+}
+
+#svgtext {
+    display: inline-block;
+    fill:red;
+    font-size: 50px;
+}

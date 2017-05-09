@@ -1,0 +1,82 @@
+body {
+    background-image: url('../images/board_black_line_texture_background_wood_55220_1920x1080.jpg');
+}
+
+canvas {
+    position: absolute;
+}
+
+#wrapper {
+    margin: 0 auto;
+    width: 960px;
+    text-align: center;
+}
+
+#player-canvas {
+    z-index: 5;
+}
+
+#enemy-canvas {
+    z-index: 3;
+}
+
+#background {
+    z-index: 1;
+}
+
+.sprite {
+    display: none;
+}
+
+.menu-button {
+    width: 25%;
+    margin: 1%;
+}
+
+.sound {
+    width: 4%;
+    height: 5%;
+    position: absolute;
+    left: 80%;
+    top: 4%;
+    z-index: 100;
+}
+
+.score {
+    font-family: 'Chicle', cursive;
+    color: white;
+    text-shadow: 2px 2px black;
+    width: 5%;
+    height: 5%;
+    position: absolute;
+    left: 18%;
+    top: 1%;
+    z-index: 100;
+    font-size: 5rem
+}
+
+#soundOff {
+    display: none;
+}
+
+#Capa_1 {
+    position: absolute;
+    display: block;
+    top: 2%;
+    left: 20%;
+    z-index: 99;
+    width: 24%;
+    height: 24%;
+}
+
+.main-svg-icon {
+    display: none;
+}
+
+use {
+    position: absolute;
+    top: 5%;
+    width: 10%;
+    height: 10%;
+    z-index: 98;
+}
