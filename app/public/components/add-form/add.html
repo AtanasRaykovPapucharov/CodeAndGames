@@ -11,14 +11,20 @@
 			<input type="hidden" name="looks" value="0">
 			<input type="hidden" name="bookmarksCount" value="0">
 			<input type="hidden" name="commentsCount" value="0">
-			<label for="title">Title: </label>
-			<input class="add-title" type="text" name="title" value=""><br>
-			<label for="description">Content: </label>
+			<label for="title">Title: </label><br>
+			<input class="add-title" type="text" name="title" value=""><br><br>
+			<label for="title">Image (as url or upload file): </label><br>
+			<input id="image-post" class="add-image" type="text" name="image" value=""> 
+			<input type="file" value="upload" style="display: inline-block">
+			<a href="#/upload-image" class="btn btn-success">Upload</a><br><br>
+			<label for="link">Link: </label><br>
+			<input class="add-link" type="url" name="link" value=""><br><br>
+			<label for="description">Description: </label><br>
 			<div myEditorContainer>
 				<textarea name="description" id="myEditor"></textarea><br>
 			</div>
-			<label for="tags">Tags: </label>
-			<div name="tags" class="droppable"></div>
+			<label for="tags">Tags: </label><br>
+			<div name="tags" class="droppable"></div><br>
 			<a href="#/post/{{role}}" class="btn btn-success"><h5>Submit</h5></a>
 		</form>
 	</div>

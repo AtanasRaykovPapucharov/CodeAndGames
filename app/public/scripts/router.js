@@ -116,6 +116,9 @@ const router = (() => {
 
 				//============================================//
 
+				'/upload-image': () => {
+					controller.mainCtrl.postImage();
+				},
 				'/post/blog': () => {
 					controller.blogCtrl.newBlog();
 					appRouter.navigate('/blog');

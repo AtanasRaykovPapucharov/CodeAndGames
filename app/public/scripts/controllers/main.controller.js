@@ -7,8 +7,9 @@ const mainCtrl = (() => {
 				this.data = data;
 				this.view = view;
 				this.utils = utils;
+				this.cloudinary = this.utils.cloudinary;
 			}
-			
+
 			get showAbout() {
 				return this.view.about('#content', {})
 			}
@@ -44,6 +45,19 @@ const mainCtrl = (() => {
 						let tagsArray = tags[0].value;
 						return this.view.aside('#content-aside', { data: tagsArray.sort() })
 					})
+			}
+
+			postImage() {
+				const imageFile = document.querySelector('input[type=file]').files[0];
+				return this.cloudinary.uploadImage(imageFile)
+					.then((resp) => {
+						this.utils.notifier.success(`Image uploaded!`);
+						let imageUrl = resp.data.secure_url;
+						$('#image-post').val(imageUrl);
+					})
+					.catch((err) => {
+						console.log(err);
+					});
 			}
 		}
 
