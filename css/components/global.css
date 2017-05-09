@@ -1,0 +1,35 @@
+@font-face {
+  font-family: 'Zhafira';
+  src: url("../assets/fonts/MJF Zhafira Demo.ttf"); }
+
+@font-face {
+  font-family: 'Sunny';
+  src: url("../assets/fonts/Sunny Spring Day - TTF.ttf"); }
+
+* > hr {
+  border: 1px solid #96cc96; }
+
+a:hover {
+  text-decoration: none; }
+
+* > input {
+  border: 1px solid darkorange !important;
+  border-radius: 5px !important;
+  background-color: #96cc96 !important; }
+
+ul {
+  list-style-type: none; }
+
+.btn {
+  height: 36px;
+  border: 1px solid darkorange; }
+  .btn h5 {
+    color: darkorange;
+    font-family: 'Sunny', serif;
+    font-weight: bold;
+    font-size: 28px;
+    text-shadow: -1px 1px black;
+    margin-top: -5px; }
+
+.full-width {
+  min-width: 100%; }

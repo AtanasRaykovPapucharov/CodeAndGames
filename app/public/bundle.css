@@ -6,8 +6,8 @@
 }
 
 body {
-  background-color: #FFFBD0;
-  color: #FFFBD0;
+  background-color: #FFE2AD;
+  color: #FFE2AD;
   font-size: 16px;
   text-align: justify;
 }
@@ -27,20 +27,20 @@ body .wrapper .middle #content-aside {
 }
 
 body .wrapper .middle #content {
-  border-left: 15px solid #FFFBD0;
-  border-right: 15px solid #FFFBD0;
+  border-left: 15px solid #FFE2AD;
+  border-right: 15px solid #FFE2AD;
 }
 
 body .wrapper .middle #content-aside {
-  border-left: 15px solid #FFFBD0;
-  border-right: 15px solid #FFFBD0;
-  border-top: 5px solid #FFFBD0;
+  border-left: 15px solid #FFE2AD;
+  border-right: 15px solid #FFE2AD;
+  border-top: 5px solid #FFE2AD;
 }
 
 body .wrapper #footer {
   background-color: transparent;
-  border-top: 15px solid #FFFBD0;
-  color: #FFFBD0;
+  border-top: 15px solid #FFE2AD;
+  color: #FFE2AD;
   margin-left: -1px;
   min-height: 150px;
   min-width: 100.3%;
@@ -60,11 +60,11 @@ body .wrapper #footer {
 
 @media only screen and (min-width: 768px) {
   body .wrapper .middle #content {
-    border-right: 5px solid #FFFBD0;
+    border-right: 5px solid #FFE2AD;
   }
 
   body .wrapper .middle #content-aside {
-    border-left: 5px solid #FFFBD0;
+    border-left: 5px solid #FFE2AD;
     border-top: 0;
   }
 
@@ -104,9 +104,9 @@ a:hover {
 }
 
 * > input {
-  border: 2px solid darkorange !important;
+  border: 2px solid #FFE2AD !important;
   border-radius: 5px !important;
-  background-color: #96cc96 !important;
+  background-color: whitesmoke !important;
 }
 
 ul {
@@ -115,11 +115,11 @@ ul {
 
 .btn {
   height: 36px;
-  border: 2px solid darkorange;
+  border: 2px solid #FFE2AD;
 }
 
 .btn h5 {
-  color: #FFFBD0;
+  color: #FFE2AD;
   font-family: 'OpenSans', serif;
   font-weight: bold;
   font-size: 16px;
@@ -170,7 +170,7 @@ ul.droppable {
   width: 62%;
 }
 .aside a h6 {
-  color: #FFFBD0;
+  color: #FFE2AD;
   text-shadow: -1px 1px #000;
   font-size: 16px;
   margin-top: 0;
@@ -208,9 +208,9 @@ a:hover {
 }
 
 * > input {
-  border: 2px solid darkorange !important;
+  border: 2px solid #FFE2AD !important;
   border-radius: 5px !important;
-  background-color: #96cc96 !important;
+  background-color: whitesmoke !important;
 }
 
 ul {
@@ -219,11 +219,11 @@ ul {
 
 .btn {
   height: 36px;
-  border: 2px solid darkorange;
+  border: 2px solid #FFE2AD;
 }
 
 .btn h5 {
-  color: #FFFBD0;
+  color: #FFE2AD;
   font-family: 'OpenSans', serif;
   font-weight: bold;
   font-size: 16px;
@@ -247,9 +247,14 @@ ul {
   background-size: 800%;
 }
 
-.wrapper #footer .footer-contant h5 {
+.wrapper #footer .footer-content h5 {
   float: right;
   padding-right: 1.3em;
+}
+
+.wrapper #footer .footer-content h5 img {
+  margin-left: 42%;
+  pargin-top: -20px;
 }
 
 /*==========  Mobile First Method  ==========*/
@@ -292,9 +297,9 @@ a:hover {
 }
 
 * > input {
-  border: 2px solid darkorange !important;
+  border: 2px solid #FFE2AD !important;
   border-radius: 5px !important;
-  background-color: #96cc96 !important;
+  background-color: whitesmoke !important;
 }
 
 ul {
@@ -303,11 +308,11 @@ ul {
 
 .btn {
   height: 36px;
-  border: 2px solid darkorange;
+  border: 2px solid #FFE2AD;
 }
 
 .btn h5 {
-  color: #FFFBD0;
+  color: #FFE2AD;
   font-family: 'OpenSans', serif;
   font-weight: bold;
   font-size: 16px;
@@ -326,12 +331,12 @@ ul {
 #profile-link {
   margin-top: -2px;
   margin-left: 35px;
-  border: 3px solid #FFFBD0;
+  border: 3px solid #FFE2AD;
   border-radius: 25%;
 }
 
 #profile-link:hover {
-  border-color: silver;
+  border-color: darkorange;
 }
 
 #profile-a:focus {
@@ -344,8 +349,8 @@ ul {
   background-image: url("assets/images/staff/bg.jpg");
   background-repeat: no-repeat;
   background-size: 300%;
-  border-left: 15px solid #FFFBD0;
-  border-right: 15px solid #FFFBD0;
+  border-left: 15px solid #FFE2AD;
+  border-right: 15px solid #FFE2AD;
   border-radius: 0;
 }
 
@@ -355,7 +360,7 @@ ul {
 }
 
 .wrapper #header nav.navbar.nav-header .nav-colapse-btn .icon-bar {
-  background-color: #FFFBD0;
+  background-color: #FFE2AD;
 }
 
 .wrapper #header nav.navbar.nav-header .main-link {
@@ -365,23 +370,23 @@ ul {
   font-family: 'OpenSans', serif;
   font-weight: bold;
   font-size: 19px;
-  color: #FFFBD0;
+  color: #FFE2AD;
   background-color: black;
 }
 
 .wrapper #header nav.navbar.nav-header .main-link:hover {
-  color: silver;
+  color: #ff8c00;
 }
 
 .wrapper #header nav.navbar.nav-header .main-link:focus {
-  color: silver;
+  color: #ff8c00;
 }
 
 .wrapper #header nav.navbar.nav-header #brand {
   margin-left: 5px;
   font-family: 'Zhafira', serif;
-  color: #085691;
-  text-shadow: -1px 1px #FFFBD0;
+  color: #ff8c00;
+  text-shadow: -1px 1px #FFE2AD;
   font-size: 42px;
 }
 
@@ -396,17 +401,18 @@ ul {
 }
 
 .wrapper #header nav.navbar.nav-header .nav-right li.dropdown > ul > li > a {
-  color: silver;
+  color: #FFE2AD;
   text-shadow: -1px 1px black;
 }
 
 .wrapper #header nav.navbar.nav-header .nav-right li.dropdown > ul > li > a:hover {
+  color: silver;
   background-color: silver;
 }
 
 .wrapper #header nav.navbar.nav-header .menu-dropdown {
-  background-color: #001020;
-  border: 2px solid #FFFBD0;
+  background-color: #00102C;
+  border: 2px solid #FFE2AD;
   border-radius: 5px;
   margin-left: -3em;
   max-width: 22%;
@@ -439,7 +445,7 @@ ul {
 }
 
 .object-collection .obj-col-article {
-  border: 2px solid darkorange;
+  border: 2px solid #FFE2AD;
   border-radius: 5px;
   background-image: url("assets/images/staff/bg.jpg");
   background-repeat: no-repeat;
@@ -453,13 +459,12 @@ ul {
 }
 
 .object-collection .obj-col-article a h4 {
-  color: silver;
+  color: #FFE2AD;
 }
 
 .object-collection div {
   text-align: center;
-  text-shadow: -1px 1px #6FA7D7;
-  color: whitesmoke;
+  color: #FFE2AD;
 }
 
 .object-collection div .span-val {

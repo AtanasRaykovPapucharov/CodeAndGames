@@ -59,6 +59,12 @@ const router = (() => {
 
 				//=====================================================//
 
+				'/game/chess': () => {
+					controller.gamesCtrl.showChess();
+				},
+
+				//=====================================================//
+
 				'/signin': () => {
 					controller.userCtrl.showSignIn();
 				},

@@ -1,5 +1,5 @@
 @import '../global.scss';
-$header-colors: #FFFBD0;
+$header-colors: #FFE2AD;
 
 #navbar-links {
 	background-color: #00102C;
@@ -13,7 +13,7 @@ $header-colors: #FFFBD0;
 }
 
 #profile-link:hover {
-	border-color: silver;
+	border-color: darkorange;
 }
 
 #profile-a:focus {
@@ -50,18 +50,18 @@ $header-colors: #FFFBD0;
 			background-color: black;
 
 			&:hover {
-				color: silver;
+				color: #ff8c00;;
 			}
  
 			&:focus {
-				color: silver;
+				color: #ff8c00;;
 			}
 		}
 
 		#brand {
 			margin-left: 5px;
 			font-family: 'Zhafira', serif;
-			color: #085691;
+			color: #ff8c00;
 			text-shadow: -1px 1px $header-colors;
 			font-size: 42px;
 
@@ -76,16 +76,17 @@ $header-colors: #FFFBD0;
 			margin-right: 0.5em;
 
 			li.dropdown>ul>li>a {
-				color: silver;
+				color: $header-colors;
 				text-shadow: -1px 1px black;
 				&:hover{
+					color: silver;
 					background-color: silver;
 				}
 			}
 		}
 
 		.menu-dropdown {
-			background-color: #001020;
+			background-color: #00102C;
 			border: 2px solid $header-colors;
 			border-radius: 5px;
 			margin-left: -3em;

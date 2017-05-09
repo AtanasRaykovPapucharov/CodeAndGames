@@ -1,14 +1,27 @@
 <div class="single-object">
 	<h3>{{title}}</h3>
-	<div>
-		<img src={{image}} alt="img" width="350px">
-		<a href="#/add/{{this.role}}" class="btn btn-info add-new">Add New</a>
-	</div>
-	<div id="single-content-container" class="fr-view">
-		Content: {{content}}
-	</div>
-	{{#each tags}}
-	<button type="" class="btn btn-primary">{{this}}</button>
-	{{/each}}
 	<hr>
+	<div style="width: 40%; float: right; margin-left: 15px">
+		<a href={{link}} class=""><img src={{image}} alt="img" width="98%"></a>
+		<hr>
+		{{#unless notGame}}
+		<a href={{link}} class="btn btn-danger" style="width: 22%">Play</a>{{/unless}}
+		{{#if notGame}}
+		<a href={{link}} class="btn btn-danger" style="width: 22%">More</a>{{/if}}
+		<div style="float: right;">
+			<span><i class="glyphicon glyphicon-eye-open" title="views"></i></span>
+			<span class="span-val">{{this.looks}}</span>
+			<span><i class="glyphicon glyphicon-thumbs-up" title="likes"></i></span>
+			<span class="span-val">{{this.likes}}</span>
+			<span><i class="glyphicon glyphicon-bookmark" title="bookmarks"></i></span>
+			<span class="span-val">{{this.bookmarksCount}}</span>
+			<span><i class="glyphicon glyphicon-comment" title="comments"></i></span>
+			<span class="span-val">{{this.commentsCount}}</span>
+		</div>
+		<hr> {{#each tags}}
+		<button type="" class="btn btn-primary">{{this}}</button> {{/each}}
+	</div>
+	<p id="single-content-container">
+		{{description}}
+	</p>
 </div>

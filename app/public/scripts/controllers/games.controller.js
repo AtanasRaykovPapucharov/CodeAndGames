@@ -19,12 +19,19 @@ const gamesCtrl = (() => {
 			gameById(id) {
 				this.data.getGameById(id)
 					.then((game) => {
-						return this.view.objectSingle('#content', game)
+						this.view.objectSingle('#content', game)
+							.then(() => {
+								$('#single-content-container').html(game.description);
+							})
 					})
 			}
 
 			get showAddFormGames() {
 				return this.view.addForm('#content', { role: 'game' })
+			}
+
+		showChess() {
+				return this.view.chess('#content', {})
 			}
 
 			newGame() {

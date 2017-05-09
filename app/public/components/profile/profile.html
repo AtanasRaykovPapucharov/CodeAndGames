@@ -9,7 +9,7 @@
 			</div>
 			<div class="card-info">
 				<input id="file-upload" type="file" name="uploader" value="Upload"><br>
-			
+
 				<span id="span-upload">
 					<a href="#/upload-image" class="btn btn-danger hidden-obj">SAVE</a>
 				</span>
@@ -48,22 +48,26 @@
 					<label for="profile-email" class="label-success app-profile-inputs">E-mail:</label>
 					<h4 id="profile-email">{{user.email}}</h4><br>
 					<label for="profile-age" class="label-success app-profile-inputs">Age:</label>
-					<h4 id="profile-age">{{user.age}}</h4><br><hr>
+					<h4 id="profile-age">{{user.age}}</h4><br>
+					<hr>
 					<label for="profile-interests" class="label-success app-profile-inputs">Interests:</label><br>
 					<div>
-					{{#each user.interests}}
-					<a href="" class="btn btn-primary">{{this}}</a>
-					{{/each}}
+						{{#each user.interests}}
+						<a href="" class="btn btn-primary">{{this}}</a> {{/each}}
 					</div>
 				</div>
 				<div class="tab-pane fade in" id="tab2">
 					<h3>No bookmarks</h3>
 				</div>
 				<div class="tab-pane fade in" id="tab3">
-					<h3>No blogs</h3>
+					<h3>No blogs
+						<a href="#/add/blog" class="btn btn-info add-new">Add New</a>
+					</h3>
 				</div>
 				<div class="tab-pane fade in" id="tab4">
-					<h3>No games</h3>
+					<h3>No games
+						<a href="#/add/game" class="btn btn-info add-new">Add New</a>
+					</h3>
 				</div>
 			</div>
 		</div>

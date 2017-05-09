@@ -11,10 +11,15 @@
 	background-repeat: no-repeat;
 	background-size: 800%;
 
-	.footer-contant {
+	.footer-content {
 		h5 {
 			float: right;
 			padding-right: 1.3em;
+
+			img {
+				margin-left: 42%;
+				pargin-top: -20px;
+			}
 		}
 	}
 }

@@ -4,7 +4,7 @@
 	//border: 2px solid black;
 
 	.obj-col-article {
-		border: 2px solid darkorange;
+		border: 2px solid #FFE2AD;
 		border-radius: 5px;
 		background-image: url('../../assets/images/staff/bg.jpg');
 		background-repeat: no-repeat;
@@ -17,7 +17,7 @@
 		display: inline-block;
 
 		a h4 {
-			color: silver;
+			color: #FFE2AD;
 		}
 
 		.obj-col-article-text {
@@ -30,8 +30,7 @@
 
 	div {
 		text-align:center;
-		text-shadow: -1px 1px #6FA7D7;
-		color: whitesmoke;
+		color: #FFE2AD;
 
 		.span-val {
 			margin-right: 10px;
@@ -54,7 +53,7 @@
 	}
 }
 
-@media only screen and (min-width : 320px) {
+@media only screen and (min-width: 320px) {
 		.object-collection {
 
 		.obj-col-article {
@@ -67,7 +66,7 @@
 		}
 	}
 }
-@media only screen and (min-width : 580px) {
+@media only screen and (min-width: 580px) {
 		.object-collection {
 
 		.obj-col-article {
@@ -82,7 +81,7 @@
 	}
 
 }
-@media only screen and (min-width : 768px) {
+@media only screen and (min-width: 768px) {
 		.object-collection {
 			width: 100%;
 
@@ -96,7 +95,7 @@
 		}
 	}
 }
-@media only screen and (min-width : 992px) {
+@media only screen and (min-width: 992px) {
 		.object-collection {
 
 		.obj-col-article {
@@ -110,7 +109,7 @@
 		}
 	}
 }
-@media only screen and (min-width : 1200px)  {
+@media only screen and (min-width: 1200px)  {
 		.object-collection {
 
 		.obj-col-article {

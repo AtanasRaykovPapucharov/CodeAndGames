@@ -1,0 +1,94 @@
+@font-face {
+  font-family: 'Zhafira';
+  src: url("../assets/fonts/MJF Zhafira Demo.ttf"); }
+
+@font-face {
+  font-family: 'Sunny';
+  src: url("../assets/fonts/Sunny Spring Day - TTF.ttf"); }
+
+* > hr {
+  border: 1px solid #96cc96; }
+
+a:hover {
+  text-decoration: none; }
+
+* > input {
+  border: 1px solid darkorange !important;
+  border-radius: 5px !important;
+  background-color: #96cc96 !important; }
+
+ul {
+  list-style-type: none; }
+
+.btn {
+  height: 36px;
+  border: 1px solid darkorange; }
+  .btn h5 {
+    color: darkorange;
+    font-family: 'Sunny', serif;
+    font-weight: bold;
+    font-size: 28px;
+    text-shadow: -1px 1px black;
+    margin-top: -5px; }
+
+.full-width {
+  min-width: 100%; }
+
+.wrapper #header nav.navbar.nav-header {
+  height: 50px;
+  background-color: #001020;
+  background-image: url("../../assets/images/staff/bg.jpg");
+  background-repeat: no-repeat;
+  background-size: 300%;
+  border-left: 15px solid darkorange;
+  border-right: 15px solid darkorange;
+  border-radius: 0; }
+  .wrapper #header nav.navbar.nav-header .nav-colapse-btn {
+    background-color: darkolivegreen; }
+    .wrapper #header nav.navbar.nav-header .nav-colapse-btn .icon-bar {
+      background-color: darkorange; }
+  .wrapper #header nav.navbar.nav-header .main-link {
+    max-height: 40px;
+    margin-top: 5px;
+    margin-left: 20px;
+    font-family: 'Sunny', serif;
+    font-weight: bold;
+    font-size: 28px;
+    color: darkorange;
+    background-color: black; }
+    .wrapper #header nav.navbar.nav-header .main-link:hover {
+      color: silver; }
+    .wrapper #header nav.navbar.nav-header .main-link:focus {
+      color: silver; }
+  .wrapper #header nav.navbar.nav-header #brand {
+    margin-left: 5px;
+    font-family: 'Zhafira', serif;
+    color: darkolivegreen;
+    text-shadow: -1px 1px darkorange;
+    font-size: 38px; }
+    .wrapper #header nav.navbar.nav-header #brand:hover {
+      color: silver;
+      text-shadow: -1px 1px whitesmoke; }
+  .wrapper #header nav.navbar.nav-header .nav-right {
+    float: right;
+    margin-right: 0.5em; }
+    .wrapper #header nav.navbar.nav-header .nav-right li.dropdown > ul > li > a {
+      color: silver;
+      text-shadow: -1px 1px black; }
+      .wrapper #header nav.navbar.nav-header .nav-right li.dropdown > ul > li > a:hover {
+        background-color: silver; }
+  .wrapper #header nav.navbar.nav-header .menu-dropdown {
+    background-color: #000000;
+    border: 2px solid darkorange;
+    border-radius: 5px;
+    margin-left: -3em;
+    max-width: 22%;
+    font-family: Verdana, Geneva, Tahoma, sans-serif; }
+
+/*==========  Mobile First Method  ==========*/
+@media only screen and (min-width: 768px) {
+  .wrapper #header nav.navbar.nav-header .main-link {
+    background-color: transparent; }
+  .wrapper #header nav.navbar.nav-header .menu-dropdown {
+    max-width: 100%;
+    margin-left: -3.2em; } }

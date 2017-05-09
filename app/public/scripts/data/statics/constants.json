@@ -1,0 +1,6 @@
+{
+	"cloudinary": {
+		"CLOUDINARY_URL": "https://api.cloudinary.com/v1_1/imagerepowebdjs/image/upload",
+		"CLOUDINARY_UPLOAD_PRESET": "g1u7teai"
+	}
+}

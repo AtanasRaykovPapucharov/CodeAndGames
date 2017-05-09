@@ -43,8 +43,10 @@ const view = (() => {
 				return this.templateLoader.load(selector, template, data);
 			}
 
-			tournaments(selector, data) {
-				let template = './components/tournaments/tournaments.html';
+			//===============================================================================================//
+
+			chess(selector, data) {
+				let template = './games/chess/chess.html';
 				return this.templateLoader.load(selector, template, data);
 			}
 

@@ -1,0 +1,26 @@
+<div class="row" style="max-width: 89%;">
+	<link rel="stylesheet" href="./games/chess/css/chessboard-0.3.0.css">
+
+	<div id="board" class="board col-md-8"></div><br>
+	<div class="info col-md-4" style="padding-left: 20px">
+		<div style="margin-top: -19px; width: 103%">
+			Opponent Level:
+			<select id="search-depth" style="background: black">
+				<option value="1">Novice</option>
+				<option value="2">Amateur</option>
+				<option value="3" selected>Intermediate</option>
+				<option value="4">Advanced</option>
+				<option value="5">Expert</option>
+			</select>
+			<br>
+			<span>Opponent Move Time: <span id="time"></span></span>
+		</div>
+		<br>Game History:
+		<div id="move-history" class="move-history">
+		</div>
+	</div>
+
+	<script src="./games/chess/js/chess.js"></script>
+	<script src="./games/chess/js/chessboard-0.3.0.js"></script>
+	<script src="./games/chess/js/script.js"></script>
+</div>

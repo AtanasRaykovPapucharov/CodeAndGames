@@ -52,3 +52,5 @@ $(window).on('resize', () => {
     $(window).resizeTo = 200;
   }
 });
+
+
