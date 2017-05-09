@@ -8,11 +8,11 @@ const router = (() => {
 			.on({
 				'/home': () => {
 					controller.mainCtrl.showHome;
-					controller.mainCtrl.getTags();
+					controller.mainCtrl.getAllTags();
 				},
 				'/about': () => {
 					controller.mainCtrl.showAbout;
-					controller.mainCtrl.getTags();
+					controller.mainCtrl.getAllTags();
 				},
 
 				//=====================================================//
@@ -23,6 +23,7 @@ const router = (() => {
 						controller.mainCtrl.showHome;
 						appRouter.navigate('/signin');
 					}
+					controller.userCtrl.userInterests;
 				},
 				'/upload-image': () => {
 					controller.profileCtrl.imageUpload()
@@ -97,18 +98,18 @@ const router = (() => {
 
 				'/blog': () => {
 					controller.blogCtrl.blogs;
-					controller.mainCtrl.getTags();
+					controller.mainCtrl.getBlogTags();
 				},
 				'/blog/:id': (params) => {
 					let blogId = params.id;
 					controller.blogCtrl.blogById(blogId);
-					controller.mainCtrl.getTags();
+					controller.mainCtrl.getBlogTags();
 				},
 				'/add/blog': () => {
 					let hasUser = controller.mainCtrl.pleaseSignIn();
 					if (hasUser) {
 						controller.blogCtrl.showAddFormBlog;
-						controller.mainCtrl.getTags();
+						controller.mainCtrl.getBlogTags();
 					} else {
 						appRouter.navigate('/signin');
 					}
@@ -135,18 +136,18 @@ const router = (() => {
 				},
 				'/games': () => {
 					controller.gamesCtrl.games;
-					controller.mainCtrl.getTags();
+					controller.mainCtrl.getGameTags();
 				},
 				'/game/:id': (params) => {
 					let gameId = params.id;
 					controller.gamesCtrl.gameById(gameId);
-					controller.mainCtrl.getTags();
+					controller.mainCtrl.getGameTags();
 				},
 				'/add/game': () => {
 					let hasUser = controller.mainCtrl.pleaseSignIn();
 					if (hasUser) {
 						controller.gamesCtrl.showAddFormGames;
-						controller.mainCtrl.getTags();
+						controller.mainCtrl.getGameTags();
 					} else {
 						appRouter.navigate('/signin');
 					}

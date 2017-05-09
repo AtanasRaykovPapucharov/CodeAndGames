@@ -226,6 +226,12 @@ const userCtrl = (() => {
 				})();
 			}
 
+			get userInterests() {
+				let interests = JSON.parse(localStorage.getItem('app-user-data')).interests;
+				console.log(interests);
+				return this.view.aside('#content-aside', { data: interests.sort() });
+			}
+
 			showSignIn() {
 				let currentWidth = window.screen.width;
 				let route = '#content-aside';

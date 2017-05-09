@@ -39,10 +39,24 @@ const mainCtrl = (() => {
 				return !!user;
 			}
 
-			getTags() {
+			getAllTags() {
 				this.data.userData.getTags()
 					.then((tags) => {
-						let tagsArray = tags[0].value;
+						let tagsArray = tags[0].all;
+						return this.view.aside('#content-aside', { data: tagsArray.sort() })
+					})
+			}
+			getBlogTags() {
+				this.data.userData.getTags()
+					.then((tags) => {
+						let tagsArray = tags[0].blog;
+						return this.view.aside('#content-aside', { data: tagsArray.sort() })
+					})
+			}
+			getGameTags() {
+				this.data.userData.getTags()
+					.then((tags) => {
+						let tagsArray = tags[0].game;
 						return this.view.aside('#content-aside', { data: tagsArray.sort() })
 					})
 			}

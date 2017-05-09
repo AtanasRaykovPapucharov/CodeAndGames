@@ -70,6 +70,10 @@ const blogCtrl = (() => {
 				let allTags = $('#all-tags').val();
 				formObj.tags = allTags.split(/[\s,;]+/);
 				formObj.comments = [];
+				formObj.looks = 0;
+				formObj.likes = 0;
+				formObj.bookmarksCount = 0;
+				formObj.commentsCount = 0;
 				formObj.date = new Date();
 				formObj.author = [localStorage.getItem('current-user-app')];
 

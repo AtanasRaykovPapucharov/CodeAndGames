@@ -40,7 +40,7 @@ module.exports = (mongo) => {
 		},
 		updateBlog: (id, dataObj) => {
 			let updated = { $push: dataObj }
-			
+
 			return new Promise((resolve, reject) => {
 
 				db['blogs'].update({ _id: mongojsObj.ObjectId(id) }, updated, {},
@@ -53,8 +53,8 @@ module.exports = (mongo) => {
 			});
 		},
 		updateComments: (id, comment) => {
-			let updated = { $push: { comments: comment } }
-			
+			let updated = { $push: { comments: comment }, $inc: { commentsCount: 1 } }
+
 			return new Promise((resolve, reject) => {
 
 				db['blogs'].update({ _id: mongojsObj.ObjectId(id) }, updated, {},

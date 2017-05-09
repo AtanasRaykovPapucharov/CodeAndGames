@@ -53,7 +53,7 @@ module.exports = (mongo) => {
 			});
 		},
 		updateComments: (id, comment) => {
-			let updated = { $push: { comments: comment } }
+			let updated = { $push: { comments: comment } , $inc: { commentsCount: 1 }}
 
 			return new Promise((resolve, reject) => {
 
