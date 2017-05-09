@@ -29,6 +29,19 @@ module.exports = (mongo) => {
 					res.send(err);
 				});
 		},
+		commentsUpdate: (req, res, next) => {
+			const comment = req.body;
+
+			gameData.updateComments(req.params.id, comment)
+				.then((comment) => {
+					if (comment) {
+						res.status(200).json({ comment: comment, message: 'success' });
+					}
+				})
+				.catch((err) => {
+					res.status(400).json({ error: err.message });
+				});
+		},
 		likeGame: (req, res, next) => {
 			let dataObj = { likes: req.body }
 

@@ -15,6 +15,14 @@ const gamesData = (() => {
 				return this.requester.get(`/api/games/${id}`);
 			}
 
+			commentGameById(id, comment) {
+				const options = {
+					data: comment
+				}
+				
+				return this.requester.put(`/api/games/comment/${id}`, options);
+			}
+
 			postGame(game) {
 				const options = {
 					data: game

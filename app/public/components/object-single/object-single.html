@@ -3,13 +3,9 @@
 	<hr>
 	<div style="width: 48%; float: right; margin-left: 15px">
 		<a href={{link}} class=""><img src={{image}} alt="img" width="98%"></a>
-		<hr>
-		{{#if isBlog}}
-		<a href={{link}} class="btn btn-info" style="width: 22%">More</a>
-		{{/if}}
-		{{#unless isBlog}}
-		<a href={{link}} class="btn btn-danger" style="width: 22%">Play</a>
-		{{/unless}}
+		<hr> {{#if isBlog}}
+		<a href={{link}} class="btn btn-info" style="width: 22%">More</a> {{/if}} {{#unless isBlog}}
+		<a href={{link}} class="btn btn-danger" style="width: 22%">Play</a> {{/unless}}
 		<div style="float: right;">
 			<span><i class="glyphicon glyphicon-eye-open" title="views"></i></span>
 			<span class="span-val">{{this.looks}}</span>
@@ -21,10 +17,25 @@
 			<span class="span-val">{{this.commentsCount}}</span>
 		</div>
 		<hr> {{#each tags}}
-		<button type="" class="btn btn-primary">{{this}}</button> {{/each}}<hr>
-		<h4>{{author}}</h4><span>{{date}}</span>
+		<button type="" class="btn btn-primary">{{this}}</button> {{/each}}
+		<hr>
+		<h4 style="float: right">Published by <span>{{author}}</span> on <span>{{date}}</span></h4>
 	</div>
 	<p id="single-content-container">
 		{{description}}
-	</p><hr>
+	</p>
+	<hr> Comments:<br>
+	<textarea id="comment-add-area" rows="3" cols="45"></textarea>
+	<span><a id="comment-add-btn" href="#/add-comment/{{role}}/{{_id}}" class="btn btn-success" style="margin-top: -27px; width: 100px">New</a></span>
+	<hr>
+	<ul>
+		{{#each comments}}
+		<li>
+			<p>{{this.content}}</p>
+			<h6 style="float: right; ">Posted by {{this.author}} on {{this.date}}</h6>
+			<hr>
+		</li>
+		{{/each}}
+	</ul>
+	<br>
 </div>

@@ -15,6 +15,14 @@ const blogData = (() => {
 				return this.requester.get(`/api/blog/${id}`);
 			}
 
+			commentBlogById(id, comment) {
+				const options = {
+					data: comment
+				}
+				
+				return this.requester.put(`/api/blog/comment/${id}`, options);
+			}
+
 			postBlog(blog) {
 				const options = {
 					data: blog

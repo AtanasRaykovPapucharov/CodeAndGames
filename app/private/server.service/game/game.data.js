@@ -51,6 +51,20 @@ module.exports = (mongo) => {
 						resolve(obj);
 					})
 			});
+		},
+		updateComments: (id, comment) => {
+			let updated = { $push: { comments: comment } }
+
+			return new Promise((resolve, reject) => {
+
+				db['games'].update({ _id: mongojsObj.ObjectId(id) }, updated, {},
+					(err, obj) => {
+						if (err) {
+							reject(err);
+						}
+						resolve(obj);
+					})
+			});
 		}
 	}
 }

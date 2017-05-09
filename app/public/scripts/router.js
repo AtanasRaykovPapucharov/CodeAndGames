@@ -113,15 +113,25 @@ const router = (() => {
 						appRouter.navigate('/signin');
 					}
 				},
-
-				//============================================//
-
-				'/upload-image': () => {
-					controller.mainCtrl.postImage();
-				},
 				'/post/blog': () => {
 					controller.blogCtrl.newBlog();
 					appRouter.navigate('/blog');
+				},
+				'/add-comment/blog/:id': (params) => {
+					const commentId = params.id;
+					controller.blogCtrl.commentBlogById(commentId);
+					appRouter.navigate(`/blog/${commentId}`);
+				},
+				'/upload-image': () => {
+					controller.mainCtrl.postImage();
+				},
+
+				//============================================//
+
+				'/add-comment/game/:id': (params) => {
+					const commentId = params.id;
+					controller.gamesCtrl.commentGameById(commentId);
+					appRouter.navigate(`/game/${commentId}`);
 				},
 				'/games': () => {
 					controller.gamesCtrl.games;
@@ -145,6 +155,9 @@ const router = (() => {
 					controller.gamesCtrl.newGame();
 					appRouter.navigate('/games');
 				},
+
+				//============================================//
+
 				'/': () => {
 					appRouter.navigate('/home');
 				},

@@ -20,6 +20,19 @@ module.exports = (mongo) => {
 					res.send(err);
 				});
 		},
+		commentsUpdate: (req, res, next) => {
+			const comment = req.body;
+
+			blogData.updateComments(req.params.id, comment)
+				.then((comment) => {
+					if (comment) {
+						res.status(200).json({ comment: comment, message: 'success' });
+					}
+				})
+				.catch((err) => {
+					res.status(400).json({ error: err.message });
+				});
+		},
 		newBlog: (req, res, next) => {
 			blogData.postBlog(req.body)
 				.then((blog) => {

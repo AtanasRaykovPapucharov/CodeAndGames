@@ -31,11 +31,29 @@ const blogCtrl = (() => {
 						blog.date = dateCurr.getDay() + '/' + dateCurr.getDate() + '/' + dateCurr.getFullYear();
 
 						blog.isBlog = true;
-						
+
 						this.view.objectSingle('#content', blog)
 							.then(() => {
 								$('#single-content-container').html(blog.description);
 							})
+					})
+					.catch((err) => {
+						throw (err);
+					})
+			}
+
+			commentBlogById(id) {
+				let comment = {};
+				let dateCurr = new Date();
+				comment.date = dateCurr.getDay() + '/' + dateCurr.getDate() + '/' + dateCurr.getFullYear();
+				comment.author = localStorage.getItem('current-user-app');
+				comment.content = $('#comment-add-area').val();
+
+				this.data.commentBlogById(id, comment)
+					.then((resp) => {
+						if (resp) {
+							console.log('Blog comment added!');
+						}
 					})
 					.catch((err) => {
 						throw (err);

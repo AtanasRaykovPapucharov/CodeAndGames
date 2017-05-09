@@ -18,11 +18,12 @@ module.exports = (express, app, mongo, nodemailer, params) => {
 		.get('/blog', controllers.blogCtrl.blogs)
 		.get('/blog/:id', controllers.blogCtrl.blogById)
 		.post('/blog', controllers.blogCtrl.newBlog)
-		.put('/blog/comment', controllers.userCtrl.imageUpdate)
+		.put('/blog/comment/:id', controllers.blogCtrl.commentsUpdate)
 
 		.get('/games', controllers.gameCtrl.games)
 		.get('/games/:id', controllers.gameCtrl.gameById)
 		.post('/games', controllers.gameCtrl.newGame)
+		.put('/games/comment/:id', controllers.gameCtrl.commentsUpdate)
 
 		.get('/tags', controllers.userCtrl.tags)
 
