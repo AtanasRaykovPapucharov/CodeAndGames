@@ -1,13 +1,15 @@
 <div class="single-object">
 	<h3>{{title}}</h3>
 	<hr>
-	<div style="width: 40%; float: right; margin-left: 15px">
+	<div style="width: 48%; float: right; margin-left: 15px">
 		<a href={{link}} class=""><img src={{image}} alt="img" width="98%"></a>
 		<hr>
-		{{#unless notGame}}
-		<a href={{link}} class="btn btn-danger" style="width: 22%">Play</a>{{/unless}}
-		{{#if notGame}}
-		<a href={{link}} class="btn btn-danger" style="width: 22%">More</a>{{/if}}
+		{{#if isBlog}}
+		<a href={{link}} class="btn btn-info" style="width: 22%">More</a>
+		{{/if}}
+		{{#unless isBlog}}
+		<a href={{link}} class="btn btn-danger" style="width: 22%">Play</a>
+		{{/unless}}
 		<div style="float: right;">
 			<span><i class="glyphicon glyphicon-eye-open" title="views"></i></span>
 			<span class="span-val">{{this.looks}}</span>
@@ -19,9 +21,10 @@
 			<span class="span-val">{{this.commentsCount}}</span>
 		</div>
 		<hr> {{#each tags}}
-		<button type="" class="btn btn-primary">{{this}}</button> {{/each}}
+		<button type="" class="btn btn-primary">{{this}}</button> {{/each}}<hr>
+		<h4>{{author}}</h4><span>{{date}}</span>
 	</div>
 	<p id="single-content-container">
 		{{description}}
-	</p>
+	</p><hr>
 </div>

@@ -14,18 +14,21 @@
 			<label for="title">Title: </label><br>
 			<input class="add-title" type="text" name="title" value=""><br><br>
 			<label for="title">Image (as url or upload file): </label><br>
-			<input id="image-post" class="add-image" type="text" name="image" value=""> 
+			<input id="image-post" class="add-image" type="text" name="image" value="">
 			<input type="file" value="upload" style="display: inline-block">
-			<a href="#/upload-image" class="btn btn-success">Upload</a><br><br>
+			<a href="#/upload-image" class="btn btn-primary">Upload</a><br><br>
 			<label for="link">Link: </label><br>
 			<input class="add-link" type="url" name="link" value=""><br><br>
 			<label for="description">Description: </label><br>
 			<div myEditorContainer>
 				<textarea name="description" id="myEditor"></textarea><br>
 			</div>
-			<label for="tags">Tags: </label><br>
-			<div name="tags" class="droppable"></div><br>
-			<a href="#/post/{{role}}" class="btn btn-success"><h5>Submit</h5></a>
+			<label for="all-tags">Tags (keywords separаted by a comma, semicolon or empty space): </label><br>
+			<input type="text" id="all-tags" value="">
+			<br><br>
+			<a href="#/post/{{role}}" class="btn btn-success">
+				<h5>Submit</h5>
+			</a>
 		</form>
 	</div>
 

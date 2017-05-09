@@ -51,12 +51,13 @@ const mainCtrl = (() => {
 				const imageFile = document.querySelector('input[type=file]').files[0];
 				return this.cloudinary.uploadImage(imageFile)
 					.then((resp) => {
-						this.utils.notifier.success(`Image uploaded!`);
 						let imageUrl = resp.data.secure_url;
 						$('#image-post').val(imageUrl);
+						this.utils.notifier.success(`Image uploaded!`);
 					})
 					.catch((err) => {
 						console.log(err);
+						this.utils.notifier.error('Probably, too large file!');
 					});
 			}
 		}

@@ -156,6 +156,7 @@ form input {
 
 .add-form div form button.btn.btn-success h5 {
   margin-top: -2px;
+  width: 30%;
 }
 
 ul.droppable {

@@ -27,6 +27,11 @@ const blogCtrl = (() => {
 			blogById(id) {
 				this.data.getBlogById(id)
 					.then((blog) => {
+						let dateCurr = new Date(blog.date);
+						blog.date = dateCurr.getDay() + '/' + dateCurr.getDate() + '/' + dateCurr.getFullYear();
+
+						blog.isBlog = true;
+						
 						this.view.objectSingle('#content', blog)
 							.then(() => {
 								$('#single-content-container').html(blog.description);
@@ -44,6 +49,8 @@ const blogCtrl = (() => {
 					formObj[el.name] = el.value;
 				});
 
+				let allTags = $('#all-tags').val();
+				formObj.tags = allTags.split(/[\s,;]+/);
 				formObj.comments = [];
 				formObj.date = new Date();
 				formObj.author = [localStorage.getItem('current-user-app')];
