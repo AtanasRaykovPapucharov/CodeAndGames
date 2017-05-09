@@ -20,6 +20,16 @@ module.exports = (mongo) => {
 					res.send(err);
 				});
 		},
+		gameByTag: (req, res, next) => {
+			gameData.getGameByTag(req.params.tag)
+				.then((game) => {
+					console.log(game);
+					res.status(200).json(game);
+				})
+				.catch((err) => {
+					res.send(err);
+				});
+		},
 		newGame: (req, res, next) => {
 			gameData.postGame(req.body)
 				.then((game) => {

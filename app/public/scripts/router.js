@@ -14,6 +14,11 @@ const router = (() => {
 					controller.mainCtrl.showAbout;
 					controller.mainCtrl.getAllTags();
 				},
+				'/tag/:value': (params) => {
+					const tag = params.value;
+					controller.gamesCtrl.getGamesWithTag(tag);
+					controller.blogCtrl.getBlogsWithTag(tag);
+				},
 
 				//=====================================================//
 

@@ -14,6 +14,17 @@ module.exports = (mongo) => {
 					})
 			});
 		},
+		getGameByTag: (id) => {
+			return new Promise((resolve, reject) => {
+				db['games']
+					.find({ tags: { $in: tag } }, (err, game) => {
+						if (err) {
+							reject(err);
+						}
+						resolve(game);
+					})
+			});
+		},
 		getGameById: (id) => {
 			return new Promise((resolve, reject) => {
 				db['games']
@@ -53,7 +64,7 @@ module.exports = (mongo) => {
 			});
 		},
 		updateComments: (id, comment) => {
-			let updated = { $push: { comments: comment } , $inc: { commentsCount: 1 }}
+			let updated = { $push: { comments: comment }, $inc: { commentsCount: 1 } }
 
 			return new Promise((resolve, reject) => {
 

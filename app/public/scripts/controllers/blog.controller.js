@@ -86,6 +86,18 @@ const blogCtrl = (() => {
 						throw ('Server error: ' + err);
 					})
 			}
+
+			getBlogsWithTag(tag) {
+				this.data.getBlogByTag(tag)
+					.then((resp) => {
+						if (resp) {
+							console.log(resp);
+						}
+					})
+					.catch((err) => {
+						throw (err);
+					})
+			}
 		}
 
 		let newCtrl = new BlogCtrl(data, view, utils);

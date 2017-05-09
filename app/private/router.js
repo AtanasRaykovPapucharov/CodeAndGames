@@ -17,6 +17,7 @@ module.exports = (express, app, mongo, nodemailer, params) => {
 
 		.get('/blog', controllers.blogCtrl.blogs)
 		.get('/blog/:id', controllers.blogCtrl.blogById)
+		.get('/blog/:tag', controllers.blogCtrl.blogByTag)
 		.post('/blog', controllers.blogCtrl.newBlog)
 		.put('/blog/comment/:id', controllers.blogCtrl.commentsUpdate)
 		.put('/blog/like/:id', (req, res, next) => { })
@@ -25,6 +26,7 @@ module.exports = (express, app, mongo, nodemailer, params) => {
 
 		.get('/games', controllers.gameCtrl.games)
 		.get('/games/:id', controllers.gameCtrl.gameById)
+		.get('/games/:tag', controllers.gameCtrl.gameByTag)
 		.post('/games', controllers.gameCtrl.newGame)
 		.put('/games/comment/:id', controllers.gameCtrl.commentsUpdate)
 		.put('/games/like/:id', (req, res, next) => { })

@@ -30,6 +30,10 @@ const gamesData = (() => {
 				
 				return this.requester.post('/api/games', options);
 			}
+
+			getGameByTag(tag) {
+				return this.requester.get(`/api/games/${tag}`);
+			}
 		}
 
 		let newData = new GamesData(requester);

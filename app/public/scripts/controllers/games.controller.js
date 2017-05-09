@@ -83,6 +83,18 @@ const gamesCtrl = (() => {
 						throw ('Server error: ' + err);
 					})
 			}
+
+			getGamesWithTag(tag) {
+				return this.data.getGameByTag(tag)
+					.then((resp) => {
+						if (resp) {
+							console.log(resp);
+						}
+					})
+					.catch((err) => {
+						throw (err);
+					})
+			}
 		}
 
 		let newCtrl = new GamesCtrl(data, view, utils);

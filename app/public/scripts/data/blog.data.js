@@ -30,6 +30,10 @@ const blogData = (() => {
 			
 				return this.requester.post('/api/blog', options);
 			}
+
+			getBlogByTag(tag) {
+				return this.requester.get(`/api/blog/${tag}`);
+			}
 		}
 
 		let newData = new BlogData(requester);
