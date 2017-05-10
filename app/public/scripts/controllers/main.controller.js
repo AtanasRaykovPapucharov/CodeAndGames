@@ -39,25 +39,58 @@ const mainCtrl = (() => {
 				return !!user;
 			}
 
+			getAllWithTag(tag) {
+				this.data.blogData.getBlogByTag(tag)
+					.then((blogs) => {
+						if (blogs) {
+							blogs.forEach((blog) => {
+								let titleShort = blog.title.substring(0, 19) + ' ...';
+								blog.title = titleShort;
+							}, this);
+						}
+
+						let blogz = blogs;
+						this.data.gamesData.getGameByTag(tag)
+							.then((gamesObj) => {
+								let games = gamesObj;
+								blogz.push.apply(blogz, games);
+
+								if (!blogz || blogz =='' || blogz == []) {
+									this.utils.notifier.info('No objects with that tag!');
+									return;
+								}
+
+								return this.view.objectCollection('#content', { data: blogz })
+							})
+							.catch((err) => {
+								throw (err);
+							})
+
+					})
+					.catch((err) => {
+						throw (err);
+					})
+			}
+
 			getAllTags() {
 				this.data.userData.getTags()
 					.then((tags) => {
 						let tagsArray = tags[0].all;
-						return this.view.aside('#content-aside', { data: tagsArray.sort() })
+						return this.view.aside('#content-aside', { data: tagsArray.sort(), role: 'all' })
 					})
 			}
 			getBlogTags() {
 				this.data.userData.getTags()
 					.then((tags) => {
 						let tagsArray = tags[0].blog;
-						return this.view.aside('#content-aside', { data: tagsArray.sort() })
+						return this.view.aside('#content-aside', { data: tagsArray.sort(), role: 'blog' })
 					})
 			}
 			getGameTags() {
 				this.data.userData.getTags()
 					.then((tags) => {
 						let tagsArray = tags[0].game;
-						return this.view.aside('#content-aside', { data: tagsArray.sort() })
+						return this.view.aside('#content-aside', { data: tagsArray.sort(), role: 'game' })
 					})
 			}
 

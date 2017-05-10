@@ -89,10 +89,17 @@ const blogCtrl = (() => {
 
 			getBlogsWithTag(tag) {
 				this.data.getBlogByTag(tag)
-					.then((resp) => {
-						if (resp) {
-							console.log(resp);
+					.then((blogs) => {
+						if (!blogs || blogs == '' || blogs == []) {
+							this.utils.notifier.info('No blog posts with that tag!');
+							return;
 						}
+
+						blogs.forEach((blog) => {
+							let titleShort = blog.title.substring(0, 19) + ' ...';
+							blog.title = titleShort;
+						}, this);
+						return this.view.objectCollection('#content', { data: blogs });
 					})
 					.catch((err) => {
 						throw (err);

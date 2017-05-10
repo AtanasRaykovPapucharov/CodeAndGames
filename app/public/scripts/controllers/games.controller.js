@@ -86,10 +86,13 @@ const gamesCtrl = (() => {
 
 			getGamesWithTag(tag) {
 				return this.data.getGameByTag(tag)
-					.then((resp) => {
-						if (resp) {
-							console.log(resp);
+					.then((games) => {
+						if (!games || games== '' || games == []) {
+							this.utils.notifier.info('No games with that tag!');
+							return;
 						}
+
+						return this.view.objectCollection('#content', { data: games })
 					})
 					.catch((err) => {
 						throw (err);

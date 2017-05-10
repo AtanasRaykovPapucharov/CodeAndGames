@@ -23,7 +23,6 @@ module.exports = (mongo) => {
 		gameByTag: (req, res, next) => {
 			gameData.getGameByTag(req.params.tag)
 				.then((game) => {
-					console.log(game);
 					res.status(200).json(game);
 				})
 				.catch((err) => {

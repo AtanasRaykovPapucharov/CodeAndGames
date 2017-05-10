@@ -14,10 +14,20 @@ const router = (() => {
 					controller.mainCtrl.showAbout;
 					controller.mainCtrl.getAllTags();
 				},
-				'/tag/:value': (params) => {
+
+				//=====================================================//
+
+				'/tag/blog/:value': (params) => {
+					const tag = params.value;
+					controller.blogCtrl.getBlogsWithTag(tag);
+				},
+				'/tag/game/:value': (params) => {
 					const tag = params.value;
 					controller.gamesCtrl.getGamesWithTag(tag);
-					controller.blogCtrl.getBlogsWithTag(tag);
+				},
+				'/tag/all/:value': (params) => {
+					const tag = params.value;
+					controller.mainCtrl.getAllWithTag(tag);
 				},
 
 				//=====================================================//

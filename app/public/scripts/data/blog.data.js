@@ -19,7 +19,7 @@ const blogData = (() => {
 				const options = {
 					data: comment
 				}
-				
+
 				return this.requester.put(`/api/blog/comment/${id}`, options);
 			}
 
@@ -27,12 +27,12 @@ const blogData = (() => {
 				const options = {
 					data: blog
 				}
-			
+
 				return this.requester.post('/api/blog', options);
 			}
 
 			getBlogByTag(tag) {
-				return this.requester.get(`/api/blog/${tag}`);
+				return this.requester.put(`/api/blog/${tag}`);
 			}
 		}
 

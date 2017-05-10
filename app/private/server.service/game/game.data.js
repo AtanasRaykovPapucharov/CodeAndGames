@@ -14,10 +14,10 @@ module.exports = (mongo) => {
 					})
 			});
 		},
-		getGameByTag: (id) => {
+		getGameByTag: (tag) => {
 			return new Promise((resolve, reject) => {
 				db['games']
-					.find({ tags: { $in: tag } }, (err, game) => {
+					.find({ tags: tag }, (err, game) => {
 						if (err) {
 							reject(err);
 						}

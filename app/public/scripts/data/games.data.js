@@ -19,7 +19,7 @@ const gamesData = (() => {
 				const options = {
 					data: comment
 				}
-				
+
 				return this.requester.put(`/api/games/comment/${id}`, options);
 			}
 
@@ -27,12 +27,12 @@ const gamesData = (() => {
 				const options = {
 					data: game
 				}
-				
+
 				return this.requester.post('/api/games', options);
 			}
 
 			getGameByTag(tag) {
-				return this.requester.get(`/api/games/${tag}`);
+				return this.requester.put(`/api/games/${tag}`);
 			}
 		}
 

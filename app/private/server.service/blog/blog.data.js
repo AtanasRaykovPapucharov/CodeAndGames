@@ -30,7 +30,7 @@ module.exports = (mongo) => {
 		getBlogByTag: (tag) => {
 			return new Promise((resolve, reject) => {
 				db['blogs']
-					.find({ tags: { $in: tag } }, (err, blog) => {
+					.find({ tags: tag }, (err, blog) => {
 						if (err) {
 							reject(err);
 						}
