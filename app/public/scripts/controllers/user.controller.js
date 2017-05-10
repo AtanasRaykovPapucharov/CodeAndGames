@@ -229,7 +229,7 @@ const userCtrl = (() => {
 			get userInterests() {
 				let interests = JSON.parse(localStorage.getItem('app-user-data')).interests;
 				console.log(interests);
-				return this.view.aside('#content-aside', { data: interests.sort() });
+				return this.view.aside('#content-aside', { data: interests.sort(), role: 'all' });
 			}
 
 			showSignIn() {

@@ -22,6 +22,7 @@ const profileCtrl = (() => {
 						this.data.putImage(imageObj)
 							.then((resp) => {
 								if (resp) {
+									console.log(resp);
 									let userData = JSON.parse(localStorage.getItem('app-user-data'));
 									userData.image = imageObj;
 									localStorage.setItem('app-user-data', JSON.stringify(userData));

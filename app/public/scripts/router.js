@@ -40,7 +40,7 @@ const router = (() => {
 					}
 					controller.userCtrl.userInterests;
 				},
-				'/upload-image': () => {
+				'/upload-profile-image': () => {
 					controller.profileCtrl.imageUpload()
 						.then(() => {
 							appRouter.navigate('/home');

@@ -16,7 +16,7 @@ const ajaxRequesterAxios = (() => {
 				params: options.params || {},
 				data: options.data || {},
 				responseType: options.responseType || 'json',
-				maxContentLength: options.maxContentLength || 20000,
+				maxContentLength: options.maxContentLength || 200000,
 				validateStatus: function (status) {
 					return status >= 200 && status < 300;
 				},
