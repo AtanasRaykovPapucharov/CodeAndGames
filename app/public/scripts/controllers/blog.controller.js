@@ -69,6 +69,10 @@ const blogCtrl = (() => {
 
 				let allTags = $('#all-tags').val();
 				formObj.tags = allTags.split(/[\s,;]+/);
+				formObj.tags.forEach((tag) => {
+					tag = tag.toLowerCase();
+				});
+
 				formObj.comments = [];
 				formObj.looks = 0;
 				formObj.likes = 0;

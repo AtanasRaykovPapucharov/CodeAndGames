@@ -1,32 +1,49 @@
 <div class="single-object">
 	<h3>{{title}}</h3>
+	<!-- Load Facebook SDK for JavaScript -->
+	<div id="fb-root"></div>
+	<script>
+		(function (d, s, id) {
+			var js, fjs = d.getElementsByTagName(s)[0];
+			if (d.getElementById(id)) return;
+			js = d.createElement(s); js.id = id;
+			js.src = "//connect.facebook.net/en_US/sdk.js#xfbml=1";
+			fjs.parentNode.insertBefore(js, fjs);
+		}(document, 'script', 'facebook-jssdk'));
+
+	</script>
+	<!-- Your like button code -->
+	<div class="fb-like" data-href="" data-layout="standard" data-action="like" data-show-faces="true" style="color: whitesmoke">
+	</div>
 	<hr>
 	<div style="width: 48%; float: right; margin-left: 15px">
-		<a href={{link}} class=""><img src={{image}} alt="img" width="98%"></a>
-		<hr> {{#if isBlog}}
-		<a href={{link}} class="btn btn-info" style="width: 22%">More</a> {{/if}} {{#unless isBlog}}
-		<a href={{link}} class="btn btn-danger" style="width: 22%">Play</a> {{/unless}}
+		<a href={{link}} class=""><img src={{image}} alt="img" width="98%"></a><hr> 
+		{{#if isBlog}}
+		<a href={{link}} class="btn btn-info" style="width: 22%">More</a> 
+		{{/if}} 
+		{{#unless isBlog}}
+		<a href={{link}} class="btn btn-danger" style="width: 22%">Play</a> 
+		{{/unless}}
 		<div style="float: right;">
 			<span><i class="glyphicon glyphicon-eye-open" title="views"></i></span>
 			<span class="span-val">{{this.looks}}</span>
-			<span><a href=""><i class="glyphicon glyphicon-thumbs-up" title="likes"></i></a></span>
+			<span><a href="#/like/{{role}}/{{_id}}"><i class="glyphicon glyphicon-thumbs-up" title="likes"></i></a></span>
 			<span class="span-val">{{this.likes}}</span>
-			<span><a href=""><i class="glyphicon glyphicon-bookmark" title="bookmarks"></i></a></span>
+			<span><a href="#/bookmark/{{role}}/{{_id}}"><i class="glyphicon glyphicon-bookmark" title="bookmarks"></i></a></span>
 			<span class="span-val">{{this.bookmarksCount}}</span>
 			<span><i class="glyphicon glyphicon-comment" title="comments"></i></span>
 			<span class="span-val">{{this.commentsCount}}</span>
-		</div><hr> 
-		{{#each tags}}
-		<a href="#/tag/{{../role}}/{{this}}" class="btn btn-primary">{{this}}</a> 
-		{{/each}}
+		</div>
+		<hr> {{#each tags}}
+		<a href="#/tag/{{../role}}/{{this}}" class="btn btn-primary" style="color: #FFE2AD;">{{this}}</a> {{/each}}
 		<hr>
-		<h4 style="float: right">Published by <span>{{author}}</span> on <span>{{date}}</span></h4>
+		<h4 style="float: right; color:steelblue">Published by <span>{{author}}</span> on <span>{{date}}</span></h4>
 	</div>
 	<p id="single-content-container">
 		{{description}}
 	</p>
 	<hr> Comments:<br>
-	<textarea id="comment-add-area" rows="3" cols="35"></textarea>
+	<textarea id="comment-add-area" rows="3" cols="21" style="color:midnightblue"></textarea>
 	<span><a id="comment-add-btn" href="#/add-comment/{{role}}/{{_id}}" class="btn btn-success" style="margin-top: -27px; width: 100px">New</a></span>
 	<hr>
 	<ul>

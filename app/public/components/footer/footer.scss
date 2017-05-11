@@ -12,14 +12,14 @@
 	background-size: 800%;
 
 	.footer-content {
+		img {
+			margin-left: 35%;
+			pargin-top: -20px;
+		}
+
 		h5 {
 			float: right;
 			padding-right: 1.3em;
-
-			img {
-				margin-left: 42%;
-				pargin-top: -20px;
-			}
 		}
 	}
 }

@@ -6,7 +6,7 @@
 }
 
 body {
-  background-color: #FFE2AD;
+  background-color: silver;
   color: #FFE2AD;
   font-size: 16px;
   text-align: justify;
@@ -27,19 +27,19 @@ body .wrapper .middle #content-aside {
 }
 
 body .wrapper .middle #content {
-  border-left: 15px solid #FFE2AD;
-  border-right: 15px solid #FFE2AD;
+  border-left: 15px solid silver;
+  border-right: 15px solid silver;
 }
 
 body .wrapper .middle #content-aside {
-  border-left: 15px solid #FFE2AD;
-  border-right: 15px solid #FFE2AD;
-  border-top: 5px solid #FFE2AD;
+  border-left: 15px solid silver;
+  border-right: 15px solid silver;
+  border-top: 5px solid silver;
 }
 
 body .wrapper #footer {
   background-color: transparent;
-  border-top: 15px solid #FFE2AD;
+  border-top: 15px solid silver;
   color: #FFE2AD;
   margin-left: -1px;
   min-height: 150px;
@@ -60,11 +60,11 @@ body .wrapper #footer {
 
 @media only screen and (min-width: 768px) {
   body .wrapper .middle #content {
-    border-right: 5px solid #FFE2AD;
+    border-right: 5px solid silver;
   }
 
   body .wrapper .middle #content-aside {
-    border-left: 5px solid #FFE2AD;
+    border-left: 5px solid silver;
     border-top: 0;
   }
 
@@ -104,7 +104,6 @@ a:hover {
 }
 
 * > input {
-  border: 2px solid #FFE2AD !important;
   border-radius: 5px !important;
   background-color: whitesmoke !important;
 }
@@ -115,7 +114,6 @@ ul {
 
 .btn {
   height: 36px;
-  border: 2px solid #FFE2AD;
 }
 
 .btn h5 {
@@ -178,7 +176,7 @@ ul.droppable {
 }
 
 #contact-us-msg-container {
-  border: 1px solid darkorange;
+  border: 1px solid #FFE2AD;
   border-radius: 5px;
 }
 @font-face {
@@ -209,7 +207,6 @@ a:hover {
 }
 
 * > input {
-  border: 2px solid #FFE2AD !important;
   border-radius: 5px !important;
   background-color: whitesmoke !important;
 }
@@ -220,7 +217,6 @@ ul {
 
 .btn {
   height: 36px;
-  border: 2px solid #FFE2AD;
 }
 
 .btn h5 {
@@ -248,14 +244,14 @@ ul {
   background-size: 800%;
 }
 
+.wrapper #footer .footer-content img {
+  margin-left: 35%;
+  pargin-top: -20px;
+}
+
 .wrapper #footer .footer-content h5 {
   float: right;
   padding-right: 1.3em;
-}
-
-.wrapper #footer .footer-content h5 img {
-  margin-left: 42%;
-  pargin-top: -20px;
 }
 
 /*==========  Mobile First Method  ==========*/
@@ -298,7 +294,6 @@ a:hover {
 }
 
 * > input {
-  border: 2px solid #FFE2AD !important;
   border-radius: 5px !important;
   background-color: whitesmoke !important;
 }
@@ -309,7 +304,6 @@ ul {
 
 .btn {
   height: 36px;
-  border: 2px solid #FFE2AD;
 }
 
 .btn h5 {
@@ -332,7 +326,7 @@ ul {
 #profile-link {
   margin-top: -2px;
   margin-left: 35px;
-  border: 3px solid #FFE2AD;
+  border: 3px solid transparent;
   border-radius: 25%;
 }
 
@@ -350,8 +344,8 @@ ul {
   background-image: url("assets/images/staff/bg.jpg");
   background-repeat: no-repeat;
   background-size: 300%;
-  border-left: 15px solid #FFE2AD;
-  border-right: 15px solid #FFE2AD;
+  border-left: 15px solid silver;
+  border-right: 15px solid silver;
   border-radius: 0;
 }
 

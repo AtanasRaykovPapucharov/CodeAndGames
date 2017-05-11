@@ -17,8 +17,10 @@ module.exports = (mongo) => {
 		getBlogById: (id) => {
 			return new Promise((resolve, reject) => {
 				db['blogs']
-					.findOne({
-						_id: mongojsObj.ObjectId(id)
+					.findAndModify({
+						query: { _id: mongojsObj.ObjectId(id) },
+						update: { $inc: { looks: 1 } },
+						new: true
 					}, (err, blog) => {
 						if (err) {
 							reject(err);

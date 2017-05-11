@@ -66,12 +66,20 @@ const gamesCtrl = (() => {
 
 				let allTags = $('all-tags').val();
 				formObj.tags = allTags.split(/[\s,;]+/);
+				formObj.tags.forEach((tag) => {
+					tag = tag.toLowerCase();
+				})
+
 				formObj.comments = [];
+
 				formObj.looks = 0;
 				formObj.likes = 0;
+
 				formObj.bookmarksCount = 0;
 				formObj.commentsCount = 0;
+
 				formObj.date = new Date();
+
 				formObj.author = [localStorage.getItem('current-user-app')];
 
 				this.data.postGame(formObj)
@@ -87,7 +95,7 @@ const gamesCtrl = (() => {
 			getGamesWithTag(tag) {
 				return this.data.getGameByTag(tag)
 					.then((games) => {
-						if (!games || games== '' || games == []) {
+						if (!games || games == '' || games == []) {
 							this.utils.notifier.info('No games with that tag!');
 							return;
 						}

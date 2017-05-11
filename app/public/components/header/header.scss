@@ -8,7 +8,7 @@ $header-colors: #FFE2AD;
 #profile-link {
 	margin-top: -2px;
 	margin-left: 35px;
-	border: 3px solid $header-colors;
+	border: 3px solid transparent;
 	border-radius: 25%;
 }
 
@@ -27,8 +27,8 @@ $header-colors: #FFE2AD;
 		background-image: url('../../assets/images/staff/bg.jpg');
 		background-repeat: no-repeat;
 		background-size: 300%;
-		border-left: 15px solid $header-colors;
-		border-right: 15px solid $header-colors;
+		border-left: 15px solid silver;
+		border-right: 15px solid silver;
 		border-radius: 0;
 
 		.nav-colapse-btn {

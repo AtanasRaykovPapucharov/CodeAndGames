@@ -283,8 +283,6 @@ const userCtrl = (() => {
 				$('#log-forms-link').html('Sign in / Sign up').attr('href', '#/signin');
 				if ($('#profile-link').attr('src') !== this.emptyAvatar) {
 					$('#profile-link').attr('src', this.emptyAvatar);
-				} else {
-					utils.notifier.infoUntitle('Bye, bye!');
 				}
 			}
 

@@ -144,6 +144,19 @@ const router = (() => {
 
 				//============================================//
 
+				'/like/:role/:id': (params) => {
+					const role = params.role;
+					const id = params.id;
+					alert('like ' + role + ' with ID: ' + id);
+				},
+				'/bookmark/:role/:id': (params) => {
+					const role = params.role;
+					const id = params.id;
+					alert('bookmark ' + role + ' with ID: ' + id);
+				},
+
+				//============================================//
+
 				'/add-comment/game/:id': (params) => {
 					const commentId = params.id;
 					controller.gamesCtrl.commentGameById(commentId);
