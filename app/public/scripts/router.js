@@ -147,7 +147,22 @@ const router = (() => {
 				'/like/:role/:id': (params) => {
 					const role = params.role;
 					const id = params.id;
-					alert('like ' + role + ' with ID: ' + id);
+
+					switch (role) {
+						case 'blog':
+							if ($('#just-like').hasClass('liked')) {
+								break;
+							}
+							controller.blogCtrl.likeBlogById(id);
+							appRouter.navigate(`/blog/${id}`);
+							break;
+						case 'game':
+							if ($('#just-like').hasClass('liked')) {
+							}
+							controller.gamesCtrl.likeGameById(id);
+							appRouter.navigate(`/game/${id}`);
+							break;
+					}
 				},
 				'/bookmark/:role/:id': (params) => {
 					const role = params.role;

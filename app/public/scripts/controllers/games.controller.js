@@ -9,6 +9,18 @@ const gamesCtrl = (() => {
 				this.utils = utils;
 			}
 
+			likeGameById(id) {
+				this.data.likeGameWithId(id)
+					.then((resp) => {
+						if (resp) {
+							$('#just-like').addClass('liked');
+						}
+					})
+					.catch((err) => {
+						console.log(err);
+					})
+			}
+
 			get games() {
 				this.data.getGames()
 					.then((games) => {
@@ -38,6 +50,14 @@ const gamesCtrl = (() => {
 				comment.author = localStorage.getItem('current-user-app');
 				comment.content = $('#comment-add-area').val();
 
+				if (!localStorage.getItem('current-user-app')) {
+					this.utils.notifier.warning(`Please, sign in first!`);
+					return;
+				}
+				if (!comment.content) {
+					this.utils.notifier.error('Empty comments could not be posted!');
+					return;
+				}
 				this.data.commentGameById(id, comment)
 					.then((resp) => {
 						if (resp) {

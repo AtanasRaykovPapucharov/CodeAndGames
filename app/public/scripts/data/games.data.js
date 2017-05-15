@@ -34,6 +34,10 @@ const gamesData = (() => {
 			getGameByTag(tag) {
 				return this.requester.put(`/api/games/${tag}`);
 			}
+
+			likeGameWithId(id) {
+				return this.requester.put(`/api/games/like/${id}`)
+			}
 		}
 
 		let newData = new GamesData(requester);

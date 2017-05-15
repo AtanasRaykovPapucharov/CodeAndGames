@@ -8,8 +8,8 @@ $colors-main: #FFE2AD;
 }
 
 body {
-	background-color: silver;
-	color: #FFE2AD;
+	background-color: $colors-main;
+	color: $colors-main;
 	font-size: 16px;
 	text-align: justify;
 
@@ -30,20 +30,20 @@ body {
 			}
 
 			#content {
-				border-left: 15px solid silver;
-				border-right: 15px solid silver;
+				border-left: 15px solid $colors-main;
+				border-right: 15px solid $colors-main;
 			}
 			
 			#content-aside {
-				border-left: 15px solid silver;
-				border-right: 15px solid silver;
-				border-top: 5px solid silver;
+				border-left: 15px solid $colors-main;
+				border-right: 15px solid $colors-main;
+				border-top: 5px solid $colors-main;
 			}
 		}
 
 		#footer {
 			background-color: transparent;
-			border-top: 15px solid silver;
+			border-top: 15px solid $colors-main;
 			color: $colors-main;
 			margin-left: -1px;
 			min-height: 150px;
@@ -106,10 +106,10 @@ body {
 				#content, #content-aside {
 				}
 				#content {
-				border-right: 5px solid silver;
+				border-right: 5px solid $colors-main;
 				}
 				#content-aside {
-				border-left: 5px solid silver;
+				border-left: 5px solid $colors-main;
 				border-top: 0;
 				}
 			}

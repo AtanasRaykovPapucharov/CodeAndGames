@@ -24,6 +24,18 @@ const blogCtrl = (() => {
 				return this.view.addForm('#content', { role: 'blog', notGame: true })
 			}
 
+			likeBlogById(id) {
+				this.data.likeBlogWithId(id)
+					.then((resp) => {
+						if (resp) {
+							$('#just-like').addClass('liked');
+						}
+					})
+					.catch((err) => {
+						console.log(err);
+					})
+			}
+
 			blogById(id) {
 				this.data.getBlogById(id)
 					.then((blog) => {
@@ -49,6 +61,14 @@ const blogCtrl = (() => {
 				comment.author = localStorage.getItem('current-user-app');
 				comment.content = $('#comment-add-area').val();
 
+				if (!localStorage.getItem('current-user-app')) {
+					this.utils.notifier.warning(`Please, sign in first!`);
+					return;
+				}
+				if (!comment.content) {
+					this.utils.notifier.error('Empty comments could not be posted!');
+					return;
+				}
 				this.data.commentBlogById(id, comment)
 					.then((resp) => {
 						if (resp) {

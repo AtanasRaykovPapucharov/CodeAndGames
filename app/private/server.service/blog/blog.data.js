@@ -40,6 +40,21 @@ module.exports = (mongo) => {
 					})
 			});
 		},
+		likeBlogById: (id) => {
+			return new Promise((resolve, reject) => {
+				db['blogs']
+					.findAndModify({
+						query: { _id: mongojsObj.ObjectId(id) },
+						update: { $inc: { likes: 1 } },
+						new: true
+					}, (err, blog) => {
+						if (err) {
+							reject(err);
+						}
+						resolve(blog);
+					})
+			});
+		},
 		postBlog: (blog) => {
 			return new Promise((resolve, reject) => {
 				db['blogs']

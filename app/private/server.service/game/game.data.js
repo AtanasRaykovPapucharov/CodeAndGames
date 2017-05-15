@@ -40,6 +40,21 @@ module.exports = (mongo) => {
 					})
 			});
 		},
+		likeGameById: (id) => {
+			return new Promise((resolve, reject) => {
+				db['games']
+					.findAndModify({
+						query: { _id: mongojsObj.ObjectId(id) },
+						update: { $inc: { likes: 1 } },
+						new: true
+					}, (err, game) => {
+						if (err) {
+							reject(err);
+						}
+						resolve(game);
+					})
+			});
+		},
 		postGame: (game) => {
 			return new Promise((resolve, reject) => {
 				db['games']

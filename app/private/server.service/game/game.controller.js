@@ -38,6 +38,15 @@ module.exports = (mongo) => {
 					res.send(err);
 				});
 		},
+		likeGame: (req, res, next) => {
+			gameData.likeGameById(req.params.id)
+				.then((resp) => {
+					res.status(200).json(resp);
+				})
+				.catch((err) => {
+					res.send(err);
+				});
+		},
 		commentsUpdate: (req, res, next) => {
 			const comment = req.body;
 
@@ -49,17 +58,6 @@ module.exports = (mongo) => {
 				})
 				.catch((err) => {
 					res.status(400).json({ error: err.message });
-				});
-		},
-		likeGame: (req, res, next) => {
-			let dataObj = { likes: req.body }
-
-			gameData.updateGame(req.params.id, dataObj)
-				.then((game) => {
-					res.status(200).json(game);
-				})
-				.catch((err) => {
-					res.send(err);
 				});
 		}
 	}

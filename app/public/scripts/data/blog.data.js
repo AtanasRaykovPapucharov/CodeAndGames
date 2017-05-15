@@ -34,6 +34,10 @@ const blogData = (() => {
 			getBlogByTag(tag) {
 				return this.requester.put(`/api/blog/${tag}`);
 			}
+
+			likeBlogWithId(id) {
+				return this.requester.put(`/api/blog/like/${id}`)
+			}
 		}
 
 		let newData = new BlogData(requester);

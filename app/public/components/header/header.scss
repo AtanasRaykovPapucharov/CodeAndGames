@@ -27,8 +27,8 @@ $header-colors: #FFE2AD;
 		background-image: url('../../assets/images/staff/bg.jpg');
 		background-repeat: no-repeat;
 		background-size: 300%;
-		border-left: 15px solid silver;
-		border-right: 15px solid silver;
+		border-left: 15px solid $header-colors;
+		border-right: 15px solid $header-colors;
 		border-radius: 0;
 
 		.nav-colapse-btn {

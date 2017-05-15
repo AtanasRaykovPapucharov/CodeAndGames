@@ -53,7 +53,7 @@ gulp.task('js:compile-server', () => {
 
 gulp.task("js:compile", ['js:compile-server']);
 
-gulp.task("final", ['html:copy', 'css:compress', 'js:compile', 'js:compress']);
+gulp.task("final", ['html:copy', 'css:compress', 'js:compile']);
 
 const sass = require('gulp-sass');
 gulp.task('sass:compile', function () {

@@ -42,6 +42,15 @@ module.exports = (mongo) => {
 					res.status(400).json({ error: err.message });
 				});
 		},
+		likeBlog: (req, res, next) => {
+			blogData.likeBlogById(req.params.id)
+				.then((resp) => {
+					res.status(200).json(resp);
+				})
+				.catch((err) => {
+					res.send(err);
+				});
+		},
 		newBlog: (req, res, next) => {
 			blogData.postBlog(req.body)
 				.then((blog) => {
